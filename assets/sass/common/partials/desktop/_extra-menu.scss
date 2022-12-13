@@ -1,0 +1,104 @@
+.extra-menu {
+  --menu-width: 216px;
+  --menu-item-height: 56px;
+  --menu-font-size: 14px;
+  --menu-font-size-sm: 12px;
+  --menu-font-weight: 400;
+  --menu-font-color: #fff;
+  --menu-bgcolor: #000;
+
+  top: var(--header-height) !important;
+  left: auto !important;
+  right: var(--header-height);
+  border-radius: 0;
+  padding: 0;
+  width: var(--menu-width);
+  background-color: var(--menu-bgcolor) !important;
+  box-shadow: 0 40px 40px 0 rgba(#000, .5);
+
+  &__list {
+    border-radius: inherit;
+    padding: 0;
+    background-color: transparent !important;
+
+    .v-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0 8px;
+      position: relative;
+      margin: 0;
+      padding: 0 16px;
+      height: var(--menu-item-height);
+      line-height: 1.3;
+      font-size: var(--menu-font-size);
+      font-weight: var(--menu-font-weight);
+      color: var(--menu-font-color) !important;
+      transition: background-color 400ms ease;
+
+      .wrap-menu {
+        display: flex;
+        column-gap: 8px;
+        align-items: center;
+
+        &.small {
+          column-gap: 4px;
+
+          font-size: var(--menu-font-size-sm);
+        }
+      }
+
+      &::before {
+        content: none !important;
+      }
+
+      &.v-item--active {
+        font-weight: 700;
+      }
+
+      &[aria-disabled='true'][href] {
+        color: rgba(#fff, 0.4) !important;
+      }
+
+      &[target='_blank'] {
+        &::after {
+          content: '';
+          display: block;
+          width: 9px;
+          height: 9px;
+          min-height: auto;
+          background: url("https://file.mir4global.com/xdraco/img/desktop/header-v2/icon-arrow-external.webp") 0 0 / auto 100% no-repeat;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(#fff, .1);
+      }
+    }
+  }
+}
+
+.btn-extra-menu {
+  > span {
+    transition: transform 400ms ease;
+
+    &::before {
+      content: '';
+      display: block;
+      position: relative;
+      top: -4px;
+      border: 1px solid #fff;
+      border-width: 0 0 1px 1px;
+      width: 16px;
+      height: 16px;
+      box-sizing: border-box;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &[aria-expanded="true"] {
+    > span {
+      transform: rotateX(180deg);
+    }
+  }
+}

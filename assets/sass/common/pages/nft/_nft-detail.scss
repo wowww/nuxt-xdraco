@@ -1,0 +1,3835 @@
+@import "../../../mixin";
+
+.nft {
+  .section {
+    margin: 0 auto !important;
+    width: calc(100% - var(--intro-draco-padding) * 2) !important;
+  }
+
+  .item-manual__detail {
+    margin-bottom: 20px;
+  }
+}
+
+.float-bottom {
+  display: block !important;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  .register {
+    .item-info {
+      display: none;
+    }
+  }
+}
+
+.exchange-market {
+  padding-bottom: 80px;
+
+  .list-item {
+    padding: 0;
+
+    &:empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      height: 200px;
+      background: #1b1b30 linear-gradient(180deg, #1b1b30 0%, #0e0e24 100%);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+      &::before {
+        content: attr(data-empty-message);
+        display: block;
+        font-size: 14px;
+        letter-spacing: -0.01em;
+        color: rgba(#fff, 0.5);
+      }
+    }
+  }
+
+  .wrap-item-square {
+    &.inventory {
+      .total {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        font-weight: 600;
+
+        .number {
+          color: #a0f;
+        }
+      }
+
+      .wrap-btn {
+        margin-top: 16px;
+
+        .btn {
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.05);
+          height: 48px;
+          padding: 0 24px;
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+
+      .enhance {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 24px;
+        height: 16px;
+        font-size: 11px;
+        font-weight: 600;
+        text-shadow: 0 1px 1px #000;
+        letter-spacing: -0.01em;
+      }
+    }
+  }
+
+  .wrap-item-circle {
+    &.size-md {
+      .list-item {
+        flex-direction: row;
+        text-align: center;
+
+        > li {
+          flex: 1 1 calc(100% / 3 - 2px);
+          gap: 8px;
+          flex-direction: column;
+          min-height: 198px;
+          padding: 40px 16px 43px;
+          background: #1b1b30;
+          background: linear-gradient(180deg, #1b1b30 0%, #0e0e24 100%);
+          box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+          &.common .bg,
+          &.grade-1 .bg {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-common.webp");
+          }
+
+          &.uncommon .bg,
+          &.grade-2 .bg {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-uncommon.webp");
+          }
+
+          &.rare .bg,
+          &.grade-3 .bg {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-rare.webp");
+          }
+
+          &.epic .bg,
+          &.grade-4 .bg {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-epic.webp");
+          }
+
+          &.legendary .bg,
+          &.grade-5 .bg {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-legendary.webp");
+          }
+        }
+
+        .desc {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 38px;
+        }
+      }
+
+      .locked {
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: normal;
+
+        &::before {
+          content: "";
+          display: block;
+          margin: 0 auto 2px;
+          width: 24px;
+          height: 24px;
+          background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/ico-lock.webp") no-repeat 50% 0 / 100%;
+        }
+      }
+    }
+
+    &.size-sm {
+      .list-item {
+        flex-direction: row;
+        text-align: center;
+
+        > li {
+          flex: 1 1 calc(100% / 4 - 2px);
+          gap: 8px;
+          flex-direction: column;
+          min-height: 184px;
+          padding: 32px 8px 40px;
+          background: #1b1b30;
+          background: linear-gradient(180deg, #1b1b30 0%, #0e0e24 100%);
+          box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+          &.common .bg,
+          &.grade-1 .bg {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-common.webp");
+          }
+
+          &.uncommon .bg,
+          &.grade-2 .bg {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-uncommon.webp");
+          }
+
+          &.rare .bg,
+          &.grade-3 .bg {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-rare.webp");
+          }
+
+          &.epic .bg,
+          &.grade-4 .bg {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-epic.webp");
+          }
+
+          &.legendary .bg,
+          &.grade-5 .bg {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-legendary.webp");
+          }
+        }
+
+        .desc {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 48px;
+        }
+
+        .bg {
+          width: 56px;
+          height: 56px;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+
+      .locked {
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: normal;
+
+        &::before {
+          content: "";
+          display: block;
+          margin: 0 auto 2px;
+          width: 24px;
+          height: 24px;
+          background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/ico-lock.webp") no-repeat 50% 0 / 100%;
+        }
+      }
+    }
+
+    &.no-gutters {
+      .list-item {
+        > li {
+          &:nth-child(7) {
+            flex-direction: row;
+            min-height: 96px;
+            padding: 16px 24px;
+            text-align: left;
+            column-gap: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .price-history {
+    .display-price {
+      display: flex;
+      justify-content: space-between;
+
+      .label {
+        margin-top: -5px;
+        color: rgba(#fff, 0.5);
+        font-size: 12px;
+      }
+
+      .add-inside {
+        margin-left: 8px;
+        padding-left: 28px;
+        height: auto;
+        line-height: 1;
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: -0.02em;
+        color: #fff;
+
+        &.ico-sm {
+          padding-left: 28px;
+        }
+
+        &::before {
+          width: 24px !important;
+          height: 24px !important;
+        }
+      }
+    }
+
+    .wrap-chart {
+      position: relative;
+      margin: 22px 0 32px;
+    }
+
+    .list-sale-history {
+      &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        border-bottom: 1px solid rgba(#fff, 0.15);
+        padding: 16px 0 17px;
+        line-height: 1.2;
+        font-size: 14px;
+        letter-spacing: -0.01em;
+        box-sizing: border-box;
+
+        .obj {
+          display: flex;
+          flex: 1;
+          justify-content: space-between;
+          align-items: baseline;
+
+          dt {
+            display: block;
+            font-size: 12px;
+            color: rgba(#fff, 0.5);
+          }
+
+          dd {
+            color: #fff;
+          }
+        }
+
+        .add-inside {
+          line-height: 1;
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .wrap-tabs-item {
+    &.v-tabs-items {
+      background-color: transparent;
+    }
+  }
+
+  .wrap-item-circle {
+    .list-item {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      padding-left: 0;
+      gap: 2px;
+      list-style: none;
+      word-break: break-word;
+      letter-spacing: -0.01em;
+      font-size: 14px;
+      color: #fff;
+
+      > li {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        min-height: 96px;
+        padding: 16px 20px;
+        background-color: #0f182b;
+        line-height: normal;
+
+        &.common .bg,
+        &.grade-1 .bg {
+          background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-common.webp");
+        }
+
+        &.uncommon .bg,
+        &.grade-2 .bg {
+          background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-uncommon.webp");
+        }
+
+        &.rare .bg,
+        &.grade-3 .bg {
+          background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-rare.webp");
+        }
+
+        &.epic .bg,
+        &.grade-4 .bg {
+          background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-epic.webp");
+        }
+
+        &.legendary .bg,
+        &.grade-5 .bg {
+          background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-legendary.webp");
+        }
+      }
+
+      .wrap-thumb {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .bg {
+        display: block;
+        position: relative;
+        width: 64px;
+        height: 64px;
+        background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-none.webp") 0 0 / cover no-repeat;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 48px;
+          height: 48px;
+          transform: translate(-50%, -50%);
+        }
+
+        .tier-badge {
+          display: flex;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          justify-content: center;
+          align-items: center;
+          width: 20px;
+          height: 20px;
+          background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/spirit-tier-badge.webp") 0 0 / cover no-repeat;
+          font-size: 11px;
+        }
+      }
+
+      .desc {
+        .name {
+          display: block;
+        }
+
+        .category {
+          display: block;
+          margin-top: 6px;
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+
+  .wrap-item-square {
+    .list-item {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+      gap: 12px 8px;
+      padding-left: 0;
+      text-align: center;
+      list-style: none;
+      color: #fff;
+
+      > li {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        background-color: rgba(255, 255, 255, 0.1);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &.common,
+        &.grade-1 {
+          border: 0;
+          background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-item-bg-common.webp");
+        }
+
+        &.uncommon,
+        &.grade-2 {
+          border: 0;
+          background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-item-bg-uncommon.webp");
+        }
+
+        &.rare,
+        &.grade-3 {
+          border: 0;
+          background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-item-bg-rare.webp");
+        }
+
+        &.epic,
+        &.grade-4 {
+          border: 0;
+          background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-item-bg-epic.webp");
+        }
+
+        &.legendary,
+        &.grade-5 {
+          border: 0;
+          background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-item-bg-legendary.webp");
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%);
+      }
+
+      .tier {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        min-width: 16px;
+        height: 16px;
+        font-weight: 600;
+        font-size: 11px;
+        text-shadow: 0 1px 1px #000;
+        letter-spacing: -0.01em;
+      }
+
+      .quantity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        min-width: 24px;
+        height: 16px;
+        font-size: 10px;
+        text-shadow: 0 1px 1px #000;
+        letter-spacing: -0.01em;
+      }
+    }
+  }
+
+  .character {
+    &-info {
+      padding: 0;
+
+      &--list {
+        list-style: none;
+        min-height: 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        letter-spacing: -.01em;
+        color: #fff;
+        border-top: 1px solid hsla(0,0%,100%,.15);
+
+        &:last-child {
+          border-bottom: 1px solid hsla(0,0%,100%,.15);
+        }
+
+        .skill-desc {
+          flex: 1;
+          text-align: left;
+          font-size: 14px;
+          font-weight: 400;
+          color: hsla(0,0%,100%,.75);
+        }
+
+        .value {
+          font-size: 14px;
+          font-weight: 400;
+
+          .link-page {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &::after {
+              content: "";
+              display: block;
+              width: 24px;
+              height: 24px;
+              background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/ico-outlink.webp) 50% 50%/contain no-repeat;
+            }
+          }
+        }
+      }
+    }
+
+    &-stat {
+      word-break: break-all;
+      letter-spacing: -0.01em;
+
+      .list-stat {
+        padding-left: 0;
+        list-style: none;
+        line-height: normal;
+
+        > li {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          min-height: 52px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+          &.total {
+            .subject {
+              padding: 0;
+            }
+          }
+        }
+
+        .icon-subject {
+          width: 32px;
+          height: 32px;
+        }
+
+        .subject {
+          flex: 1;
+          padding: 0 8px;
+          font-size: 14px;
+          line-height: 16px;
+          color: rgba(255, 255, 255, 0.75);
+        }
+
+        .value {
+          flex-basis: 64px;
+          color: #fff;
+          font-size: 16px;
+          text-align: right;
+        }
+
+        .total {
+          min-height: 44px;
+          align-items: flex-start;
+
+          .subject {
+            flex: 0 0 auto;
+            color: #fff;
+            font-size: 16px;
+          }
+
+          .value {
+            position: relative;
+            padding-left: 28px;
+            flex-basis: auto;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+            text-align: left;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 2px;
+              left: 0;
+              width: 24px;
+              height: 24px;
+              background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/ico-power-white.webp") no-repeat 0 0 / 100%;
+            }
+          }
+        }
+      }
+
+      .wrap-btn {
+        display: flex;
+        margin-top: 16px;
+        justify-content: center;
+
+        .btn {
+          width: auto;
+          min-width: 110px;
+          height: 40px;
+          padding: 0 12px;
+          background-color: rgba(255, 255, 255, 0.1);
+          font-size: 12px;
+          font-weight: 400;
+
+          span {
+            position: relative;
+            padding-right: 20px;
+
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              top: calc(50% - 2px);
+              right: 0;
+              width: 12px;
+              height: 2px;
+              background-color: #fff;
+            }
+
+            &::after {
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+
+      .data-empty {
+        margin: 48px 0 64px;
+
+        &:empty {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 160px;
+          background-image: linear-gradient(
+              113deg,
+              rgba(2, 2, 25, 0.75) 0%,
+              rgba(13, 13, 32, 0.75) 51%,
+              rgba(2, 2, 25, 0.75) 100%
+          );
+          text-align: center;
+
+          &::before {
+            content: attr(data-empty-message);
+            display: block;
+            font-size: 14px;
+            color: #999;
+          }
+        }
+      }
+
+      .wrap-score {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+        background-image: linear-gradient(35deg, #ff4d00 0%, #ffeba3 46%, #f90 84%, #ff4000 99%, #f90 132%);
+        line-height: normal;
+
+        .score-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          row-gap: 4px;
+          flex: 1;
+          font-size: 14px;
+          color: #000;
+          min-height: 80px;
+
+          &:nth-child(3) {
+            > span {
+              margin-top: -9px;
+            }
+          }
+
+          .volume {
+            display: flex;
+            align-items: center;
+            column-gap: 4px;
+            font-size: 20px;
+            font-weight: bold;
+
+            &.score {
+              &::before {
+                content: '';
+                width: 24px;
+                height: 24px;
+                background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/icon-mirage-score.webp") 50% 50% / cover no-repeat;
+              }
+            }
+
+            &.enhancement {
+              color: #ffe600;
+              position: relative;
+              z-index: 1;
+              margin-top: 9px;
+              color: #fff;
+
+              &[data-character-reinforce="1"],
+              &[data-character-reinforce="2"] {
+                color: #42FF00;
+              }
+
+              &[data-character-reinforce="3"],
+              &[data-character-reinforce="4"] {
+                color: #00C2FF;
+              }
+
+              &[data-character-reinforce="5"],
+              &[data-character-reinforce="6"] {
+                color: #E8401B;
+              }
+
+              &[data-character-reinforce="7"],
+              &[data-character-reinforce="8"] {
+                color: #FFE600;
+              }
+
+              &::before {
+                z-index: -1;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: block;
+                content: '';
+                width: 48px;
+                height: 48px;
+                background: url('https://file.mir4global.com/xdraco/img/common/nft-detail/ico-level-rectangle.webp') 0 / 100% no-repeat;
+              }
+            }
+          }
+
+          &:not(:first-of-type) {
+            border-left: 1px solid #000;
+          }
+        }
+      }
+    }
+
+    &-skill {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+      place-items: center;
+      gap: 8px 4px;
+
+      &[data-character-class="1"] {
+        [data-character-skill="1"] {
+          &:before {
+            background-position: -160px -12px;
+          }
+        }
+
+        [data-character-skill="2"] {
+          &:before {
+            background-position: -92px -12px;
+          }
+        }
+
+        [data-character-skill="3"] {
+          &:before {
+            background-position: -228px -12px;
+          }
+        }
+
+        [data-character-skill="4"] {
+          &:before {
+            background-position: -296px -12px;
+          }
+        }
+
+        [data-character-skill="5"] {
+          &:before {
+            background-position: -364px -12px;
+          }
+        }
+
+        [data-character-skill="6"] {
+          &:before {
+            background-position: -432px -12px;
+          }
+        }
+
+        [data-character-skill="7"] {
+          &:before {
+            background-position: -500px -12px;
+          }
+        }
+
+        [data-character-skill="8"] {
+          &:before {
+            background-position: -568px -12px;
+          }
+        }
+
+        [data-character-skill="9"] {
+          &:before {
+            background-position: -636px -12px;
+          }
+        }
+
+        [data-character-skill="10"] {
+          &:before {
+            background-position: -704px -12px;
+          }
+        }
+
+        [data-character-skill="11"] {
+          &:before {
+            background-position: -772px -12px;
+          }
+        }
+
+        [data-character-skill="12"] {
+          &:before {
+            background-position: -840px -12px;
+          }
+        }
+      }
+
+      &[data-character-class="2"] {
+        [data-character-skill="0"] {
+          &:before {
+            background-position: 0 -66px;
+          }
+        }
+
+        [data-character-skill="1"] {
+          &:before {
+            background-position: -92px -104px;
+          }
+        }
+
+        [data-character-skill="2"] {
+          &:before {
+            background-position: -160px -104px;
+          }
+        }
+
+        [data-character-skill="3"] {
+          &:before {
+            background-position: -228px -104px;
+          }
+        }
+
+        [data-character-skill="4"] {
+          &:before {
+            background-position: -296px -104px;
+          }
+        }
+
+        [data-character-skill="5"] {
+          &:before {
+            background-position: -364px -104px;
+          }
+        }
+
+        [data-character-skill="6"] {
+          &:before {
+            background-position: -432px -104px;
+          }
+        }
+
+        [data-character-skill="7"] {
+          &:before {
+            background-position: -500px -104px;
+          }
+        }
+
+        [data-character-skill="8"] {
+          &:before {
+            background-position: -568px -104px;
+          }
+        }
+
+        [data-character-skill="9"] {
+          &:before {
+            background-position: -636px -104px;
+          }
+        }
+
+        [data-character-skill="10"] {
+          &:before {
+            background-position: -704px -104px;
+          }
+        }
+
+        [data-character-skill="11"] {
+          &:before {
+            background-position: -772px -104px;
+          }
+        }
+
+        [data-character-skill="12"] {
+          &:before {
+            background-position: -840px -104px;
+          }
+        }
+      }
+
+      &[data-character-class="3"] {
+        [data-character-skill="0"] {
+          &:before {
+            background-position: 0 -133px;
+          }
+        }
+
+        [data-character-skill="1"] {
+          &:before {
+            background-position: -92px -196px;
+          }
+        }
+
+        [data-character-skill="2"] {
+          &:before {
+            background-position: -704px -196px;
+          }
+        }
+
+        [data-character-skill="3"] {
+          &:before {
+            background-position: -228px -196px;
+          }
+        }
+
+        [data-character-skill="4"] {
+          &:before {
+            background-position: -296px -196px;
+          }
+        }
+
+        [data-character-skill="5"] {
+          &:before {
+            background-position: -364px -196px;
+          }
+        }
+
+        [data-character-skill="6"] {
+          &:before {
+            background-position: -432px -196px;
+          }
+        }
+
+        [data-character-skill="7"] {
+          &:before {
+            background-position: -500px -196px;
+          }
+        }
+
+        [data-character-skill="8"] {
+          &:before {
+            background-position: -568px -196px;
+          }
+        }
+
+        [data-character-skill="9"] {
+          &:before {
+            background-position: -636px -196px;
+          }
+        }
+
+        [data-character-skill="10"] {
+          &:before {
+            background-position: -160px -196px;
+          }
+        }
+
+        [data-character-skill="11"] {
+          &:before {
+            background-position: -772px -196px;
+          }
+        }
+
+        [data-character-skill="12"] {
+          &:before {
+            background-position: -840px -196px;
+          }
+        }
+      }
+
+      &[data-character-class="4"] {
+        [data-character-skill="0"] {
+          &:before {
+            background-position: 0 -266px;
+          }
+        }
+
+        [data-character-skill="1"] {
+          &:before {
+            background-position: -92px -380px;
+          }
+        }
+
+        [data-character-skill="2"] {
+          &:before {
+            background-position: -432px -380px;
+          }
+        }
+
+        [data-character-skill="3"] {
+          &:before {
+            background-position: -160px -380px;
+          }
+        }
+
+        [data-character-skill="4"] {
+          &:before {
+            background-position: -228px -380px;
+          }
+        }
+
+        [data-character-skill="5"] {
+          &:before {
+            background-position: -500px -380px;
+          }
+        }
+
+        [data-character-skill="6"] {
+          &:before {
+            background-position: -568px -380px;
+          }
+        }
+
+        [data-character-skill="7"] {
+          &:before {
+            background-position: -772px -380px;
+          }
+        }
+
+        [data-character-skill="8"] {
+          &:before {
+            background-position: -364px -380px;
+          }
+        }
+
+        [data-character-skill="9"] {
+          &:before {
+            background-position: -636px -380px;
+          }
+        }
+
+        [data-character-skill="10"] {
+          &:before {
+            background-position: -296px -380px;
+          }
+        }
+
+        [data-character-skill="11"] {
+          &:before {
+            background-position: -704px -380px;
+          }
+        }
+
+        [data-character-skill="12"] {
+          &:before {
+            background-position: -840px -380px;
+          }
+        }
+      }
+
+      &[data-character-class="5"] {
+        [data-character-skill="0"] {
+          &:before {
+            background-position: 0 -200px;
+          }
+        }
+
+        [data-character-skill="1"] {
+          &:before {
+            background-position: -92px -288px;
+          }
+        }
+
+        [data-character-skill="2"] {
+          &:before {
+            background-position: -160px -288px;
+          }
+        }
+
+        [data-character-skill="3"] {
+          &:before {
+            background-position: -228px -288px;
+          }
+        }
+
+        [data-character-skill="4"] {
+          &:before {
+            background-position: -296px -288px;
+          }
+        }
+
+        [data-character-skill="5"] {
+          &:before {
+            background-position: -364px -288px;
+          }
+        }
+
+        [data-character-skill="6"] {
+          &:before {
+            background-position: -432px -288px;
+          }
+        }
+
+        [data-character-skill="7"] {
+          &:before {
+            background-position: -500px -288px;
+          }
+        }
+
+        [data-character-skill="8"] {
+          &:before {
+            background-position: -568px -288px;
+          }
+        }
+
+        [data-character-skill="9"] {
+          &:before {
+            background-position: -636px -288px;
+          }
+        }
+
+        [data-character-skill="10"] {
+          &:before {
+            background-position: -704px -288px;
+          }
+        }
+
+        [data-character-skill="11"] {
+          &:before {
+            background-position: -772px -288px;
+          }
+        }
+
+        [data-character-skill="12"] {
+          &:before {
+            background-position: -840px -288px;
+          }
+        }
+      }
+
+      .badge-wrap {
+        position: relative;
+        width: 64px;
+        height: 64px;
+
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: 1;
+          transform: translateX(-50%) translateY(-50%);
+          width: 52px;
+          height: 52px;
+          border: 2px solid #000;
+          box-sizing: border-box;
+          border-radius: 50%;
+        }
+
+        &.badge-big {
+          width: 64px;
+          height: 64px;
+
+          &:before {
+            width: 56px;
+            height: 56px;
+          }
+
+          .badge {
+            &:before {
+              background-size: 649px 324px;
+            }
+
+            &:after {
+              top: 0;
+              left: 0;
+              transform: translateX(0) translateY(0);
+              border: 0;
+            }
+          }
+
+          .badge {
+            width: 100%;
+            height: 100%;
+
+            &:before {
+              top: 0;
+              left: 0;
+              transform: translateX(3px) translateY(3px);
+            }
+
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-badge-off.webp") 0 0 / 100% auto no-repeat;
+            }
+          }
+        }
+
+        .badge {
+          width: 64px;
+          height: 64px;
+
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 56px;
+            height: 56px;
+            box-sizing: border-box;
+            border: 2px solid #57568b;
+            border-radius: 50%;
+          }
+        }
+
+        .badge {
+          overflow: hidden;
+          position: relative;
+
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 56px;
+            height: 56px;
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/sp-skill.webp");
+            background-size: 896px 448px;
+            background-repeat: no-repeat;
+          }
+        }
+
+        &.on {
+          &:before {
+            box-shadow: 0 0 13px #ff0000;
+          }
+
+          &.badge-big {
+            &:before {
+              box-shadow: none;
+            }
+
+            .badge {
+              &:after {
+                background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-badge-on.webp") 0 0 / 100% auto no-repeat;
+              }
+            }
+          }
+
+          .badge {
+            &:after {
+              border-color: #ff0000;
+            }
+          }
+
+          span {
+            border-color: #ff0000;
+          }
+        }
+
+        &.disabled {
+          .badge:before {
+            filter: grayscale(100%);
+          }
+        }
+
+        span {
+          display: block;
+          position: absolute;
+          z-index: 2;
+          font-size: 14px;
+          color: #fff;
+          background-color: #000;
+          line-height: 20px;
+          text-align: center;
+          border: 2px solid #57568b;
+          box-sizing: border-box;
+
+          &.big-tier {
+            width: 56px;
+            height: 24px;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            border-radius: 20px;
+            font-weight: bold;
+          }
+
+          &.sm-tier {
+            width: 24px;
+            height: 24px;
+            left: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    &-spirit {
+      &.full-horizon {
+        margin: 0 -15px;
+
+        .v-slide-group__content {
+          padding: 0 15px;
+        }
+      }
+
+      .v-tabs-items {
+        background-color: transparent !important;
+      }
+      .v-tabs {
+        margin-bottom: 22px;
+
+        &.theme--light {
+          > .v-tabs-bar {
+            height: auto;
+            background-color: transparent;
+
+            .v-tab {
+              padding: 0;
+              min-width: auto;
+              font-weight: 600;
+              text-transform: none;
+              color: #fff;
+              line-height: 1.71;
+              letter-spacing: normal;
+
+              &::before {
+                display: none;
+              }
+
+              &:not(.v-tab--active) {
+                color: rgba(255, 255, 255, 0.4);
+              }
+
+              &.v-tab--disabled {
+                opacity: 0.3;
+              }
+
+              ~ .v-tab {
+                margin-left: 16px;
+              }
+            }
+
+            .v-slide-group__prev,
+            .v-slide-group__next {
+              display: none !important;
+            }
+          }
+        }
+      }
+
+      .v-slide-group__content {
+        justify-content: flex-start;
+      }
+
+      .v-tabs-slider-wrapper {
+        height: 1px !important;
+      }
+
+      .wrap-item-square {
+        padding: 0;
+      }
+
+      .grade {
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-shadow: 0 1.1px 1.1px #000;
+      }
+
+      .stone-grade {
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        right: 6px;
+        top: 2px;
+      }
+    }
+
+    &-dragon {
+      list-style: none !important;
+      padding-left: 0 !important;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2px;
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 20px 16px;
+        column-gap: 16px;
+        background-color: #0f182b;
+
+        .bg {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+
+          .tier-badge {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/spirit-tier-badge.webp") 0 0 / cover no-repeat;
+            font-size: 12px;
+          }
+
+          .grade {
+            font-size: 14px;
+            position: absolute;
+            right: 9px;
+            top: 5px;
+            font-weight: bold;
+          }
+        }
+
+        &.grade-3 {
+          .bg {
+            width: 80px;
+            height: 80px;
+            background: url("~@/assets/img/common/nft-detail/img-dragon-item-rare.webp") 50% 0 / cover no-repeat;
+          }
+        }
+
+        &.grade-4 {
+          .bg {
+            width: 80px;
+            height: 80px;
+            background: url("~@/assets/img/common/nft-detail/img-dragon-item-epic.webp") 50% 0 / cover no-repeat;
+          }
+        }
+
+        &.grade-5 {
+          .bg {
+            width: 80px;
+            height: 80px;
+            background: url("~@/assets/img/common/nft-detail/img-dragon-item-legendary.webp") 50% 0 / cover no-repeat;
+          }
+        }
+
+        .desc {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          row-gap: 6px;
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.5);
+
+          &__name {
+            color: #fff;
+            text-align: start;
+          }
+        }
+      }
+    }
+
+    &-training {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+
+      .training-item {
+        @include trainingCenter;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        flex: 1 1 calc(100% / 2 - 2px);
+        width: 50%;
+        min-height: 80px;
+        padding: 16px;
+        box-sizing: border-box;
+        background-color: rgba($color: #fff, $alpha: 0.05);
+        color: #fff;
+
+        .training-dec {
+          @include trainingCenter;
+          align-items: flex-start;
+          margin-left: 10px;
+          word-break: break-word;
+          font-size: 14px;
+          line-height: 16px;
+          text-align: left;
+
+          p {
+            margin: 0;
+
+            & + p {
+              margin-top: 3px;
+              font-size: 12px;
+              color: #98bbff;
+            }
+          }
+        }
+
+        .training-tier {
+          @include trainingCenter;
+          flex-shrink: 0;
+          width: 48px;
+          height: 48px;
+          background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-training-default.webp") 0 0 / 100% auto no-repeat;
+
+          span {
+            font-size: 10px;
+            margin-top: 3px;
+          }
+
+          p {
+            margin-top: -3px;
+            margin-bottom: 0;
+            font-size: 16px;
+            font-weight: 700;
+          }
+
+          &.lock {
+            background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-training-lock.webp") 0 0 / 100% auto no-repeat;
+          }
+        }
+      }
+
+      .training-sold {
+        width: 100%;
+
+        .training-item {
+          width: 100%;
+
+          .training-dec {
+            font-weight: bold;
+
+            p + p {
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+
+    &-conquest {
+      margin-right: calc(var(--intro-draco-padding) * -1);
+      margin-left: calc(var(--intro-draco-padding) * -1);
+
+      &--list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1px;
+        row-gap: 1px;
+        padding: 0;
+        width: 100%;
+
+        li {
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          list-style: none;
+          width: 100%;
+          height: 180px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            opacity: 0.5;
+          }
+
+          .level {
+            color: #fff;
+            text-align: center;
+            z-index: 2;
+
+            dt {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 50px;
+              line-height: 1.2;
+              font-size: 14px;
+            }
+
+            dd {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 12px auto 0;
+              width: 72px;
+              height: 73px;
+              line-height: 1;
+              font-weight: 700;
+              font-size: 32px;
+              letter-spacing: -0.01em;
+              background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conquest-level.webp") 50% 0 / auto 100% no-repeat;
+            }
+          }
+
+          &.mine::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conq-mine.webp");
+          }
+
+          &.forge::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conq-forge.webp");
+          }
+
+          &.hydra::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conq-hydra.webp");
+          }
+
+          &.conquest::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conq-conquest.webp");
+          }
+
+          &.quintessence::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conq-quintessence.webp");
+          }
+
+          &.millennial-tree::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conq-millennial-tree.webp");
+          }
+
+          &.portal::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conq-portal.webp");
+          }
+
+          &.victory::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conq-victory.webp");
+          }
+
+          &.training-sanctum::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conq-training-sanctum.webp");
+          }
+
+          &.holy-shrine::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conq-holy-shrine.webp");
+          }
+        }
+      }
+    }
+
+    &-asset {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 24px 20px;
+      background-color: rgba($color: #fff, $alpha: 0.05);
+      color: #fff;
+      gap: 32px 0;
+
+      .asset-info-box {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        line-height: normal;
+        width: 50%;
+
+        img {
+          margin-right: 8px;
+        }
+
+        .asset-desc {
+          display: flex;
+          flex-direction: column;
+          row-gap: 2px;
+
+          p {
+            margin-bottom: 0;
+          }
+
+          .asset-name {
+            font-size: 12px;
+            letter-spacing: -0.01em;
+            word-break: break-all;
+          }
+
+          .asset-data {
+            word-break: break-all;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: -0.01em;
+          }
+        }
+      }
+    }
+
+    &-inventory {
+      .v-item-group.v-slide-group {
+        display: flex;
+        .v-slide-group__prev.v-slide-group__prev--disabled,
+        .v-slide-group__next.v-slide-group__next--disabled {
+          display: none !important;
+        }
+      }
+
+      .tab-rounds.theme--light {
+        &.v-tabs {
+          .v-tabs-bar {
+            .v-tab {
+              em {
+                color: #ff0000;
+              }
+            }
+          }
+        }
+
+        .v-tabs-slider-wrapper {
+          color: #ff0000;
+        }
+      }
+    }
+  }
+
+  .relic {
+    &__title {
+      margin: 64px 0 24px;
+      line-height: 1.15;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &-item {
+      &__container {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        overflow: hidden;
+        margin: 0 calc(var(--intro-draco-padding) * -1);
+        list-style: none;
+        word-break: break-word;
+        letter-spacing: -0.01em;
+        flex-direction: column;
+
+        .relic-item__contents {
+          padding-left: 0;
+        }
+      }
+      &__contents {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        text-align: center;
+        list-style: none;
+        word-break: break-word;
+        letter-spacing: -0.01em;
+        flex-direction: column;
+
+        &--list {
+          display: flex;
+          padding-right: 24px;
+          padding-left: 24px;
+          width: 100%;
+          flex-basis: calc(100% / 5);
+          flex-direction: row;
+          align-items: center;
+          min-height: auto;
+          margin-bottom: 2px;
+          background: rgba(255, 255, 255, 0.05);
+          line-height: normal;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        &--info {
+          width: 100%;
+          position: relative;
+        }
+        &--image {
+          max-width: 300px;
+          min-width: 101px;
+          width: 30%;
+
+          img {
+            width: 102px;
+            height: 160px;
+          }
+        }
+        &--title {
+          position: absolute;
+          transform: translateX(-50%);
+          left: 50%;
+          margin-bottom: 8px;
+          font-size: 14px;
+          font-weight: 500;
+          width: 100%;
+        }
+        &--level {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin: 40px auto 0;
+          font-size: 21px;
+          font-weight: 700;
+          width: 64px;
+          height: 64px;
+          background: url('https://file.mir4global.com/xdraco/img/common/nft-detail/bg-relic-training.webp') 50% / 100% no-repeat;
+        }
+      }
+    }
+  }
+
+  .circle-progress {
+    .circle-area {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 122px;
+      height: 122px;
+
+      #doughnut-chart {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+
+    .wrap-item-chart {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+
+    .chart-item {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 calc(100% / 2 - 2px);
+      text-align: center;
+      position: relative;
+      height: 261px;
+      background: rgb(27, 27, 48);
+      background: linear-gradient(
+          180deg,
+          rgba(27, 27, 48, 1) 0%,
+          rgba(14, 14, 36, 1) 100%
+      );
+      border-top: 1px solid #323244;
+      box-sizing: border-box;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      .cirin-data {
+        margin-top: 68px;
+
+        .minmax {
+          margin-bottom: 4px;
+          letter-spacing: -0.01em;
+          font-size: 20px;
+          font-weight: bold;
+          color: #fff;
+        }
+
+        .percent {
+          margin-top: 1px;
+          letter-spacing: -0.01em;
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+
+      .name {
+        margin: 16px 0 10px;
+        letter-spacing: -0.01em;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .progress,
+      .completed {
+        margin-top: 0;
+        margin-bottom: 4px;
+        letter-spacing: -0.01em;
+        font-size: 12px;
+
+        span {
+          margin-left: 8px;
+          font-weight: bold;
+          color: #fff;
+        }
+      }
+
+      .progress {
+        color: #4c74ff;
+      }
+
+      .completed {
+        color: #23b0ff;
+      }
+    }
+  }
+}
+
+@include pc {
+  .nft.market {
+    > .section {
+      margin: 0;
+    }
+
+    .function {
+      margin: 0 auto;
+    }
+
+    .exchange-market {
+      padding-bottom: 120px;
+
+      .title-sub-detail {
+        margin: 64px 0 24px;
+        line-height: 1.15;
+        font-size: 20px;
+      }
+
+      .wrap-score {
+        margin-top: 32px;
+      }
+
+      .training {
+        background-color: rgba($color: #fff, $alpha: 0.05);
+      }
+
+      .character {
+        &-equip {
+          &__wrapper {
+            + .option-detail {
+              .item-manual {
+                text-align: left;
+              }
+            }
+          }
+
+          &--thumbs {
+            max-width: 480px;
+          }
+        }
+
+        &-stat {
+          position: relative;
+
+          &__inner {
+            align-items: center;
+            word-break: break-all;
+            letter-spacing: -0.01em;
+
+            .list-stat {
+              display: flex;
+              flex-grow: 1;
+              justify-content: space-between;
+              max-width: calc(100% - 110px);
+
+              li {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                flex-grow: 1;
+                padding-right: 10px;
+                min-height: 58px;
+                border-bottom: none;
+
+                &.total {
+                  position: relative;
+                  margin-right: 32px;
+                  padding-right: 32px;
+                  flex-grow: 0;
+
+                  .value {
+                    position: relative;
+                    padding-left: 36px;
+                    font-size: 32px;
+                    line-height: 38px;
+
+                    &::before {
+                      top: calc(50% - 16px);
+                      width: 32px;
+                      height: 32px;
+                    }
+                  }
+
+                  &::after {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 1px;
+                    height: 100%;
+                    background-color: hsla(0,0%,100%,.2);
+                  }
+                }
+
+                .subject,
+                .value {
+                  width: 100%;
+                  text-align: left;
+                }
+
+                .subject {
+                  display: block;
+                  padding: 0;
+                  margin-bottom: 7px;
+                  color: #fff;
+                  font-size: 14px;
+                  line-height: 16px;
+                  max-height: 16px;
+                }
+
+                .value {
+                  flex-basis: inherit;
+                  font-size: 20px;
+                  letter-spacing: -.011em;
+                }
+              }
+
+              .icon-subject {
+                display: none;
+              }
+            }
+
+            .wrap-btn {
+              position: absolute;
+              top: 8px;
+              right: 0;
+              margin: 0;
+
+              .btn {
+                padding: 0 12px;
+                min-width: 100px;
+                height: 44px;
+                font-size: 12px;
+              }
+            }
+
+            .wrap-score {
+              .score-item {
+                flex-direction: row;
+                column-gap: 8px;
+                min-height: 64px;
+
+                &:nth-child(3) {
+                  span {
+                    margin: 0;
+                  }
+                }
+
+                .volume.enhancement {
+                  margin-top: 0;
+                  margin-left: 10px;
+                }
+              }
+            }
+          }
+        }
+
+        &-skill {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0;
+
+          .badge-big {
+            width: 95px;
+            height: 97px;
+
+            &::before {
+              width: 84px;
+              height: 84px;
+              border-width: 4px;
+            }
+
+            .badge {
+              width: 100%;
+              height: 100%;
+
+              &::before {
+                width: 100%;
+                height: 100%;
+                transform: inherit;
+                background-position: 5px 7px;
+                background-size: 938px 469px;
+              }
+            }
+          }
+        }
+
+        &-spirit {
+          .v-tabs-items {
+            background-color: transparent !important;
+          }
+
+          .v-tabs {
+            margin-top: -47px;
+            margin-bottom: 24px;
+            padding-left: 200px;
+
+            &.theme--light {
+              > .v-tabs-bar {
+                height: auto;
+                background-color: transparent;
+
+                .v-tab {
+                  padding: 0;
+                  min-width: auto;
+                  font-weight: 600;
+                  text-transform: none;
+                  line-height: 1.71;
+                  letter-spacing: normal;
+
+                  &:not(.v-tab--active) {
+                    color: rgba(255, 255, 255, 0.4);
+                  }
+
+                  &.v-tab--disabled {
+                    opacity: 0.3;
+                  }
+
+                  ~ .v-tab {
+                    margin-left: 16px;
+                  }
+                }
+              }
+            }
+          }
+
+          .v-slide-group__content {
+            justify-content: flex-end;
+          }
+
+          .v-tabs-slider-wrapper {
+            height: 1px !important;
+          }
+
+          .grade {
+            font-size: 18px;
+            right: 13px;
+            top: 7px;
+          }
+
+          .stone-grade {
+            font-size: 18px;
+            right: 8px;
+            top: 3px;
+          }
+        }
+
+        &-dragon {
+          list-style: none !important;
+          padding-left: 0 !important;
+          flex-direction: row;
+          column-gap: 2px;
+
+          li {
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 16px 48px;
+            row-gap: 27px;
+            min-height: 264px;
+            background: #1b1b30;
+            background: linear-gradient(180deg, #1b1b30 0%, #0e0e24 100%);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+            .bg {
+              &__item {
+                width: 52px;
+
+                &--empty {
+                  width: 108px;
+                }
+              }
+
+              .tier-badge {
+                width: 32px;
+                height: 32px;
+                background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/spirit-tier-badge.webp") 0 0 / cover no-repeat;
+                font-size: 16px;
+              }
+
+              .grade {
+                font-size: 18px;
+                top: 4px;
+                right: 12px;
+              }
+            }
+
+            &.grade-3,
+            &.grade-4,
+            &.grade-5 {
+              .bg {
+                width: 107px;
+                height: 104px;
+              }
+            }
+
+            .desc {
+              align-items: center;
+              font-size: 16px;
+
+              &__name {
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        &-training {
+          display: flex;
+          flex-wrap: nowrap;
+
+          .training-item {
+            @include trainingCenter;
+            width: 107px;
+            min-height: 219px;
+            padding: 32px 8px;
+            box-sizing: border-box;
+            background-color: transparent;
+            word-break: break-word;
+            color: #fff;
+
+            &:nth-child(2) {
+              padding-left: 24px;
+            }
+
+            &:nth-child(7) {
+              padding-right: 24px;
+            }
+
+            .training-dec {
+              @include trainingCenter;
+              justify-content: flex-start;
+              min-height: 75px;
+              margin-bottom: 8px;
+              margin-left: 0;
+              padding-top: 18px;
+              font-size: 12px;
+              line-height: 16px;
+
+              p + p {
+                margin-top: 0;
+                color: #98bbff;
+              }
+            }
+
+            .training-tier {
+              @include trainingCenter;
+              width: 72px;
+              height: 72px;
+              background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-training-default.webp") 0 0 / 100% auto no-repeat;
+
+              span {
+                font-size: 10px;
+                margin-top: 0;
+                margin-bottom: 6px;
+              }
+
+              p {
+                margin-top: -10px;
+                font-size: 20px;
+                font-weight: 700;
+              }
+
+              &.lock {
+                background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-training-lock.webp") 0 0 / 100% auto no-repeat;
+              }
+            }
+          }
+
+          .training-sold {
+            display: flex;
+            margin-left: 2px;
+
+            &:first-child {
+              margin: 0;
+              border-right: 2px solid var(--bg-container);
+            }
+
+            &:last-child {
+              border-left: 2px solid var(--bg-container);
+            }
+
+            .training-item {
+              width: 148px;
+
+              .training-dec {
+                margin-bottom: 0;
+                margin-left: 0;
+                font-size: 14px;
+                font-weight: bold;
+
+                p + p {
+                  margin-top: 1px;
+                  font-size: 12px;
+                  font-weight: normal;
+                  line-height: 15px;
+                }
+              }
+
+              .training-tier {
+                width: 80px;
+                height: 80px;
+
+                span {
+                  margin-top: 0;
+                  margin-bottom: 6px;
+                }
+
+                p {
+                  margin-top: -11px;
+                  font-size: 24px;
+                }
+              }
+            }
+          }
+        }
+
+        &-conquest {
+          &--list {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 380px;
+            background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conquest.webp") 50% 50% / 896px 380px no-repeat;
+
+            li {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 80px;
+              list-style: none;
+              height: auto;
+
+              &::before {
+                background-image: none;
+              }
+
+              .level {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                gap: 8px;
+                color: #fff;
+                text-align: center;
+
+                dt {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  line-height: 1.2;
+                  font-size: 12px;
+                  min-height: auto;
+                }
+
+                dd {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: auto 0;
+                  width: 64px;
+                  height: 64px;
+                  line-height: 1;
+                  font-weight: 700;
+                  font-size: 21px;
+                  letter-spacing: -0.01em;
+                  background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-conquest-level.webp") 50% 0 / auto 100% no-repeat;
+                }
+              }
+
+              &.mine {
+                top: 191px;
+                left: 16px;
+              }
+
+              &.forge {
+                top: 251px;
+                left: 96px;
+              }
+
+              &.hydra {
+                top: 240px;
+                left: 186px;
+                background-color: transparent;
+              }
+
+              &.conquest {
+                top: 196px;
+                left: 292px;
+              }
+
+              &.quintessence {
+                top: 238px;
+                left: 374px;
+              }
+
+              &.millennial-tree {
+                top: 225px;
+                left: 456px;
+              }
+
+              &.portal {
+                top: 204px;
+                left: 538px;
+              }
+
+              &.victory {
+                top: 225px;
+                left: 628px;
+              }
+
+              &.training-sanctum {
+                top: 248px;
+                left: 716px;
+              }
+
+              &.holy-shrine {
+                top: 199px;
+                left: 800px;
+              }
+            }
+          }
+        }
+
+        &-asset {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 100%;
+          padding: 32px 17px;
+          background-color: rgba($color: #fff, $alpha: 0.05);
+          gap: 32px 56px;
+
+          .asset-info-box {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            line-height: normal;
+            width: 245px;
+
+            img {
+              margin-right: 8px;
+            }
+
+            .asset-desc {
+              display: flex;
+              flex-direction: column;
+
+              .asset-name {
+                font-size: 12px;
+                letter-spacing: -0.01em;
+                word-break: break-all;
+              }
+
+              .asset-data {
+                margin-top: 1px;
+                word-break: break-all;
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: -0.01em;
+              }
+            }
+          }
+        }
+
+        &-inventory {
+          margin-top: -16px;
+
+          .tab-rounds {
+            &.theme--light {
+              &.v-tabs {
+                .v-tabs-bar {
+                  height: auto;
+                  min-height: 50px;
+
+                  .v-tab {
+                    align-items: center;
+                    padding: 16px 0 17px;
+                    font-size: 14px;
+                    text-align: left;
+
+                    em {
+                      margin-left: 4px;
+                      font-size: 18px;
+                      color: #ff0000;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .wrap-item-square {
+            .list-item {
+              gap: 12px 0;
+            }
+          }
+
+        }
+      }
+
+      .list-item {
+        padding: 0;
+
+        &:empty {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          height: 200px;
+          background: #1b1b30 linear-gradient(180deg, #1b1b30 0%, #0e0e24 100%);
+          box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+          &::before {
+            content: attr(data-empty-message);
+            display: block;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            color: rgba(#fff, 0.5);
+          }
+        }
+      }
+
+      .circle-progress {
+        .circle-area {
+          position: absolute;
+          top: 31px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 145px;
+          height: 145px;
+        }
+
+        .wrap-item-chart {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          flex-wrap: nowrap;
+        }
+
+        .chart-item {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          position: relative;
+          width: 222px;
+          height: 325px;
+          background: rgb(27, 27, 48);
+          background: linear-gradient(
+              180deg,
+              rgba(27, 27, 48, 1) 0%,
+              rgba(14, 14, 36, 1) 100%
+          );
+          border-top: 1px solid #323244;
+          box-sizing: border-box;
+          margin-left: 2px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          .cirin-data {
+            margin-top: 84px;
+
+            .minmax {
+              letter-spacing: -0.01em;
+              font-size: 20px;
+              font-weight: bold;
+            }
+
+            .percent {
+              margin-top: -6px;
+              letter-spacing: -0.01em;
+              font-size: 14px;
+              color: rgba(255, 255, 255, 0.5);
+            }
+          }
+
+          .name {
+            margin: 57px 0 7px;
+            letter-spacing: -0.01em;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+          }
+
+          .progress,
+          .completed {
+            letter-spacing: -0.01em;
+            font-size: 14px;
+
+            span {
+              margin-left: 8px;
+              font-weight: bold;
+              color: #fff;
+            }
+          }
+
+          .progress {
+            color: #4c74ff;
+          }
+
+          .completed {
+            margin-top: -1px;
+            color: #23b0ff;
+          }
+        }
+      }
+
+      .wrap-tabs-item {
+        &.v-tabs-items {
+          background-color: transparent;
+        }
+      }
+
+      .wrap-item-square {
+        &.inventory {
+          .total {
+            margin-bottom: 24px;
+            font-size: 14px;
+            font-weight: 600;
+
+            .number {
+              color: #a0f;
+            }
+          }
+
+          .wrap-btn {
+            margin-top: 16px;
+
+            .btn {
+              width: 100%;
+              background-color: rgba(255, 255, 255, 0.05);
+              height: 62px;
+              font-size: 12px;
+              font-weight: 400;
+            }
+          }
+
+          .enhance {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 40px;
+            height: 27px;
+            font-size: 18px;
+            font-weight: 600;
+            text-shadow: 0 1px 1px #000;
+            letter-spacing: -0.01em;
+          }
+        }
+      }
+
+      .wrap-item-circle {
+        &.size-md {
+          .list-item {
+            > li {
+              flex-basis: calc(100% / 6 - 2px);
+              min-height: 238px;
+              padding-bottom: 48px;
+
+              &.common .bg {
+                background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-common.webp");
+              }
+
+              &.uncommon .bg {
+                background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-uncommon.webp");
+              }
+
+              &.rare .bg {
+                background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-rare.webp");
+              }
+
+              &.epic .bg {
+                background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-epic.webp");
+              }
+
+              &.legendary .bg {
+                background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-legendary.webp");
+              }
+            }
+
+            .desc {
+              font-size: 14px;
+            }
+
+            .bg {
+              width: 88px;
+              height: 88px;
+
+              img {
+                width: 64px;
+                height: 64px;
+              }
+
+              .tier-badge {
+                bottom: -4px;
+                left: -4px;
+              }
+            }
+
+            .locked {
+              margin-top: 24px;
+              color: rgba(255, 255, 255, 0.5);
+              letter-spacing: normal;
+              font-size: 14px;
+
+              &::before {
+                content: "";
+                display: block;
+                margin: 0 auto -1px;
+                width: 24px;
+                height: 24px;
+                background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/ico-lock.webp") no-repeat 50% 0 / 100%;
+              }
+            }
+          }
+        }
+
+        &.size-sm {
+          .list-item {
+            > li {
+              flex-basis: calc(100% / 8 - 2px);
+              min-height: 238px;
+              padding-bottom: 48px;
+
+              &.common .bg {
+                background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-common.webp");
+              }
+
+              &.uncommon .bg {
+                background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-uncommon.webp");
+              }
+
+              &.rare .bg {
+                background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-rare.webp");
+              }
+
+              &.epic .bg {
+                background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-epic.webp");
+              }
+
+              &.legendary .bg {
+                background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-stone-bg-legendary.webp");
+              }
+            }
+
+            .desc {
+              font-size: 14px;
+            }
+
+            .bg {
+              width: 72px;
+              height: 72px;
+
+              img {
+                width: 52px;
+                height: 52px;
+              }
+
+              .tier-badge {
+                bottom: -4px;
+                left: -4px;
+              }
+            }
+
+            .locked {
+              margin-top: 24px;
+              color: rgba(255, 255, 255, 0.5);
+              letter-spacing: normal;
+              font-size: 14px;
+
+              &::before {
+                content: "";
+                display: block;
+                margin: 0 auto -1px;
+                width: 24px;
+                height: 24px;
+                background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/ico-lock.webp") no-repeat 50% 0 / 100%;
+              }
+            }
+          }
+        }
+
+        &.no-gutters {
+          .list-item {
+            margin-left: 0;
+
+            > li {
+              margin-left: 0;
+              padding-left: 8px;
+              padding-right: 8px;
+              flex-basis: auto;
+              width: 124px;
+              flex-grow: 1;
+
+              &:nth-child(7) {
+                width: 148px;
+                margin-left: 0;
+                padding-right: 16px;
+                padding-left: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .price-history {
+        .display-price {
+          margin-top: calc(-24px - 23px);
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          .label {
+            color: rgba(#fff, 0.5);
+            font-size: 14px;
+          }
+
+          .add-inside {
+            margin-left: 8px;
+            padding-left: 28px;
+            height: auto;
+            line-height: 1;
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+
+            &::before {
+              width: 24px !important;
+              height: 24px !important;
+            }
+          }
+        }
+
+        .wrap-chart {
+          position: relative;
+          margin: 22px 0 32px;
+        }
+
+        .list-sale-history {
+          &__item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-bottom: 1px solid hsla(0,0%,100%,.15);
+            padding: 0;
+            height: 71px;
+            line-height: 1.2;
+            font-size: 14px;
+            letter-spacing: -.01em;
+            box-sizing: border-box;
+            color: #fff;
+            flex-direction: row;
+
+            .obj {
+              flex: 1;
+              flex-direction: column;
+
+              dt {
+                display: block;
+                margin-bottom: 4px;
+                font-size: 12px;
+                color: rgba(#fff, 0.5);
+              }
+            }
+
+            .add-inside {
+              line-height: 1;
+              font-size: 16px;
+              font-weight: 700;
+            }
+
+            &[target="_blank"] {
+              &::after {
+                content: "";
+                display: block;
+                width: 24px;
+                height: 24px;
+                background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/ico-outlink.webp") 50% 50% / contain no-repeat;
+              }
+            }
+          }
+        }
+      }
+
+      .character-skill {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0 10px;
+
+        &[data-character-class="1"] {
+          [data-character-skill="0"] {
+            &:before {
+              background-position: 0 0;
+            }
+          }
+
+          [data-character-skill="1"] {
+            &:before {
+              background-position: -160px -12px;
+            }
+          }
+
+          [data-character-skill="2"] {
+            &:before {
+              background-position: -92px -12px;
+            }
+          }
+
+          [data-character-skill="3"] {
+            &:before {
+              background-position: -228px -12px;
+            }
+          }
+
+          [data-character-skill="4"] {
+            &:before {
+              background-position: -296px -12px;
+            }
+          }
+
+          [data-character-skill="5"] {
+            &:before {
+              background-position: -364px -12px;
+            }
+          }
+
+          [data-character-skill="6"] {
+            &:before {
+              background-position: -432px -12px;
+            }
+          }
+
+          [data-character-skill="7"] {
+            &:before {
+              background-position: -500px -12px;
+            }
+          }
+
+          [data-character-skill="8"] {
+            &:before {
+              background-position: -568px -12px;
+            }
+          }
+
+          [data-character-skill="9"] {
+            &:before {
+              background-position: -636px -12px;
+            }
+          }
+
+          [data-character-skill="10"] {
+            &:before {
+              background-position: -704px -12px;
+            }
+          }
+
+          [data-character-skill="11"] {
+            &:before {
+              background-position: -772px -12px;
+            }
+          }
+
+          [data-character-skill="12"] {
+            &:before {
+              background-position: -840px -12px;
+            }
+          }
+        }
+
+        &[data-character-class="2"] {
+          [data-character-skill="0"] {
+            &:before {
+              background-position: 0 -97px;
+            }
+          }
+
+          [data-character-skill="1"] {
+            &:before {
+              background-position: -92px -104px;
+            }
+          }
+
+          [data-character-skill="2"] {
+            &:before {
+              background-position: -160px -104px;
+            }
+          }
+
+          [data-character-skill="3"] {
+            &:before {
+              background-position: -228px -104px;
+            }
+          }
+
+          [data-character-skill="4"] {
+            &:before {
+              background-position: -296px -104px;
+            }
+          }
+
+          [data-character-skill="5"] {
+            &:before {
+              background-position: -364px -104px;
+            }
+          }
+
+          [data-character-skill="6"] {
+            &:before {
+              background-position: -432px -104px;
+            }
+          }
+
+          [data-character-skill="7"] {
+            &:before {
+              background-position: -500px -104px;
+            }
+          }
+
+          [data-character-skill="8"] {
+            &:before {
+              background-position: -568px -104px;
+            }
+          }
+
+          [data-character-skill="9"] {
+            &:before {
+              background-position: -636px -104px;
+            }
+          }
+
+          [data-character-skill="10"] {
+            &:before {
+              background-position: -704px -104px;
+            }
+          }
+
+          [data-character-skill="11"] {
+            &:before {
+              background-position: -772px -104px;
+            }
+          }
+
+          [data-character-skill="12"] {
+            &:before {
+              background-position: -840px -104px;
+            }
+          }
+        }
+
+        &[data-character-class="3"] {
+          [data-character-skill="0"] {
+            &:before {
+              background-position: 0 -192px;
+            }
+          }
+
+          [data-character-skill="1"] {
+            &:before {
+              background-position: -92px -196px;
+            }
+          }
+
+          [data-character-skill="2"] {
+            &:before {
+              background-position: -704px -196px;
+            }
+          }
+
+          [data-character-skill="3"] {
+            &:before {
+              background-position: -228px -196px;
+            }
+          }
+
+          [data-character-skill="4"] {
+            &:before {
+              background-position: -296px -196px;
+            }
+          }
+
+          [data-character-skill="5"] {
+            &:before {
+              background-position: -364px -196px;
+            }
+          }
+
+          [data-character-skill="6"] {
+            &:before {
+              background-position: -432px -196px;
+            }
+          }
+
+          [data-character-skill="7"] {
+            &:before {
+              background-position: -500px -196px;
+            }
+          }
+
+          [data-character-skill="8"] {
+            &:before {
+              background-position: -568px -196px;
+            }
+          }
+
+          [data-character-skill="9"] {
+            &:before {
+              background-position: -636px -196px;
+            }
+          }
+
+          [data-character-skill="10"] {
+            &:before {
+              background-position: -160px -196px;
+            }
+          }
+
+          [data-character-skill="11"] {
+            &:before {
+              background-position: -772px -196px;
+            }
+          }
+
+          [data-character-skill="12"] {
+            &:before {
+              background-position: -840px -196px;
+            }
+          }
+        }
+
+        &[data-character-class="4"] {
+          [data-character-skill="0"] {
+            &:before {
+              background-position: 0 -385px;
+            }
+          }
+
+          [data-character-skill="1"] {
+            &:before {
+              background-position: -92px -380px;
+            }
+          }
+
+          [data-character-skill="2"] {
+            &:before {
+              background-position: -432px -380px;
+            }
+          }
+
+          [data-character-skill="3"] {
+            &:before {
+              background-position: -160px -380px;
+            }
+          }
+
+          [data-character-skill="4"] {
+            &:before {
+              background-position: -228px -380px;
+            }
+          }
+
+          [data-character-skill="5"] {
+            &:before {
+              background-position: -500px -380px;
+            }
+          }
+
+          [data-character-skill="6"] {
+            &:before {
+              background-position: -568px -380px;
+            }
+          }
+
+          [data-character-skill="7"] {
+            &:before {
+              background-position: -772px -380px;
+            }
+          }
+
+          [data-character-skill="8"] {
+            &:before {
+              background-position: -364px -380px;
+            }
+          }
+
+          [data-character-skill="9"] {
+            &:before {
+              background-position: -636px -380px;
+            }
+          }
+
+          [data-character-skill="10"] {
+            &:before {
+              background-position: -296px -380px;
+            }
+          }
+
+          [data-character-skill="11"] {
+            &:before {
+              background-position: -704px -380px;
+            }
+          }
+
+          [data-character-skill="12"] {
+            &:before {
+              background-position: -840px -380px;
+            }
+          }
+        }
+
+        &[data-character-class="5"] {
+          [data-character-skill="0"] {
+            &:before {
+              background-position: 0 -289px;
+            }
+          }
+
+          [data-character-skill="1"] {
+            &:before {
+              background-position: -92px -288px;
+            }
+          }
+
+          [data-character-skill="2"] {
+            &:before {
+              background-position: -160px -288px;
+            }
+          }
+
+          [data-character-skill="3"] {
+            &:before {
+              background-position: -228px -288px;
+            }
+          }
+
+          [data-character-skill="4"] {
+            &:before {
+              background-position: -296px -288px;
+            }
+          }
+
+          [data-character-skill="5"] {
+            &:before {
+              background-position: -364px -288px;
+            }
+          }
+
+          [data-character-skill="6"] {
+            &:before {
+              background-position: -432px -288px;
+            }
+          }
+
+          [data-character-skill="7"] {
+            &:before {
+              background-position: -500px -288px;
+            }
+          }
+
+          [data-character-skill="8"] {
+            &:before {
+              background-position: -568px -288px;
+            }
+          }
+
+          [data-character-skill="9"] {
+            &:before {
+              background-position: -636px -288px;
+            }
+          }
+
+          [data-character-skill="10"] {
+            &:before {
+              background-position: -704px -288px;
+            }
+          }
+
+          [data-character-skill="11"] {
+            &:before {
+              background-position: -772px -288px;
+            }
+          }
+
+          [data-character-skill="12"] {
+            &:before {
+              background-position: -840px -288px;
+            }
+          }
+        }
+
+        .badge-wrap {
+          position: relative;
+          width: 56px;
+          height: 56px;
+
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            transform: translateX(-50%) translateY(-50%);
+            width: 52px;
+            height: 52px;
+            border: 2px solid #000;
+            box-sizing: border-box;
+            border-radius: 50%;
+          }
+
+          &.badge-big {
+            width: 95px;
+            height: 97px;
+
+            &:before {
+              width: 84px;
+              height: 84px;
+              border-width: 4px;
+            }
+
+            .badge {
+              &:after {
+                border: 0;
+              }
+            }
+
+            .badge {
+              width: 100%;
+              height: 100%;
+
+              &:before {
+                transform: translateX(6px) translateY(6px);
+                background-size: 938px 469px;
+              }
+
+              &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                //top: 0;
+                //left: 0;
+                width: 100%;
+                height: 100%;
+                background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-badge-off.webp") 0 0 / 100% auto no-repeat;
+              }
+            }
+          }
+
+          .badge {
+            width: 100%;
+            height: 100%;
+
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              //top: 0;
+              //left: 0;
+              width: 100%;
+              height: 100%;
+              box-sizing: border-box;
+              border: 2px solid #57568b;
+              border-radius: 50%;
+            }
+          }
+
+          .badge {
+            overflow: hidden;
+            position: relative;
+
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              //top: 0;
+              //left: 0;
+              width: 100%;
+              height: 100%;
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/sp-skill.webp");
+              background-size: 896px 448px;
+              background-repeat: no-repeat;
+            }
+          }
+
+          &.on {
+            &:before {
+              box-shadow: 0 0 13px #ff0000;
+            }
+
+            &.badge-big {
+              &:before {
+                box-shadow: none;
+              }
+
+              .badge {
+                &:after {
+                  background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/bg-badge-on.webp") 0 0 / 100% auto no-repeat;
+                }
+              }
+            }
+
+            .badge {
+              &:after {
+                border-color: #ff0000;
+              }
+            }
+
+            span {
+              border-color: #ff0000;
+            }
+          }
+
+          &.disabled {
+            .badge:before {
+              filter: grayscale(100%);
+            }
+          }
+
+          span {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            font-size: 14px;
+            color: #fff;
+            background-color: #000;
+            line-height: 20px;
+            text-align: center;
+            border: 2px solid #57568b;
+            box-sizing: border-box;
+
+            &.big-tier {
+              width: 56px;
+              height: 24px;
+              left: 50%;
+              bottom: 0;
+              transform: translateX(-50%);
+              border-radius: 20px;
+              font-weight: bold;
+            }
+
+            &.sm-tier {
+              width: 24px;
+              height: 24px;
+              left: -4px;
+              bottom: -4px;
+              border-radius: 50%;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .wrap-item-circle {
+        .list-item {
+          display: flex;
+          flex-wrap: wrap;
+          text-align: center;
+          margin-left: -2px;
+          padding-left: 0;
+          list-style: none;
+          word-break: break-word;
+          letter-spacing: -0.01em;
+          flex-direction: row;
+          flex-wrap: nowrap;
+
+          > li {
+            display: flex;
+            flex-basis: calc(100% / 5 - 4px);
+            flex-direction: column;
+            align-items: center;
+            min-height: 280px;
+            margin-left: 2px;
+            padding: 40px 16px 45px;
+            background: #1b1b30;
+            background: linear-gradient(180deg, #1b1b30 0%, #0e0e24 100%);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+            line-height: normal;
+            gap: 0;
+
+            &.common .bg,
+            &.grade-1 .bg {
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-common.webp");
+            }
+
+            &.uncommon .bg,
+            &.grade-2 .bg {
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-uncommon.webp");
+            }
+
+            &.rare .bg,
+            &.grade-3 .bg {
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-rare.webp");
+            }
+
+            &.epic .bg,
+            &.grade-4 .bg {
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-epic.webp");
+            }
+
+            &.legendary .bg,
+            &.grade-5 .bg {
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-legendary.webp");
+            }
+          }
+
+          .wrap-thumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .bg {
+            display: block;
+            position: relative;
+            width: 108px;
+            height: 108px;
+            background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-none.webp") 0 0 / contain no-repeat;
+
+            img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 72px;
+              height: 72px;
+              transform: translate(-50%, -50%);
+            }
+
+            .tier-badge {
+              display: flex;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              justify-content: center;
+              align-items: center;
+              width: 32px;
+              height: 32px;
+              background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/spirit-tier-badge.webp") 0 0 / cover no-repeat;
+            }
+          }
+
+          .desc {
+            margin-top: 24px;
+
+            .name {
+              display: block;
+            }
+
+            .category {
+              display: block;
+              margin-top: 6px;
+              color: rgba(255, 255, 255, 0.5);
+            }
+          }
+        }
+      }
+
+      .wrap-item-square {
+        .list-item {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: -16px;
+          margin-left: -16px;
+          padding-left: 0;
+          text-align: center;
+          list-style: none;
+          gap: 0;
+
+          > li {
+            position: relative;
+            flex-basis: calc(100% / 8 - 16px);
+            height: 98px;
+            margin-top: 16px;
+            margin-left: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: rgba(255, 255, 255, 0.1);
+            background-repeat: no-repeat;
+            background-size: cover;
+            letter-spacing: -0.01em;
+
+            &.common,
+            &.grade-1 {
+              border: 0;
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-item-bg-common.webp");
+            }
+
+            &.uncommon,
+            &.grade-2 {
+              border: 0;
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-item-bg-uncommon.webp");
+            }
+
+            &.rare,
+            &.grade-3 {
+              border: 0;
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-item-bg-rare.webp");
+            }
+
+            &.epic,
+            &.grade-4 {
+              border: 0;
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-item-bg-epic.webp");
+            }
+
+            &.legendary,
+            &.grade-5 {
+              border: 0;
+              background-image: url("https://file.mir4global.com/xdraco/img/common/nft-detail/img-item-bg-legendary.webp");
+            }
+          }
+
+          img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 82px;
+            height: 82px;
+            transform: translate(-50%, -50%);
+          }
+
+          .tier {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            min-width: 27px;
+            height: 27px;
+            font-weight: 600;
+            text-shadow: 0 1px 1px #000;
+            font-size: 18px;
+          }
+
+          .quantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            min-width: 41px;
+            height: 27px;
+            font-size: 14px;
+            text-shadow: 0 1px 1px #000;
+          }
+        }
+      }
+
+      .wrap-addition,
+      .wrap-addition__detail {
+        flex-direction: row;
+        margin: 0;
+        justify-content: space-between;
+
+        &.flex-desktop-item {
+          justify-content: end;
+
+          .wrap-item-desc {
+            min-width: 376px;
+          }
+        }
+        .option-detail .wrap-item-desc .wrap-button .ico-wemixcredit {
+          width: fit-content !important;
+        }
+      }
+
+      .relic {
+        &-item {
+          &__container {
+            margin-left: -2px;
+          }
+
+          &__contents {
+            padding-right: 18px;
+            padding-left: 18px;
+            flex-direction: row;
+            background-color: rgba(255, 255, 255, 0.05);
+
+            &--image {
+              width: auto;
+
+              img {
+                width: 100%;
+                height: auto;
+              }
+            }
+
+            &--list {
+              flex-direction: column;
+              min-height: 386px;
+              padding: 12px 16px;
+              background-color: transparent;
+            }
+          }
+
+          img {
+            max-width: 101px;
+          }
+        }
+      }
+    }
+  }
+
+  .float-bottom {
+    .register {
+      .item-info {
+        display: flex;
+        min-width: 600px;
+        width: 100%;
+
+        .item-manual {
+          margin: 0;
+
+          &__detail {
+            column-gap: 56px;
+
+            li {
+              padding: 0;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .exchange-market {
+    .nft & {
+      .wrap-item-square {
+        .list-item {
+          column-gap: 7px;
+        }
+      }
+    }
+  }
+}
+
+@media  (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+  .contents {
+    &[class*="market"] {
+      &.nft,
+      &.bg-legendary,
+      &.bg-grade-5 {
+        background-position-x: 30% !important;
+      }
+    }
+    &.nft.market {
+      .function {
+        max-width: 896px;
+      }
+    }
+  }
+}

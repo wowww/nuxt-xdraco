@@ -1,0 +1,464 @@
+.contents.hsp-teaser {
+  --section-width: 960px;
+  --background-color: #000055;
+
+  background-color: var(--background-color);
+  color: #fff;
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .banner-hsp-top {
+    &__inner {
+      p {
+        display: none;
+      }
+    }
+  }
+
+  .section {
+    &.section-forecasted,
+    &.section-caution {
+      .section__inner {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          height: 1px;
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+
+    &.section-forecasted {
+      .section__inner {
+        padding-top: 24px;
+      }
+    }
+
+    &.section-caution {
+      .section__inner {
+        padding-top: 17px;
+        padding-bottom: 80px;
+      }
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+      font-size: 20px;
+      line-height: normal;
+    }
+
+    .sub-title {
+      margin-top: 24px;
+      margin-bottom: 4px;
+      font-size: 14px;
+      line-height: 1.71;
+      font-weight: normal;
+    }
+
+    .desc {
+      font-size: 14px;
+      line-height: 1.43;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .list-feature {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      > div {
+        &:nth-child(1) {
+          dd {
+            &::after {
+              width: 214px;
+              margin-left: -107px;
+              background-image: url('https://file.mir4global.com/xdraco/img/desktop/hsp-teaser/img-feature01.webp');
+            }
+          }
+        }
+        &:nth-child(2) {
+          dd {
+            &::after {
+              width: 240px;
+              margin-left: -120px;
+              background-image: url('https://file.mir4global.com/xdraco/img/desktop/hsp-teaser/img-feature02.webp');
+              background-size: 280px auto;
+            }
+          }
+        }
+        &:nth-child(3) {
+          dd {
+            &::after {
+              width: 196px;
+              margin-left: -98px;
+              background-image: url('https://file.mir4global.com/xdraco/img/desktop/hsp-teaser/img-feature03.webp');
+            }
+          }
+        }
+      }
+
+      dt {
+        margin-bottom: 6px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      dd {
+        position: relative;
+        padding-bottom: 216px;
+
+        p {
+          font-size: 12px;
+          opacity: 0.75;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          height: 200px;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: 100% auto;
+        }
+      }
+    }
+
+    .meaning {
+      dd {
+        font-size: 12px;
+        line-height: 1.33;
+        margin: 16px 0;
+        opacity: 0.5;
+      }
+    }
+
+    .list-caution {
+      opacity: 0.5;
+      line-height: 1.5;
+      font-size: 12px;
+
+      > li {
+        position: relative;
+        padding-left: 19px;
+
+        ~ li {
+          margin-top: 4px;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          border: 1px solid;
+          border-radius: 100%;
+        }
+      }
+    }
+
+    .list-summary {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+
+      > li {
+        position: relative;
+        padding-left: 20px;
+        flex: 1;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 11px;
+          left: 8px;
+          border: 1px solid;
+          border-width: 3px 3px 0 0;
+          border-radius: 100%;
+        }
+
+        em,
+        strong {
+          color: #fff;
+        }
+      }
+    }
+
+    .tbl-stake {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+
+      th {
+        padding: 8px 12px 7px;
+        border: 1px solid var(--background-color);
+        background-color: #0176ff;
+        font-size: 14px;
+        line-height: 1.14;
+        color: #000;
+        font-weight: normal;
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 32px;
+        }
+
+        &:first-child {
+          border-left: 0;
+        }
+        &:last-child {
+          border-right: 0;
+        }
+      }
+
+      td {
+        padding: 12px;
+        border: 2px solid var(--background-color);
+        background-color: rgba(143, 194, 255, 0.15);
+        text-align: right;
+        font-size: 14px;
+      }
+
+      tr {
+        &:nth-child(even) {
+          td {
+            background-color: rgba(143, 194, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-desktop {
+  .contents.hsp-teaser {
+    min-height: calc(100vh - 72px);
+
+    .banner-hsp-top {
+      height: 400px;
+
+      &__inner {
+        h2 {
+          width: 960px;
+          height: 72px;
+          background: url('https://file.mir4global.com/xdraco/img/desktop/hsp-teaser/tit-pc-hsp.webp')
+          50% 50% / 100% auto no-repeat;
+        }
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .section {
+      &__inner {
+        position: relative;
+        width: var(--section-width);
+      }
+
+      &.section-feature {
+        margin-top: 64px;
+      }
+
+      &.section-forecasted {
+        margin-top: 80px;
+
+        .section__inner {
+          padding-top: 48px;
+        }
+
+        .list-caution {
+          line-height: 1.5;
+
+          > li {
+            margin-top: 4px;
+
+            &::before {
+              top: 10px;
+            }
+            &:first-of-type {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+      &.section-caution {
+        margin-top: 64px;
+        margin-bottom: 16px;
+
+        .section__inner {
+          padding-top: 24px;
+        }
+      }
+
+      .section-title {
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .desc {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .list-feature {
+        column-gap: 40px;
+
+        > div {
+          flex: 1;
+          padding: 0 20px;
+        }
+
+        dt {
+          margin-bottom: 8px;
+          font-size: 20px;
+          line-height: 1.2;
+        }
+
+        dd {
+          p {
+            font-size: 14px;
+            line-height: 1.43;
+          }
+        }
+      }
+
+      .meaning {
+        dt {
+          font-size: 12px;
+          line-height: 1.33;
+        }
+
+        dd {
+          line-height: 1.67;
+        }
+      }
+
+      .list-caution {
+        > li {
+          padding-left: 17px;
+        }
+      }
+
+      .list-summary {
+        display: flex;
+        column-gap: 16px;
+      }
+
+      .tbl-wrap {
+        display: flex;
+        column-gap: 8px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+      }
+
+      .tbl-stake {
+        th {
+          padding: 12px;
+          font-size: 12px;
+          line-height: 1.33;
+        }
+
+        td {
+          padding: 8px 12px;
+          border: 1px solid var(--background-color);
+          background-color: rgba(143, 194, 255, 0.15);
+          text-align: right;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.is-mobile {
+  .contents.hsp-teaser {
+    .banner-hsp-top {
+      .is-mobile & {
+        --banner-height: 300px;
+
+        background-image: url('https://file.mir4global.com/xdraco/img/mobile/hsp-teaser/bg-mo-hsp.webp');
+      }
+    }
+
+    .section {
+      margin-top: 56px;
+      line-height: normal;
+
+      &.section-forecasted,
+      &.section-caution {
+        .section__inner {
+          position: relative;
+        }
+      }
+
+      &.section-count {
+        position: relative;
+        margin-top: -45px;
+      }
+
+      .list-feature {
+        row-gap: 40px;
+      }
+
+      .meaning {
+        line-height: 1.71;
+        font-size: 14px;
+      }
+
+      .list-caution {
+        > li {
+          &::before {
+            border-radius: 100%;
+          }
+        }
+      }
+
+      .list-summary {
+        line-height: 1.29;
+      }
+
+      .tbl-wrap {
+        margin: 24px -15px 12px;
+      }
+
+      .tbl-stake {
+        th {
+          border-width: 0 2px 2px 2px;
+
+          span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 32px;
+          }
+
+          &:first-child {
+            border-left: 0;
+          }
+          &:last-child {
+            border-right: 0;
+          }
+        }
+
+        td {
+          &:first-child {
+            border-left: 0;
+          }
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

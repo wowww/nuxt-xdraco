@@ -1,0 +1,144 @@
+@import '~@/assets/sass/mixin';
+
+#contents .dialog-mirage-bidding {
+  .swiper {
+    &-wrapper {
+      overflow-x: scroll;
+    }
+
+    &-slide {
+      max-width: 60% !important;
+    }
+
+    &-container {
+      overflow-x: scroll;
+      max-width: 100% !important;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &-button {
+      &-prev,
+      &-next {
+        display: none !important;
+      }
+
+      &-next {
+        + span {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .chr-content {
+    padding: 0;
+  }
+
+  .item-input-wrap {
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      align-items: center;
+
+      .input-box {
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .input-area {
+        padding: 14px 12px;
+        width: 100%;
+
+        .v-input {
+          align-items: center;
+        }
+      }
+
+      .v-text-field__slot input,
+      .standard-value {
+        font-size: 20px;
+      }
+
+      .btn-mirage {
+        max-width: 100%;
+        width: 100%;
+        height: 48px;
+      }
+
+      .min, .max {
+        min-width: 48px;
+      }
+    }
+  }
+}
+
+@include tablet {
+  #contents .dialog-mirage-bidding {
+    .swiper {
+      &-wrapper {
+        overflow-x: scroll;
+      }
+
+      &-button {
+        &-next,
+        &-prev {
+          display: block !important;
+        }
+      }
+
+      &-slide {
+        width: 33.333% !important;
+      }
+    }
+  }
+}
+
+@include pc {
+  #contents {
+    .dialog-mirage-bidding {
+      .item-input-wrap {
+        border-top: 0;
+        padding: 0 32px 32px;
+
+        .field {
+          flex-direction: row;
+
+          .input-box {
+            img {
+              width: 24px;
+              height: 24px;
+            }
+          }
+
+          .input-area {
+            padding: 12px;
+          }
+
+          .standard-value {
+            font-size: 28px !important;
+          }
+
+          .btn-mirage {
+            width: 120px;
+            height: 56px;
+          }
+        }
+
+        .remain {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

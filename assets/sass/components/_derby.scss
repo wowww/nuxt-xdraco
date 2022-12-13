@@ -1,0 +1,106 @@
+.derby-wrap {
+  width: calc(100% + var(--gutter-width));
+  margin: 40px 0 24px;
+  padding: 56px 0 32px;
+  transform: translateX(calc(var(--gutter-width) / 2 * -1));
+  background-color: #1c0032;
+  text-align: center;
+}
+
+.derby {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 40px 32px;
+
+  .display-price {
+    color: #fff;
+    flex: 1;
+
+    dt {
+      display: block;
+      min-height: 41px;
+      line-height: 1.15;
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+
+      .sub-title {
+        display: block;
+        margin-top: 4px;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+    dd {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 16px 0 8px;
+      line-height: 1.17;
+      font-weight: 700;
+      font-size: 48px;
+    }
+    .amount {
+      display: flex;
+      font-size: 48px;
+
+      &::before {
+        display: block;
+        margin-right: 8px;
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 0;
+      }
+      &.draco::before {
+        content: '';
+        background-image: url('https://file.mir4global.com/xdraco/img/desktop/symbol-draco.webp');
+      }
+      &.wemix::before {
+        content: '';
+        background-image: url('https://file.mir4global.com/xdraco/img/desktop/symbol-wemix.webp');
+      }
+      &.wemix-credit::before {
+        content: '';
+        background-image: url('https://file.mir4global.com/xdraco/img/desktop/symbol-wemixcredit.webp');
+      }
+    }
+    .sup {
+      display: inline-block;
+      position: relative;
+      margin-left: 4px;
+      line-height: 1.1;
+      font-size: 16px;
+      vertical-align: top;
+    }
+    .change {
+      @include volume-change($height: 27px, $font-size: 16px, $padding: 4px);
+      margin-left: 8px;
+    }
+    .symbol {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+
+      img {
+        margin-right: 10px;
+        width: 56px;
+        height: 56px;
+      }
+      .eqaul {
+        margin: 0 26px;
+      }
+    }
+  }
+  &__date {
+    padding: 0 40px;
+    line-height: 1.5;
+    font-size: 12px;
+    color: var(--content-color);
+  }
+}

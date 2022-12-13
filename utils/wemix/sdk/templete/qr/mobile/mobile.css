@@ -1,0 +1,420 @@
+﻿@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* ----------------------------------------------- */
+/* 위믹스 QR 모달 */
+/* ----------------------------------------------- */
+.wemix__modal {
+  z-index: 99999;
+  position: fixed;
+  display: none;
+  font-family: "Noto Sans", "Noto Sans KR", "Noto Sans SC", "Noto Sans TC",
+    "Nanum Gothic", sans-serif;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+}
+
+.wemix__modal[aria-wemix-modal="true"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(9, 30, 66, 0.54);
+}
+
+.wemix__modal-set {
+  position: relative;
+  top: -1px;
+  width: 400px;
+  height: auto;
+  padding: 0;
+  background: #ededed;
+  box-shadow: 0px 0px 15px 0px rgb(0, 0, 0, 0.05);
+  border-radius: 20px;
+  animation: ani-modal 0.3s forwards;
+}
+
+@keyframes ani-modal {
+  20% {
+    transform: scale3d(1.01, 1.01, 1);
+  }
+  35% {
+    transform: scale3d(1.02, 1.02, 1);
+  }
+  85% {
+    transform: scale3d(0.995, 0.995, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* 닫기 */
+.wemix__modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.wemix__modal-close img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  padding: 9px;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+  box-sizing: content-box;
+}
+
+.wemix__modal-close img:hover {
+  background-color: transparent;
+  cursor: pointer;
+  box-shadow: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+.wemix__modal-close img:active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  transition: all 0.15s ease;
+}
+
+/* 타이틀 */
+.wemix__modal-set .wemix__modal-title {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-template-areas: "logo prefix name suffix";
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 7px;
+  padding: 52px 20px 0 20px;
+  color: #000;
+}
+
+.wemix__modal-set .wemix__modal-title.reverse {
+  grid-template-areas: "logo suffix name";
+}
+
+.wemix__modal-set .wemix__modal-title .wemix__modal-title-logo {
+  grid-area: logo;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 2px;
+}
+
+.wemix__modal-set .wemix__modal-title .wemix__modal-title-logo-name {
+  grid-area: name;
+  width: auto;
+  height: 17px;
+  position: relative;
+  top: 2px;
+}
+.wemix__modal-set .wemix__modal-title .wemix__modal-title-prefix {
+  grid-area: prefix;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.wemix__modal-set .wemix__modal-title .wemix__modal-title-suffix {
+  grid-area: suffix;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* QR Code  */
+.wemix__modal-set .wemix__modal-qrcode {
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 이미지 */
+.wemix__modal-set .wemix__modal-qrcode-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 auto 30px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+.wemix__modal-set .wemix__modal-qrcode-timer {
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0 3px;
+}
+
+.wemix__modal-set .wemix__modal-qrcode-timer p {
+  margin: 0;
+  padding: 0;
+}
+
+.wemix__modal-set .wemix__modal-qrcode-timer span {
+  color: #e72a2a;
+  font-weight: 600;
+  padding: 0 0 0 2px;
+  letter-spacing: 0.5px;
+}
+
+.wemix__modal-set .wemix__modal-qrcode-warning {
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* 설명 */
+.wemix__modal-set .wemix__modal__notice {
+  padding: 32px 15px 34px;
+  background: #fff;
+  background-color: #4c5972;
+  border-radius: 0 0 20px 20px;
+}
+
+.wemix__modal-set .wemix__modal__notice > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.wemix__modal-set .wemix__modal__notice .wemix__modal__flow {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.wemix__modal-set .wemix__modal__notice .wemix__modal__flow-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  width: 80px;
+  word-break: keep-all;
+}
+
+.wemix__modal-set .wemix__modal__notice .wemix__modal__flow-wrap p {
+  font-size: 11px;
+  font-weight: 300;
+  margin: 6px 0 0 0;
+}
+
+.wemix__modal-set .wemix__modal__notice .wemix__modal__flow-wrap span {
+  font-size: 10px;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+}
+
+.wemix__modal-set .wemix__modal__notice .wemix__modal__flow-wrap em {
+  font-size: 10px;
+  font-style: normal;
+  color: #27ea84;
+  padding: 0 0 0 3px;
+  font-family: Montserrat, sans-serif;
+}
+
+.wemix__modal-set .wemix__modal__notice .wemix__modal__flow-icon {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wemix__modal-set .wemix__modal__notice .wemix__modal__flow-icon.app {
+  background: #000;
+}
+
+.wemix__modal-set
+  .wemix__modal__notice
+  .wemix__modal__flow-icon
+  .wemix__modal__flow-icon--app {
+  width: 28px;
+  height: auto;
+}
+
+.wemix__modal-set
+  .wemix__modal__notice
+  .wemix__modal__flow-icon
+  .wemix__modal__flow-icon--scan {
+  width: 20px;
+  height: auto;
+}
+
+.wemix__modal-set
+  .wemix__modal__notice
+  .wemix__modal__flow-icon
+  .wemix__modal__flow-icon--auth {
+  width: 26px;
+  height: auto;
+}
+
+.wemix__modal-set .wemix__modal__notice .wemix__modal__flow-arrow {
+  padding: 0 12px;
+}
+
+.wemix__modal-set .wemix__modal-step-text {
+  color: #f1cea3;
+}
+
+.wemix__modal-set .wemix__modal-step-text:nth-child(2) {
+  padding: 0 15px;
+}
+
+.wemix__modal-set .wemix__modal__step-warning {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 200;
+  margin-top: 15px;
+}
+
+/* -------------------------------------------- */
+/* aria-cell-phone */
+/* -------------------------------------------- */
+.wemix__modal-set .wemix__modal-qrcode-image.cell-phone {
+  display: none;
+}
+
+.wemix__modal-set .wemix__modal-qrcode-image.cell-phone img {
+  width: 100%;
+  height: auto;
+}
+
+.wemix__modal-set[aria-cell-phone="true"] .wemix__modal-qrcode-image {
+  display: none;
+}
+
+.wemix__modal-set[aria-cell-phone="true"]
+  .wemix__modal-qrcode-image.cell-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 12px;
+  background: transparent;
+  border-radius: 10px;
+  margin: 0 20px 20px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0);
+}
+
+.wemix__modal-set .wemix__modal-qrcode-warning.cell-phone {
+  display: none;
+}
+
+.wemix__modal-set[aria-cell-phone="true"] .wemix__modal-qrcode-warning {
+  display: none;
+}
+
+.wemix__modal-set[aria-cell-phone="true"]
+  .wemix__modal-qrcode-warning.cell-phone {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #000;
+}
+
+.wemix__modal-set .wemix__modal__notice.cell-phone {
+  display: none;
+}
+
+.wemix__modal-set[aria-cell-phone="true"] .wemix__modal__notice {
+  display: none;
+}
+
+.wemix__modal-set[aria-cell-phone="true"] .wemix__modal__notice.cell-phone {
+  display: block;
+}
+
+.wemix__modal-set[aria-cell-phone="true"]
+  .wemix__modal__notice
+  .wemix__modal__flow {
+  display: flex;
+  margin-bottom: 0;
+}
+
+.wemix__modal-set
+  .wemix__modal__notice
+  .wemix__modal__flow-icon
+  .wemix__modal__flow-icon--wallet-auth {
+  width: 22px;
+  height: auto;
+}
+
+.wemix__modal-set
+  .wemix__modal__notice
+  .wemix__modal__flow-icon
+  .wemix__modal__flow-icon--auth-complete {
+  width: 20px;
+  height: auto;
+}
+
+@media only screen and (max-width: 400px) {
+  .wemix__modal-set {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .wemix__modal-set {
+    border-radius: 0;
+  }
+
+  .wemix__modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .wemix__modal-set[aria-cell-phone="true"]
+    .wemix__modal-qrcode-image.cell-phone {
+    margin: 0 0 20px;
+  }
+
+  .wemix__modal-close img {
+    display: block;
+    width: 17px;
+    height: 17px;
+    padding: 8px;
+    border-radius: 0;
+    transition: all 0.25s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 0 8px;
+  }
+
+  .wemix__modal-close img:hover {
+    border-radius: 0 0 0 8px;
+  }
+
+  .wemix__modal-set .wemix__modal__notice .wemix__modal__flow-wrap {
+    width: auto;
+  }
+
+  .wemix__modal-set .wemix__modal__notice .wemix__modal__flow-arrow {
+    padding: 0 6px;
+  }
+
+  .wemix__modal-set .wemix__modal__notice {
+    border-radius: 0;
+    height: 100%;
+  }
+}

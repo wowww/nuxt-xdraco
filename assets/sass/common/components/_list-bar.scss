@@ -1,0 +1,227 @@
+.exchange-list {
+  .list-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 16px;
+    height: 40px;
+
+    &:first-of-type {
+      margin-top: 24px;
+    }
+
+    &__title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    &__count {
+      display: none;
+    }
+
+    &__total {
+      color: var(--color-exd);
+    }
+
+    &__more {
+      flex: 0;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    &__tab {
+      flex: initial;
+      width: auto;
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(#fff, 0.4);
+
+      &.v-tabs {
+        .v-tabs-bar {
+          height: 24px;
+
+          .v-tab {
+            padding: 0 1px;
+            min-width: auto;
+            font-size: 14px;
+            color: inherit;
+            text-transform: initial;
+            letter-spacing: 0;
+
+            &.v-tab--active {
+              color: #fff;
+            }
+          }
+        }
+
+        .v-tabs-bar__content {
+          gap: 24px;
+        }
+
+        .v-tabs-slider-wrapper {
+          height: 1px !important;
+
+          .v-tabs-slider {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+
+    &__traded {
+      &.v-tabs {
+        .v-tabs-bar {
+          .v-tab {
+            padding: 0;
+            font-size: 16px;
+            color: rgba(#fff, 0.6);
+            text-transform: none;
+            letter-spacing: 0;
+
+            &.v-tab--active {
+              color: #fff;
+            }
+          }
+
+          .v-slide-group__content {
+            gap: 24px;
+          }
+
+          .v-tabs-slider-wrapper {
+            bottom: 8px;
+            height: 1px !important;
+            color: #fff;
+          }
+        }
+
+        .v-slide-group--is-overflowing {
+          .v-slide-group__prev--disabled {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nft-list {
+  .exchange-list {
+    .list-bar {
+      &__traded {
+        .v-tabs-bar {
+          .v-tabs-slider-wrapper {
+            color: #ee0000;
+          }
+        }
+      }
+    }
+  }
+}
+
+.exd-list {
+  .exchange-list {
+    .list-bar {
+      &__traded {
+        .v-tabs-bar {
+          .v-tabs-slider-wrapper {
+            color: #ffdc0a;
+          }
+        }
+      }
+    }
+  }
+}
+
+.exd-my-item {
+  .exchange-list {
+    .list-bar {
+      &__title {
+        em {
+          color: #aa00ff;
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .exchange-list {
+    .list-bar {
+      &__count {
+        flex: 0;
+        display: flex;
+        white-space: nowrap;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      &__total {
+        color: var(--color-exd);
+        margin-right: 2px;
+      }
+
+      &__more {
+        color: #fff;
+      }
+
+      &__traded.v-tabs {
+        &.theme--light {
+          .v-tabs-bar {
+            .v-tab {
+              font-size: 18px;
+            }
+
+            .v-slide-group__content {
+              gap: 40px;
+            }
+          }
+        }
+      }
+    }
+
+    .exd-ranking {
+      .list-bar {
+        &__traded.v-tabs {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .myitem-list {
+    .list-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      margin-bottom: 24px;
+
+      &__title {
+        font-size: 16px;
+
+        em {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}
+
+@include large-pc {
+  .exchange-list {
+    .list-bar {
+      margin: 24px 0;
+
+      &__count {
+        display: block;
+      }
+    }
+  }
+
+  .myitem-list {
+    .list-bar {
+      margin: 24px 0;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.item-transprice {
+  width: 100%;
+  min-height: 123px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 18px 20px;
+  box-sizing: border-box;
+  line-height: normal;
+  font-size: 0;
+
+  span {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: -0.12px;
+    color: #fff;
+  }
+
+  .wrap-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 16px;
+
+    .price {
+      width: auto;
+    }
+  }
+
+  .price {
+    strong {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      line-height: normal;
+
+      &.month {
+        font-size: 40px;
+        letter-spacing: -0.8px;
+      }
+    }
+    .us-dollar {
+      display: block;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 1.67;
+      margin-top: 4px;
+    }
+  }
+  time {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.67;
+    color: rgba(#fff, 0.5);
+  }
+}
+
+.is-mobile {
+  .item-transprice {
+    .price {
+      strong {
+        letter-spacing: -0.56px;
+      }
+
+      .rate,
+      .us-dollar {
+        display: block;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 1.67;
+        margin-top: 4px;
+      }
+    }
+  }
+}

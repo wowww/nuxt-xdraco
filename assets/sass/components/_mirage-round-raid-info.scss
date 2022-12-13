@@ -1,0 +1,81 @@
+@import '~@/assets/sass/mixin';
+
+.mirage-round-raid-info {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  row-gap: 4px;
+  line-height: normal;
+
+  .raid-round {
+    position: relative;
+    color: #fff;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 400;
+
+    &::before {
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 16px;
+      background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-18-battle.webp') 0 0 / 100% auto no-repeat;
+    }
+  }
+  .boss-name {
+    position: relative;
+    flex: 1;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+
+    &::before {
+      display: none;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -9px;
+      bottom: 0;
+      width: 1px;
+      background-color: #ffffff33;
+    }
+  }
+  .raid-date {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+  }
+}
+
+@include pc {
+  .mirage-round-raid-info {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 16px;
+    line-height: 1.5;
+
+    .raid-round {
+      padding-left: 34px;
+      font-weight: 600;
+      font-size: 16px;
+
+      &::before {
+        width: 26px;
+        height: 24px;
+        background-image: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-27-battle.webp');
+      }
+    }
+
+    .boss-name {
+      font-size: 16px;
+
+      &::before {
+        display: block;
+      }
+    }
+  }
+}

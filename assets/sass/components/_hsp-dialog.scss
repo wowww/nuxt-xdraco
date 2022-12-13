@@ -1,0 +1,459 @@
+@import '~@/assets/sass/mixin';
+
+.v-dialog.dialog-hsp {
+  margin: 0 !important;
+  position: fixed;
+  bottom: 0;
+  padding: 0;
+  border-radius: 0;
+  max-width: 100% !important;
+
+  .dialog-contents {
+    background-image: linear-gradient(123deg, #005, #006 49%, #005 100%);
+    text-align: center;
+
+    .title {
+      color: #ffe600;
+      padding: 16px 24px;
+
+      .close {
+        width: 20px;
+        height: 20px;
+
+        img {
+          width: 20px;
+        }
+      }
+    }
+    .additional {
+      padding: 24px;
+      color: #fff;
+      text-align: left;
+
+      &.reward {
+        text-align: center;
+      }
+
+      .additional-info-title {
+        text-align: left;
+        font-size: 16px;
+      }
+      .additinal-info {
+        padding: 16px 0;
+        font-size: 12px;
+        color: #fff9;
+        text-align: left;
+
+        > div {
+          display: flex;
+        }
+        em {
+          color: #ffe500;
+        }
+        .dot {
+          font-size: 20px;
+          padding: 0 4px;
+        }
+      }
+      .box-wrapper {
+        padding-top: 0;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        align-content: flex-start;
+        row-gap: 16px;
+
+        .additinal-stake-box {
+          flex: 1 1;
+
+          h3 {
+            font-size: 14px;
+            font-weight: 400;
+          }
+
+          .box-contents {
+            padding: 4px 0;
+
+            .accent {
+              color: #ffe500;
+            }
+            .empty {
+              color: #fff2;
+            }
+            .count {
+              align-items: baseline;
+              line-height: 1;
+              @include ellipsis();
+
+              > em {
+                font-size: 24px;
+              }
+            }
+            .box {
+              padding: 0;
+            }
+          }
+
+          .usd {
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .icon-add {
+          width: 16px;
+          height: 16px;
+          margin: 0 24px;
+        }
+      }
+      .reward-label {
+        padding: 24px 0 10px 0;
+        text-align: left;
+      }
+      .reward-box {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        align-content: center;
+
+        + .usd {
+          margin-top: 4px;
+          text-align: left;
+          margin-bottom: 0;
+        }
+
+        .hydra-icon {
+          width: 40px;
+        }
+        .count {
+          align-items: baseline;
+          padding: 0 8px;
+          font-size: 40px;
+          font-weight: bold;
+          line-height: 1;
+          @include ellipsis();
+
+          > em {
+            font-size: 24px;
+          }
+        }
+      }
+      .usd {
+        color: rgba(255, 255, 255, 0.6)
+      }
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: unset;
+      padding: 24px;
+      color: #fff;
+
+      .hydra-label {
+        display: flex;
+        align-items: center;
+
+        &.error {
+          color: #f00;
+        }
+
+        .input-message {
+          width: 100%;
+        }
+
+        .btn-info {
+          margin: 0 8px 0 0;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        .options {
+          .amount-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            color: #fff;
+
+            .amount-label {
+              font-size: 14px;
+              opacity: 0.5;
+              white-space: nowrap;
+            }
+            .amount {
+              font-size: 16px;
+              padding: 0;
+              white-space: nowrap;
+            }
+          }
+          > button {
+            margin-left: 8px;
+            padding: 0 4px !important;
+            min-width: 56px !important;
+            height: 34px;
+            font-size: 14px !important;
+            letter-spacing: 0;
+            font-weight: bold;
+
+            &.all-decimal {
+              padding: 0 16px !important;
+            }
+            &.max {
+              background-color: #ffe500 !important;
+              font-size: 16px !important;
+            }
+          }
+        }
+      }
+      .hydra-input {
+        margin: 18px 0 16px 0;
+        border: 1px solid #fff;
+        padding: 12px 16px;
+        background-image: linear-gradient(to bottom, #000036 0%, rgba(0, 0, 54, 0.63) 100%);
+
+        > button {
+          position: relative;
+          top: -68px;
+          left: 16px;
+        }
+
+        &.error {
+          border-color: #f00;
+        }
+        .hydra-icon {
+          width: 32px;
+        }
+        .input {
+          &.v-text-field--solo > .v-input__control > .v-input__slot {
+            input {
+              font-size: 28px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .dialog-loading-contents {
+    .close {
+      right: 0;
+    }
+    .loading-contents {
+      padding: 48px 12px;
+      text-align: center;
+
+      .icon-loading {
+        width: 64px;
+        animation: animCircle 0.75s linear infinite;
+      }
+
+      h2 {
+        color: #000;
+        padding: 8px 0;
+      }
+
+      .loading-info {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .loading-close {
+        margin-top: 16px;
+      }
+    }
+  }
+  .btn-stake {
+    &.btn-unstake {
+      border-image-source: linear-gradient(to bottom, #4a4a4a 0%, #000 100%);
+      background-image: linear-gradient(95deg, #000, #212121 49%, #000 100%);
+    }
+  }
+}
+
+@include pc {
+  .v-dialog.dialog-hsp {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 720px !important;
+
+    .dialog-contents {
+      .additional {
+        .box-wrapper {
+          flex-direction: row;
+          row-gap: 0;
+        }
+
+        .reward-label {
+          text-align: center;
+        }
+        .reward-box {
+          justify-content: center;
+          + .usd {
+            text-align: center;
+          }
+        }
+      }
+
+      .actions {
+        .hydra-input {
+          > button {
+            position: initial;
+            top: initial;
+            left: initial;
+          }
+        }
+        .hydra-label {
+          .options {
+            .amount-wrapper {
+              flex-direction: row;
+              column-gap: 8px;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .dialog-hsp {
+    .dialog-contents {
+      .title {
+        padding: 12px 16px;
+
+        h2 {
+          font-size: 20px;
+        }
+      }
+      .additional {
+        text-align: left;
+        padding: 24px;
+
+        .additional-info-title {
+          font-size: 14px;
+        }
+        .additinal-info {
+          font-size: 12px;
+          line-height: 1.2;
+
+          .dot {
+            line-height: 0.8;
+          }
+        }
+        .box-wrapper {
+          padding-top: 0;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .additinal-stake-box {
+            &:first-child {
+              margin-bottom: 8px;
+            }
+            &:not(:first-child) {
+              .usd {
+                padding-bottom: 0px;
+              }
+            }
+            .box-contents {
+              padding: 0;
+            }
+            .usd {
+              text-align: left;
+            }
+          }
+        }
+
+        .reward-box {
+          padding-bottom: 0;
+
+          .hydra-icon {
+            width: 28px;
+          }
+          .count {
+            font-size: 28px;
+          }
+        }
+        .usd {
+          text-align: center;
+          padding-bottom: 24px;
+        }
+      }
+      .actions {
+        padding: 16px;
+
+        .hydra-label {
+          font-size: 14px;
+          text-align: left;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .input-header {
+            display: flex;
+            width: 100%;
+
+            .btn-info {
+              width: 24px;
+              margin: 0 0 0 8px;
+
+              img {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+          .options {
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+
+            .amount-wrapper {
+              flex-direction: column;
+              align-items: flex-start;
+              margin-top: 16px;
+
+              .amount-label {
+                line-height: 1;
+                font-size: 12px;
+              }
+              .amount {
+                padding: 0;
+                font-size: 14px;
+                @include ellipsis();
+              }
+            }
+            > button {
+              display: block;
+
+              &.all-decimal {
+                padding: 0 8px !important;
+                font-size: 12px !important;
+                max-width: 60px;
+                white-space: pre-wrap;
+
+                .v-btn__content {
+                  line-height: 0.9;
+                }
+              }
+            }
+          }
+        }
+        .hydra-input {
+          padding: 12px;
+
+          > button {
+            display: none;
+          }
+        }
+        .btn-stake {
+          font-size: 16px;
+          height: 48px;
+
+          &.btn-unstake {
+            border-image-slice: 1;
+            background-image: linear-gradient(98deg, #002, #003 49%, #002 100%);
+          }
+        }
+      }
+    }
+  }
+}

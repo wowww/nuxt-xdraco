@@ -1,0 +1,103 @@
+@import '~assets/sass/_mixin.scss';
+
+.exd-list,
+.nft-list,
+.collectible {
+  .title-for-list {
+    margin: 32px 16px;
+  }
+
+  .exchange-list {
+    .wrap-card {
+      display: grid;
+      grid-gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+      margin: 23px;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .wrap-button {
+          width: 100%;
+        }
+      }
+    }
+    .list-bar {
+      margin: 16px;
+    }
+  }
+
+  .for-list {
+    .wrap-filter-chip {
+      gap: 4px;
+    }
+  }
+}
+
+@include pc {
+  .exd-list,
+  .nft-list,
+  .collectible,
+  .myitem-list {
+    .exchange-list {
+      .wrap-card {
+        grid-gap: 24px 16px;
+        grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
+        margin: 24px 0 40px;
+      }
+
+      .list-item {
+        margin-left: 0;
+      }
+
+      .list-bar,
+      .title-for-list,
+      .tab-score {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      .tab-score + .list-bar,
+      .exchange-list .list-bar:first-of-type {
+        margin-top: 48px;
+      }
+    }
+
+    #wrapFilterList,
+    .for-list {
+      .wrap-filter {
+        &__inner {
+          margin-left: 0;
+          margin-right: -16px;
+        }
+
+        &-chip {
+          margin: 0;
+
+          .select-filter {
+            top: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include large-pc {
+  .exd-list,
+  .nft-list,
+  .collectible,
+  .myitem-list {
+    .title-for-list {
+      margin: 32px 0;
+    }
+
+    #wrapFilterList {
+      .wrap-filter__inner {
+        margin-right: 0;
+      }
+    }
+  }
+}

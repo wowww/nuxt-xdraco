@@ -1,0 +1,13 @@
+@import '~@/assets/sass/mixin';
+
+@include large-pc {
+  .wrap-grid {
+    &__side {
+      &__bar {
+        position: sticky;
+        top: 84px;
+        left: 0;
+      }
+    }
+  }
+}

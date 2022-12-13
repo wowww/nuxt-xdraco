@@ -1,0 +1,169 @@
+﻿<div class="wemix__modal" aria-wemix-modal="true">
+  <!-- aria-wemix-modal : true 팝업 노출 시 -->
+  <section class="wemix__modal-set" aria-cell-phone="true">
+    <!-- aria-cell-phone : true 휴대폰에서 웹화면 접근 시 -->
+    <div class="wemix__modal-close">
+      <img src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-close.svg" alt="" />
+    </div>
+    <div class="wemix__modal-title">
+      <img
+          class="wemix__modal-title-logo"
+          src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-logo.svg"
+          height="75"
+          width="75"
+          alt="WEMIX"
+      />
+      <span class="wemix__modal-title-prefix">${qr.title.prefix}</span>
+      <img
+          class="wemix__modal-title-logo-name"
+          src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-logo-text.svg"
+          height="75"
+          width="auto"
+          alt="WEMIX"
+      />
+      <span class="wemix__modal-title-suffix">${qr.title.suffix}</span>
+    </div>
+    <article class="wemix__modal-qrcode">
+      <!-- pc -->
+      <div class="wemix__modal-qrcode-image">
+        <img src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/qr.png" height="175" width="175" alt="" />
+      </div>
+      <!-- cell-phone -->
+      <div class="wemix__modal-qrcode-image cell-phone">
+        <img src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/mobile-auth.png" alt="" />
+      </div>
+
+      <div class="wemix__modal-qrcode-timer">
+        <p>${qr.remain} <span class="wemix__modal-qrcode-remain"></span></p>
+      </div>
+
+      <!-- pc -->
+      <div class="wemix__modal-qrcode-warning">
+        ${qr.text1}
+      </div>
+
+      <!-- cell-phone -->
+      <div class="wemix__modal-qrcode-warning cell-phone">
+        ${qr.text2}
+      </div>
+      <div class="wemix__modal-qrcode-warning cell-phone">
+        ${qr.allow.popup.mobile}
+      </div>
+
+    </article>
+
+    <!-- pc -->
+    <article class="wemix__modal__notice">
+      <div>
+        <div class="wemix__modal__flow">
+          <div class="wemix__modal__flow-wrap">
+            <span>step<em>1</em></span>
+            <div class="wemix__modal__flow-icon app">
+              <img
+                  class="wemix__modal__flow-icon--app"
+                  src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-logo.svg"
+                  alt=""
+              />
+            </div>
+            <p>${qr.step1}</p>
+          </div>
+          <img
+              class="wemix__modal__flow-arrow"
+              src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-arrow.svg"
+              alt="pointer"
+          />
+        </div>
+        <div class="wemix__modal__flow">
+          <div class="wemix__modal__flow-wrap">
+            <span>step<em>2</em></span>
+            <div class="wemix__modal__flow-icon">
+              <img
+                  class="wemix__modal__flow-icon--scan"
+                  src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-scan.svg"
+                  alt=""
+              />
+            </div>
+            <p>${qr.step2}</p>
+          </div>
+          <img
+              class="wemix__modal__flow-arrow"
+              src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-arrow.svg"
+              alt="pointer"
+          />
+        </div>
+        <div class="wemix__modal__flow">
+          <div class="wemix__modal__flow-wrap">
+            <span>step<em>3</em></span>
+            <div class="wemix__modal__flow-icon">
+              <img
+                  class="wemix__modal__flow-icon--auth"
+                  src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-auth.svg"
+                  alt=""
+              />
+            </div>
+            <p>${qr.step3}</p>
+          </div>
+        </div>
+      </div>
+      <div class="wemix__modal__step-warning">
+        <span>* ${qr.other1}</span>
+      </div>
+    </article>
+
+    <!-- cell-phone -->
+    <article class="wemix__modal__notice cell-phone">
+      <div>
+        <div class="wemix__modal__flow">
+          <div class="wemix__modal__flow-wrap">
+            <span>step<em>1</em></span>
+            <div class="wemix__modal__flow-icon app">
+              <img
+                  class="wemix__modal__flow-icon--app"
+                  src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-logo.svg"
+                  alt=""
+              />
+            </div>
+            <p>${qr.step1.mobile}</p>
+          </div>
+          <img
+              class="wemix__modal__flow-arrow"
+              src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-arrow.svg"
+              alt="pointer"
+          />
+        </div>
+        <div class="wemix__modal__flow">
+          <div class="wemix__modal__flow-wrap">
+            <span>step<em>2</em></span>
+            <div class="wemix__modal__flow-icon">
+              <img
+                  class="wemix__modal__flow-icon--wallet-auth"
+                  src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-wallet-auth.svg"
+                  alt=""
+              />
+            </div>
+            <p>${qr.step2.mobile}</p>
+          </div>
+          <img
+              class="wemix__modal__flow-arrow"
+              src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-arrow.svg"
+              alt="pointer"
+          />
+        </div>
+        <div class="wemix__modal__flow">
+          <div class="wemix__modal__flow-wrap">
+            <span>step<em>3</em></span>
+            <div class="wemix__modal__flow-icon">
+              <img
+                  class="wemix__modal__flow-icon--auth-complete"
+                  src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/mobile/ico-auth-complete.svg"
+                  alt=""
+              />
+            </div>
+            <p>${qr.step3.mobile}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>
+

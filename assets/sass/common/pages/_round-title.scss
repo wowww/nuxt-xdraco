@@ -1,0 +1,94 @@
+@import '~assets/sass/_mixin.scss';
+
+.round {
+  &__title {
+    line-height: normal;
+    padding-left: 16px;
+
+    em {
+      font-style: normal;
+    }
+
+    &__category {
+      --color-epic: #ff002e;
+      --color-legendary: #ffff00;
+      --color-rare: #3391ff;
+      --color-uncommon: #00b267;
+      --color-tier: #fff;
+
+      margin-bottom: 6px;
+      font-size: 0;
+
+      span {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 0 4px;
+        color: #fff;
+        border: 1px solid #fff;
+        margin-left: 4px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+      &--legendary {
+        color: var(--color-legendary);
+        border-color: var(--color-legendary);
+      }
+      &--epic {
+        color: var(--color-epic);
+        border-color: var(--color-epic);
+      }
+      &--rare {
+        color: var(--color-rare);
+        border-color: var(--color-rare);
+      }
+      &--uncommon {
+        color: var(--color-uncommon);
+      }
+      &--tier {
+        color: var(--color-tier);
+        border-color: var(--color-tier);
+      }
+    }
+
+    &__item-name {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: -0.2px;
+      max-width: calc(100% - 16px);
+      @include text-overflow();
+
+      em {
+        color: #ffe600;
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+@include pc {
+  .round {
+    &__title {
+      line-height: 1.3;
+      font-size: 20px;
+
+      em {
+        font-style: normal;
+      }
+
+      &__category {
+        &--uncommon {
+          border-color: var(--color-uncommon);
+        }
+      }
+
+      &__item-name {
+        max-width: 100%;
+      }
+    }
+  }
+}

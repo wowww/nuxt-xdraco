@@ -1,0 +1,398 @@
+@import '~@/assets/sass/mixin';
+
+.v-dialog {
+  --v-xsmall: 16px;
+
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .v-btn__content {
+      opacity: 1 !important;
+    }
+  }
+
+  &.dialog-stake {
+    .content {
+      padding: 24px;
+    }
+  }
+
+  &.dialog-trade-coin {
+    .content {
+      padding: 24px;
+
+      .wrap-link {
+        display: flex;
+        width: 100%;
+
+        img {
+          max-width: 50%;
+        }
+      }
+    }
+  }
+
+  &.dialog-card {
+    overflow: visible;
+    width: auto;
+    background-color: transparent;
+    box-shadow: none;
+
+    .v-card {
+      background-color: inherit;
+      box-shadow: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn-close-dialog {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 16px auto 0;
+      border-radius: 50% !important;
+      width: 44px;
+      height: 44px;
+      font-size: 0;
+      background-color: rgba(#fff, .3);
+
+      &::before {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        background: url('https://file.mir4global.com/xdraco/img/common/btn-close-dialog.webp') 50% 0 / cover no-repeat;
+      }
+    }
+  }
+
+  &.wemix-qr-wrap {
+    .nft-buy-qr {
+      font-weight: 500;
+
+      .contents-center {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
+        .title {
+          width: 56px;
+          height: 24px;
+          background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/title_qr.webp") 0 0 /
+            100% auto no-repeat;
+          font-size: 0 !important;
+        }
+        .desc {
+          margin-top: 8px;
+          font-size: 12px;
+        }
+        .count {
+          margin-top: 3px;
+          font-size: 14px;
+
+          span {
+            font-weight: 800;
+            color: #ee0000;
+          }
+        }
+        .qrcode-area {
+          width: 246px;
+          height: 246px;
+          margin: 3px 0 7px;
+          box-sizing: border-box;
+        }
+        .qr-wemix {
+          width: 65px;
+          height: 18px;
+          background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/qr_wemix_logo.webp") 0
+          0 / 100% auto no-repeat;
+          font-size: 0;
+        }
+      }
+
+      + .step-area {
+        display: flex;
+        flex-flow: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 0 10px;
+        background-color: #e8e8e8;
+        gap: 10px 3px;
+
+        .step-item {
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
+          .step-title {
+            display: block;
+            font-size: 14px;
+            font-weight: 800;
+            color: #000;
+          }
+          .step-img {
+            display: block;
+            width: 56px;
+            height: 56px;
+            margin: 5px 0;
+          }
+          &.step-1 {
+            .step-img {
+              background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/qr_img_step1.webp")
+              0 0 / 100% auto no-repeat;
+            }
+          }
+          &.step-2 {
+            .step-img {
+              background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/qr_img_step2.webp")
+              0 0 / 100% auto no-repeat;
+            }
+          }
+          &.step-3 {
+            .step-img {
+              background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/qr_img_step3.webp")
+              0 0 / 100% auto no-repeat;
+            }
+          }
+          .step-desc {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+            color: rgba(0, 0, 0, 0.75);
+          }
+        }
+        .step-next {
+          display: block;
+          width: 32px;
+          height: 32px;
+          margin-top: -15px;
+          background: url("https://file.mir4global.com/xdraco/img/common/nft-detail/qr_img_next.webp") 0 0 /
+            100% auto no-repeat;
+        }
+        .qr-bottom {
+          font-size: 12px;
+          color: rgba($color: #000000, $alpha: 0.5);
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .v-dialog {
+    border-radius: 0;
+    background-color: #fff;
+
+    &.dialog-trade-coin {
+      .content {
+        color: #000;
+      }
+    }
+
+    &.dialog-mirage-raid-info {
+      .content {
+        padding: 24px 32px;
+      }
+    }
+
+    &.dialog-common {
+      .content {
+        padding: 24px;
+      }
+    }
+
+    .btn-close {
+      top: 10px;
+      right: 10px;
+    }
+    .content {
+      position: relative;
+      font-size: 20px;
+    }
+
+    &.dialog-card {
+      background-color: transparent;
+    }
+
+    &.wemix-login {
+      width: 500px;
+      height: 800px;
+    }
+
+    &.wemix-qr-wrap {
+      .dialog-header {
+        margin: -24px -24px 0;
+      }
+      .nft-buy-qr {
+        font-weight: 500;
+
+        .contents-center {
+          .title {
+            width: 112px;
+            height: 48px;
+          }
+          .desc {
+            margin-top: 15px;
+            font-size: 14px;
+          }
+          .count {
+            font-size: 16px;
+          }
+        }
+
+        + .step-area {
+          padding: 28px 0 24px;
+          gap: 20px 17px;
+
+          .step-item {
+            .step-img {
+              margin: 5px 0 9px;
+            }
+          }
+          .step-next {
+            margin-top: -11px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.v-dialog {
+  .btn-close {
+    &.v-size--x-small {
+      width: var(--v-xsmall);
+      height: var(--v-xsmall);
+    }
+  }
+
+  &.dialog-playnow {
+    color: #fff;
+    background-color: #000;
+
+    .inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: calc(64px + 6vh) 0 6vh;
+      min-height: 100%;
+    }
+    .btn-close {
+      top: 10px;
+      right: 10px;
+    }
+    .content {
+      position: relative;
+      width: 282px;
+    }
+    .title {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      width: auto;
+      font-size: 16px !important;
+      font-weight: 700;
+
+      &::before {
+        content: '';
+        display: block;
+        margin-right: 9px;
+        width: 77px;
+        height: 24px;
+        background: url('https://file.mir4global.com/xdraco/img/mobile/dialog/bi-mir4.png') 0 0 / cover no-repeat;
+      }
+    }
+    .sub-title {
+      margin: 48px 0 16px;
+      line-height: 1.2;
+      font-size: 12px;
+      font-weight: 700;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+    .wrap-link {
+      .link {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 16px;
+        width: 100%;
+        height: 74px;
+        line-height: 0;
+        font-size: 0;
+
+        &::before {
+          content: '';
+          display: block;
+        }
+        &.google {
+          background: url('https://file.mir4global.com/xdraco/img/mobile/dialog/btn-google.webp') 50% 0 / cover no-repeat;
+        }
+        &.apple {
+          background: url('https://file.mir4global.com/xdraco/img/mobile/dialog/btn-apple.webp') 50% 0 / cover no-repeat;
+        }
+        &.galaxy {
+          background: url('https://file.mir4global.com/xdraco/img/mobile/dialog/btn-galaxy.webp') 50% 0 / cover no-repeat;
+        }
+        &.windows {
+          height: 79px;
+          background: url('https://file.mir4global.com/xdraco/img/mobile/dialog/btn-windows.webp') 50% 0 / cover no-repeat;
+        }
+        &.steam {
+          height: 79px;
+          background: url('https://file.mir4global.com/xdraco/img/mobile/dialog/btn-steam.webp') 50% 0 / cover no-repeat;
+        }
+      }
+    }
+  }
+
+  &.wemix-qr-wrap {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    position: relative;
+    background-color: #fff;
+    border-radius: 0;
+
+    .nft-buy-qr {
+      padding: 20px 20px 15px !important;
+      text-align: center;
+      background-color: #fff;
+
+      .dialog-header {
+        min-height: 0;
+        height: 0;
+      }
+      & {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .v-dialog {
+    &.dialog-playnow {
+      display: block;
+
+      .content {
+        padding: 60px 0;
+      }
+    }
+  }
+}
+

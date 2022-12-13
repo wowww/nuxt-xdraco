@@ -1,0 +1,219 @@
+.xdraco-policy {
+  --inner-width: 960px;
+  --header-height: 56px;
+
+  font-family: Roboto;
+  min-height: 100vh;
+  background-color: #fff;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    visibility: visible;
+    padding: 0 24px;
+    width: 100%;
+    height: var(--header-height);
+    background-color: #000;
+
+    &__left,
+    &__right {
+      display: flex;
+      align-items: center;
+    }
+    .link {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      font-size: 0;
+
+      &::before {
+        display: block;
+        content: "";
+        width: 80px;
+        height: 20px;
+        background: url("https://file.mir4global.com/xdraco/img/desktop/header/gnb-bi-xdraco.svg") 50%
+          50% / cover no-repeat;
+        transition: transform 400ms ease;
+      }
+    }
+    .wrap-button {
+      margin-right: -10px;
+    }
+    .btn-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: visible;
+      padding: 0 8px;
+      min-width: auto;
+      height: 44px;
+      box-sizing: border-box;
+      color: #fff;
+
+      &.language {
+        &::before {
+          content: "";
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: url("https://file.mir4global.com/xdraco/img/desktop/header/icon-language.webp") 50%
+            50% / cover no-repeat;
+        }
+      }
+    }
+  }
+  .contents {
+    .top {
+      position: relative;
+      margin-bottom: 32px;
+      border-bottom: 1px solid rgba(#222, 0.1);
+      padding: 32px 0;
+
+      h1 {
+        font-size: 28px;
+      }
+      .version {
+        font-size: 14px;
+        max-width: 160px;
+
+        .version-select.v-input {
+          .v-input__control fieldset {
+            border: solid 1px rgba(34, 34, 34, 0.15);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 0;
+          }
+          .v-select__slot {
+            font-size: 14px;
+            padding: 0 4px;
+
+            .v-input__append-inner {
+              margin: auto 0;
+
+              .arrow {
+                width: 16px;
+              }
+            }
+          }
+        }
+      }
+      &__inner {
+        margin: 0 auto;
+        width: 100%;
+        max-width: var(--inner-width);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 726px;
+        background: url("https://file.mir4global.com/xdraco/img/desktop/home/bg-section1.webp") 50% 0 /
+          auto 726px no-repeat;
+        opacity: 0.5;
+      }
+    }
+    .section {
+      position: relative;
+      z-index: 1;
+
+      h2 {
+        margin: 24px 0 8px;
+        line-height: 1.25;
+        font-size: 16px;
+        font-weight: 700;
+        color: #222;
+
+        &:first-of-type {
+          margin-top: 40px;
+        }
+      }
+      p {
+        margin: 8px 0 0;
+        line-height: 1.29;
+        font-size: 14px;
+        color: rgba(#222, 0.6);
+
+        a {
+          color: #1a0dab;
+          text-decoration: underline;
+        }
+        &:first-of-type {
+          margin-top: 0;
+        }
+        &.tab {
+          margin-left: 16px;
+          margin-top: 4px;
+
+          &.double {
+            margin-left: 32px;
+          }
+          &.first {
+            margin-top: 8px;
+          }
+          &.last {
+            margin-bottom: 4px;
+          }
+        }
+      }
+      &__inner {
+        margin: 0 auto;
+        width: 100%;
+        max-width: var(--inner-width);
+        box-sizing: border-box;
+      }
+      &:last-child {
+        margin-bottom: 200px;
+      }
+    }
+  }
+
+  .is-mobile & {
+    --inner-width: 640px;
+
+    .contents {
+      .top {
+        padding: 24px 0;
+        margin-bottom: 24px;
+
+        .spacer {
+          margin: 4px 0;
+        }
+        .version {
+          width: 100%;
+          max-width: unset;
+        }
+        &__inner {
+          padding: 0 16px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        &::before {
+          height: 171px;
+          background: url("https://file.mir4global.com/xdraco/img/desktop/home/bg-section1.webp") 50% 0 /
+            auto 171px no-repeat;
+        }
+      }
+      .section {
+        &__inner {
+          padding: 0 16px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

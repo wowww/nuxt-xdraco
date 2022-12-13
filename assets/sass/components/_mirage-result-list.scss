@@ -1,0 +1,531 @@
+@import '~@/assets/sass/mixin';
+
+.mirage-result-list {
+  margin-top: 2px;
+  line-height: normal;
+
+  img {
+    max-width: 100%;
+  }
+
+  .mobile-disable {
+    display: none !important;
+  }
+
+  div[class*=col-] {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    min-height: 40px;
+
+    &:not(:first-of-type) {
+      border-left: 0;
+      border-top: 1px solid #0000001a;
+
+      .wrap-value {
+        align-items: flex-end;
+      }
+    }
+
+    small {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .col-rank {
+    align-items: center;
+  }
+
+  .list-raid-result {
+    .col-reward {
+      min-width: 164px;
+
+      .col-reward--items {
+        justify-content: flex-end;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .col-rank,
+  .col-battle,
+  .col-score,
+  .col-price,
+  .col-wound,
+  .col-reward {
+    width: 100%;
+  }
+
+  .list-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+    background-image: none;
+    background-color: #c4c4c41a;
+    font-size: 12px;
+    color: #fff;
+
+    div[class*=col-] {
+      min-height: 46px;
+
+      &:not(:first-of-type) {
+        border-left: 1px solid #ffffff1a;
+      }
+    }
+  }
+
+  .list-raid-result {
+    padding-left: 0;
+    list-style: none;
+
+    > li {
+      display: flex;
+      font-size: 16px;
+      color: #000;
+      flex-direction: column;
+      background-image: linear-gradient(126deg, #f90 0%, #fff386 50%, #f90 100%);
+
+      div {
+        align-items: center;
+      }
+
+      > div[class*="col-"]:not(:first-of-type) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .col-rank {
+        padding: 16px;
+
+        .rank {
+          width: 40px;
+          height: 30px;
+          background-position-y: -7px;
+        }
+
+        .wrap-value {
+          position: relative;
+          padding-left: 48px;
+          align-items: flex-start;
+
+          &::before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            background: url("https://file.mir4global.com/xdraco/img/desktop/popup/profile-warrior.webp") 50% / 100% no-repeat;
+            transform: translateY(-50%);
+          }
+        }
+        .name {
+          padding-left: 0;
+          &::before {
+            display: none;
+          }
+        }
+
+        .wrap-value {
+          em {
+            margin-left: 0;
+          }
+        }
+      }
+
+      &[data-character-class="1"] {
+        .wrap-value {
+          &::before {
+            background-image: url('https://file.mir4global.com/xdraco/img/desktop/popup/profile-warrior.webp');
+          }
+        }
+      }
+
+      &[data-character-class="2"] {
+        .wrap-value {
+          &::before {
+            background-image: url('https://file.mir4global.com/xdraco/img/desktop/popup/profile-sorcerer.webp');
+          }
+        }
+      }
+
+      &[data-character-class="3"] {
+        .wrap-value {
+          &::before {
+            background-image: url('https://file.mir4global.com/xdraco/img/desktop/popup/profile-taoist.webp');
+          }
+        }
+      }
+
+      &[data-character-class="5"] {
+        .wrap-value {
+          &::before {
+            background-image: url('https://file.mir4global.com/xdraco/img/desktop/popup/profile-lancer.webp');
+          }
+        }
+      }
+
+      &[data-character-class="4"] {
+        .wrap-value {
+          &::before {
+            background-image: url('https://file.mir4global.com/xdraco/img/desktop/popup/profile-arbalist.webp');
+          }
+        }
+      }
+
+      &[data-damage-type="2"] {
+        .damaged {
+          color: #f60;
+        }
+      }
+
+      &[data-damage-type="3"] {
+        .damaged {
+          color: #f00;
+        }
+      }
+
+      &:not(:first-child) {
+        margin-top: 1px;
+      }
+
+      &.is-highlight {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          border: 2px solid #fff;
+        }
+      }
+    }
+
+    .rank {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      width: 28px;
+      height: 28px;
+      background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-28-rank.webp') 50% -3px / 100% auto no-repeat;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .name {
+      position: relative;
+      padding-left: 48px;
+      flex: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 0;
+        width: 40px;
+        height: 40px;
+        background-position: 50% 50%;
+        background-size: 100% auto;
+      }
+    }
+
+    .col-title {
+      display: flex;
+      flex-direction: column;
+
+      em {
+        font-weight: 400;
+      }
+
+      small {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    .wrap-value {
+      display: flex;
+      flex-direction: column;
+      font-weight: initial;
+
+      row-gap: 4px;
+      column-gap: 4px;
+
+      .bid-register {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      em {
+        font-size: 14px;
+        color: #0009;
+      }
+
+      .bid-rank {
+        font-size: 14px;
+        line-height: 1.43;
+        color: #0009;
+
+        &:after {
+          content: "/";
+          opacity: 0.3;
+          margin: 0 2px;
+        }
+      }
+    }
+
+    .col-score {
+      flex-direction: column;
+      justify-content: center;
+
+      .mirage-score {
+        position: relative;
+        padding-left: 26px;
+        line-height: 24px;
+        font-weight: 500;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 24px;
+          height: 24px;
+          mask: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-18-score.webp') 0 0 / 100% auto no-repeat;
+          background-color: #000;
+        }
+      }
+    }
+
+    .col-price {
+      column-gap: 8px;
+
+      .price-vigor {
+        position: relative;
+        padding-left: 26px;
+        font-weight: 600;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 1px;
+          left: 0;
+          width: 18px;
+          height: 18px;
+          background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-18-vigor.webp') 0 0 / 100% auto no-repeat;
+        }
+      }
+
+      .bid-rank {
+        font-size: 14px;
+        line-height: 1.43;
+        color: #0009;
+      }
+
+      .txt-buff {
+        width: 100%;
+        color: #0009;
+        font-size: 12px;
+      }
+    }
+
+    .col-rank {
+      justify-content: left;
+
+      .wrap-value {
+        em {
+          margin-left: 48px;
+        }
+      }
+    }
+
+    .col-wound {
+      font-size: 14px;
+
+      .damaged {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        font-size: 14px;
+      }
+    }
+
+    .col-reward {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      flex-direction: row;
+      gap: 4px;
+      padding: 16px;
+
+      > div {
+        cursor: pointer;
+      }
+
+      &--items {
+        padding-right: 0;
+        column-gap: 4px;
+      }
+    }
+
+    .col-battle {
+      justify-content: center !important;
+      align-items: center;
+      column-gap: 8px;
+      font-size: 14px;
+      color: #f00;
+      font-weight: 700;
+
+      div {
+        border-top: 1px solid #ffffff1a;
+      }
+
+      .damaged {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &.is-battle {
+    div[class*=col-] {
+      &:not(:first-of-type) {
+        border-left: 1px solid #ffffff1a;
+      }
+    }
+
+    .list-raid-result {
+      > li {
+        background-image: none;
+        background-color: #141437;
+        color: #fff;
+
+        > div[class*=col-] {
+          border-top: solid 1px rgba(#fff, .1);
+        }
+
+
+        &.is-highlight {
+          background-color: transparent;
+
+          &::before {
+            border: 1px solid transparent;
+            border-image-source: linear-gradient(95deg, #ffe600 0%, #a90 50%, #ffe600 100%);
+            border-image-slice: 1;
+          }
+        }
+      }
+
+      .wrap-value {
+        em,
+        .bid-rank {
+          color: #fff;
+          opacity: 0.5;
+        }
+      }
+
+      .col-score {
+        .mirage-score {
+          &::before {
+            background-color: #fff;
+          }
+        }
+      }
+
+      .col-price,
+      .col-score {
+        .col-title {
+          small {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .mirage-result-list {
+    div[class*=col-] {
+      padding: 8px 15px 8px 16px;
+      min-height: 80px;
+
+      &:not(:first-of-type) {
+        border-left: 1px solid #0000001a;
+      }
+
+      .wrap-value {
+        align-items: flex-start !important;
+      }
+    }
+
+    .list-raid-result {
+      > li {
+        flex-direction: row;
+        max-height: 80px;
+
+        .name {
+          font-weight: bold;
+        }
+
+        .col-title {
+          display: none;
+        }
+
+        .col-battle {
+          justify-content: center !important;
+        }
+      }
+    }
+
+    .mobile-disable {
+      display: flex !important;
+    }
+
+    .col-rank,
+    .col-battle {
+      flex: 1;
+    }
+
+    .col-score,
+    .col-price,
+    .col-wound,
+    .col-reward {
+      width: 16.5%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .list-raid-result {
+      .col-reward {
+        min-width: 164px;
+
+        &--items {
+          padding: 0;
+        }
+      }
+    }
+
+    &.is-battle {
+      .list-raid-result {
+        > li {
+          > div[class*=col-] {
+            border-top: none;
+          }
+        }
+      }
+    }
+  }
+}

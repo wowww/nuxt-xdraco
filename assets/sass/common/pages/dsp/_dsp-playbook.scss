@@ -1,0 +1,658 @@
+.dsp-playbook {
+  --section-inner-padding: 24px;
+  --section-inner-width: 960px;
+
+  padding-top: 54px;
+  min-height: 100vh;
+  color: var(--content-color);
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-20px);
+    top: 20px;
+    height: 359px;
+    background: url('https://file.mir4global.com/xdraco/img/mobile/playbook/playbook-topbg.webp') 50% 0 / 960px 359px no-repeat;
+    transition: opacity 0.3s ease-in-out 0.2s, transform 0.3s ease-out;
+    z-index: 1;
+  }
+
+  .section {
+    padding: 0 var(--section-inner-padding);
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+
+    &__title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: normal;
+      color: #fff;
+    }
+
+    &__desc {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.43;
+      margin-top: 24px;
+    }
+  }
+
+  .wrap-define {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__content {
+      flex: 1;
+      margin-top: 40px;
+
+      dt {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.25;
+        color: #fff;
+      }
+
+      dd {
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__desc {
+      font-size: 12px;
+      line-height: 1.33;
+    }
+  }
+
+  .wrap-formula {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .section-main {
+    padding: 0;
+    max-width: inherit;
+
+    &__inner {
+      width: 100%;
+
+      &:after {
+        content: '';
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 240px;
+        opacity: 0;
+        background: url('https://file.mir4global.com/xdraco/img/mobile/playbook/playbook-main.webp') 50% 0 / 870px 240px no-repeat;
+        transition: opacity 0.6s ease-in-out 0.2s, transform 0.6s ease-out;
+        transform: translateY(-20px);
+        z-index: 2;
+      }
+
+      .wrap-title {
+        max-width: var(--intro-draco-maxwidth);
+        min-height: 238px;
+        padding: 64px 24px 40px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .wrap-title {
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+
+    &__title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: -1px;
+      word-break: break-all;
+
+      &.line-break {
+        font-size: 24px;
+        letter-spacing: -2px;
+      }
+    }
+
+    &__desc {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-top: 16px;
+    }
+  }
+
+  .section-basic {
+    &__inner {
+      padding: 24px 0 80px;
+    }
+  }
+
+  .section-round {
+    &__inner {
+      padding: 0 0 80px;
+    }
+
+    &__list {
+      padding-left: 0;
+      list-style: none;
+
+      &__item {
+        img {
+          display: block;
+          margin-top: 24px;
+        }
+      }
+
+      &__title {
+        font-size: 16px;
+        color: #fff;
+        line-height: 1.25;
+        margin-top: 40px;
+      }
+
+      &__desc {
+        font-size: 12px;
+        line-height: 1.33;
+        margin-top: 24px;
+      }
+    }
+  }
+
+  .section-algorithm {
+    &__inner {
+      padding: 0 0 80px;
+
+      .wrap-formula {
+        margin-top: 40px;
+
+        small {
+          display: block;
+          font-size: 12px;
+          line-height: 2;
+          font-weight: normal;
+        }
+
+        &__img {
+          display: block;
+          margin: 32px auto 0;
+          margin: 40px auto 0;
+        }
+
+        &__infograph {
+          display: block;
+          margin: 40px auto 0;
+        }
+      }
+    }
+  }
+
+  .section-winning {
+    &__inner {
+      padding: 0 0 80px;
+
+      .wrap-formula {
+        margin-top: 64px;
+
+        small {
+          display: block;
+          font-size: 12px;
+          font-weight: normal;
+        }
+
+        &__img {
+          display: block;
+          margin: 40px auto;
+        }
+
+        .wrap-graph {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          padding: 0;
+          margin: 40px 0 0;
+
+          &__item {
+            flex: 1;
+
+            &__desc {
+              min-height: 40px;
+              font-size: 12px;
+              line-height: 1.67;
+            }
+          }
+        }
+      }
+    }
+
+    .wrap-define {
+      &__content {
+        margin-top: 24px;
+
+        small {
+          display: block;
+          font-size: 12px;
+          font-weight: normal;
+          margin-top: 16px;
+        }
+      }
+
+      &__desc {
+        margin-top: 16px;
+        font-size: 12px;
+        line-height: 1.33;
+      }
+    }
+  }
+
+  .section-rewards {
+    &__inner {
+      padding: 0 0 24px;
+    }
+
+    .wrap-define {
+      flex-direction: column !important;
+
+      &__content {
+        position: relative;
+        margin-top: 64px;
+      }
+
+      &__desc {
+        padding-bottom: 24px;
+        margin-top: 16px;
+      }
+
+      &__img {
+        text-align: center;
+      }
+    }
+
+    .wrap-formula {
+      small {
+        display: block;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 2;
+      }
+
+      &__img {
+        display: block;
+        margin: 40px auto 0;
+
+        &--winner {
+          display: block;
+          margin: 64px auto 0;
+        }
+      }
+    }
+  }
+
+  .section-youtube {
+    margin: 80px 0;
+    position: relative;
+    width: 100%;
+
+    &__content {
+      position: relative;
+      margin-top: 0;
+      padding-top: 56.25%;
+      height: 0;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.init-playbook {
+  .dsp-playbook {
+    &:after {
+      opacity: 1;
+      transform: translate(0);
+    }
+
+    .section-main {
+      &__inner {
+        &:after {
+          opacity: 1;
+          transform: translate(0);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .dsp-playbook {
+    padding-top: var(--navdsp-height);
+
+    &:after {
+      top: 0;
+      height: 600px;
+      background: url('https://file.mir4global.com/xdraco/img/desktop/playbook/playbook-topbg.webp') 50% 0 / 1600px 600px no-repeat;
+    }
+
+    .section {
+      max-width: none;
+      margin-top: 0;
+
+      &__inner {
+        padding: 0 24px;
+        box-sizing: content-box;
+      }
+
+      &__title {
+        font-size: 40px;
+      }
+
+      &__desc {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+
+    .init-playbook & {
+      &:after {
+        opacity: 1;
+        transform: translate(0);
+      }
+
+      .section-main {
+        &__inner {
+          &:after {
+            opacity: 1;
+            transform: translate(0);
+            z-index: 2;
+          }
+        }
+      }
+    }
+
+    .wrap-define {
+      flex-direction: row;
+
+      &__content {
+        dt {
+          font-size: 20px;
+          line-height: 1;
+        }
+      }
+
+      &__desc {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+
+    .section-main {
+      &__inner {
+        &:after {
+          height: 441px;
+          z-index: 1;
+          background: url('https://file.mir4global.com/xdraco/img/desktop/playbook/playbook-main.webp') 50% 0 / 1600px 441px no-repeat;
+        }
+
+        .wrap-title {
+          max-width: none;
+          width: var(--section-inner-width);
+          min-height: 300px;
+          padding: 62px 0 56px;
+          z-index: 2;
+        }
+      }
+    }
+
+    .wrap-title {
+      &__title {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 72px;
+
+        &.line-break {
+          font-size: 54px;
+          letter-spacing: -2px;
+        }
+      }
+
+      &__desc {
+        font-size: 32px;
+        line-height: 1.13;
+      }
+    }
+
+    .section-basic {
+      &__inner {
+        padding: 93px 0 120px;
+      }
+    }
+
+    .section-round {
+      &__inner {
+        padding: 0 0 120px;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+        justify-content: space-between;
+        width: 100%;
+
+        &__item {
+          max-width: 267px;
+          margin-left: 80px;
+
+          &:first-child {
+            margin-left: 0;
+
+            img {
+              width: 230px;
+            }
+          }
+
+          &:nth-child(2) {
+            img {
+              width: 262px;
+            }
+          }
+
+          &:nth-child(3) {
+            img {
+              width: 267px;
+            }
+          }
+
+          img {
+            margin-top: 40px;
+          }
+        }
+
+        &__title {
+          margin-top: 0;
+          font-size: 20px;
+          line-height: 1;
+        }
+
+        &__desc {
+          margin-top: 40px;
+          font-size: 16px;
+          line-height: 1.25;
+        }
+      }
+    }
+
+    .section-algorithm {
+      &__inner {
+        padding: 0 0 120px;
+
+        .text-desc {
+          max-width: 720px;
+        }
+
+        .wrap-formula {
+          margin-top: 64px;
+
+          &__img {
+            content: url('https://file.mir4global.com/xdraco/img/desktop/playbook/formula.webp');
+            width: 662px;
+            margin: 10px auto 0 0;
+          }
+
+          &__infograph {
+            width: 960px;
+            height: 468px;
+            content: url('https://file.mir4global.com/xdraco/img/desktop/playbook/formula-graph.webp');
+            display: inline-block;
+            margin-top: 64px;
+          }
+        }
+      }
+    }
+
+    .section-winning {
+      &__inner {
+        padding: 0 0 120px;
+
+        .text-desc {
+          max-width: 720px;
+        }
+
+        .wrap-formula {
+          &__img {
+            content: url('https://file.mir4global.com/xdraco/img/desktop/playbook/formula-odds.png');
+            display: inline-block;
+            width: 592px;
+            margin-top: 8px;
+          }
+
+          .wrap-graph {
+            justify-content: space-between;
+            flex-direction: row;
+
+            &__item {
+              max-width: 440px;
+              img {
+                width: 420px;
+              }
+            }
+          }
+        }
+      }
+
+      .wrap-define {
+        margin-top: 120px;
+        justify-content: space-between;
+
+        &__content {
+          max-width: 267px;
+          margin-top: 0;
+        }
+
+        &__desc {
+          font-size: 16px;
+          line-height: 1.38;
+        }
+      }
+    }
+
+    .section-rewards {
+      .section__desc {
+        max-width: 720px;
+        padding-bottom: 80px;
+      }
+
+      &__inner {
+        padding: 0 0 120px;
+      }
+
+      .wrap-define {
+        margin-top: 62px;
+
+        &__img {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+
+        &__content {
+          dd {
+            position: relative;
+          }
+          &:first-child {
+            .wrap-define__img {
+              top: -72px;
+            }
+
+            dd {
+              height: 220px;
+            }
+
+            img {
+              width: 460px;
+            }
+          }
+
+          &:nth-child(2) {
+            margin-top: 80px;
+          }
+        }
+
+        &__desc {
+          max-width: 440px;
+        }
+      }
+
+      .wrap-formula {
+        margin-top: 64px;
+        position: relative;
+
+        &__img {
+          content: url('https://file.mir4global.com/xdraco/img/desktop/playbook/formula-reward.png');
+          width: 547px;
+          margin: 8px auto 0 0;
+
+          &--winner {
+            position: absolute;
+            top: -409px;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .section-youtube {
+      margin-top: 120px;
+
+      &__content {
+        max-width: 960px;
+        max-height: 536px;
+        padding-top: 536px;
+        margin: 0 auto;
+
+        iframe {
+          width: 960px;
+          height: 536px;
+        }
+      }
+    }
+  }
+}

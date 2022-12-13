@@ -1,0 +1,205 @@
+.is-desktop {
+  .header {
+    --header-btn-width: 44px;
+    --header-btn-height: 48px;
+
+    visibility: visible;
+    position: fixed;
+    background-color: transparent !important;
+    box-shadow: none !important;
+
+    &.v-toolbar {
+      transition: height 400ms ease, margin-top 400ms ease, transform 400ms ease, backdrop-filter 600ms ease-out, background-color 600ms ease-out;
+
+      .v-toolbar__content {
+        height: inherit !important;
+      }
+    }
+
+    .v-toolbar__content {
+      display: block;
+      padding: 0;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-profile {
+      top: 0 !important;
+      left: auto !important;
+      right: 24px;
+      border-radius: 0;
+      transform: translateY(calc(var(--header-height) + 8px));
+      transition: transform 400ms ease;
+    }
+
+    .btn-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: visible;
+      padding: 0 8px;
+      min-width: auto;
+      min-width: var(--header-btn-width);
+      height: var(--header-btn-height);
+      box-sizing: border-box;
+
+      &.btn-text {
+        flex: none;
+        column-gap: 6px;
+        min-width: auto;
+        font-size: 14px;
+        font-weight: 700;
+
+        &[target="_blank"] {
+          &::after {
+            content: "";
+            display: block;
+            width: 9px;
+            height: 9px;
+            background: url("https://file.mir4global.com/xdraco/img/desktop/icon-arrow.png") 50% 50% / contain no-repeat;
+          }
+        }
+      }
+
+      &.download {
+        margin-right: 24px;
+        width: auto;
+        font-size: 16px;
+        font-weight: 700;
+        white-space: nowrap;
+
+        &::after {
+          content: "";
+          display: block;
+          margin-left: 6px;
+          width: 20px;
+          height: 20px;
+          background: url("https://file.mir4global.com/xdraco/img/desktop/header/icon-download.webp") 50% 50% / cover no-repeat;
+        }
+      }
+
+      &.discord {
+        line-height: 0;
+        font-size: 0;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 24px;
+          height: 20px;
+          background: url("https://file.mir4global.com/xdraco/img/desktop/header/icon-discord.webp") 0 50% / contain no-repeat;
+        }
+      }
+
+      &.language {
+        &::before {
+          content: '';
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: url("https://file.mir4global.com/xdraco/img/desktop/header/icon-language.webp") 50% 50% / cover no-repeat;
+        }
+      }
+
+      &.account {
+        position: relative;
+        font-size: 0;
+
+        &::after {
+          content: '';
+          display: block;
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          background: rgba(#fff, .3) url("https://file.mir4global.com/xdraco/img/desktop/header/icon-profile.webp") 50% 50% / 24px 24px no-repeat;
+        }
+
+        > img {
+          position: absolute;
+          top: calc(50% - 16px);
+          left: calc(50% - 16px);
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+        }
+
+        &[data-get-activity="true"] {
+          @include iconActivity($top: 5px, $right: 5px);
+
+          &::after {
+            background-image: none;
+          }
+        }
+      }
+    }
+
+    &.v-app-bar--is-scrolled {
+      --header-height: 44px;
+      --header-btn-height: 44px;
+
+      .gnb__bi {
+        min-width: 128px;
+
+        .link::before {
+          transform: scale(.72);
+        }
+      }
+
+      .gnb__list {
+        .v-list-item {
+          min-width: auto;
+
+          &::before {
+            opacity: 0;
+          }
+
+          &[target=_blank]::after {
+            margin-left: -2px;
+            transform: scale(.8);
+          }
+
+          .text {
+            transform: scale(.8);
+          }
+        }
+      }
+
+      &.headroom--unpinned {
+        transform: translateY(calc(-1 * var(--header-height))) !important;
+      }
+
+      &.headroom--not-top {
+        transition: background-color 400ms ease;
+        background-color: rgba(#161630, .6) !important;
+        backdrop-filter: blur(5px);
+
+        .subnav {
+          --navdsp-height: 60px;
+
+          &.dsp {
+            .logo {
+              height: 36px;
+            }
+          }
+
+          &.exchange {
+            .logo {
+              height: 20px;
+            }
+          }
+        }
+      }
+
+      .show-notification-global & {
+        &.headroom--unpinned {
+          &:not(.headroom--not-top) {
+            transform: translateY(calc(-1 * (var(--header-height) + var(--notification-global-height)))) !important;
+          }
+        }
+      }
+    }
+  }
+}

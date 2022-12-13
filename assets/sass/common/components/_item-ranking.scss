@@ -1,0 +1,528 @@
+@import '~@/assets/sass/mixin';
+
+.item-ranking {
+  --ranking-margin-y: 16px;
+  --ranking-padding: 24px 20px;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  background-color: rgba(#fff, 0.05);
+  padding: var(--ranking-padding);
+  margin-top: var(--ranking-margin-y);
+  box-shadow: inset 0 1px 0 0 rgba(#fff, 0.1);
+  gap: 12px;
+
+  &__rank {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 8px;
+    z-index: 1;
+    padding-top: 13px;
+    width: 58px;
+    height: 64px;
+    line-height: 1.1;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.32px;
+    background: url("https://file.mir4global.com/xdraco/img/common/item-ranking/bg-rank.webp") 0 0 /
+        cover no-repeat;
+    box-sizing: border-box;
+
+    .number {
+      font-size: 24px;
+      letter-spacing: -0.48px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+
+  &__name {
+    display: none;
+    .item-name {
+      line-height: 1.2;
+      color: #fff;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: -0.28px;
+    }
+
+    .item-category {
+      margin-top: 4px;
+      line-height: 1.1;
+      font-size: 14px;
+    }
+  }
+
+  .card {
+    margin: 0 auto;
+  }
+
+  .wrap-define-detail {
+    display: none;
+  }
+
+  .define-trade {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    dt {
+      display: block;
+      line-height: 1.3;
+      font-size: 14px;
+      color: #fff;
+    }
+    dd {
+      color: #fff;
+      line-height: normal;
+      font-size: 14px;
+    }
+    .character {
+      display: none;
+
+      img {
+        vertical-align: top;
+      }
+    }
+
+    &.serial-number {
+      dd {
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+
+    &.price {
+      flex-direction: row;
+      .price {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        font-size: 18px;
+        letter-spacing: -0.18px;
+        align-items: center;
+        column-gap: 4px;
+        line-height: 1;
+        color: #fff;
+
+        .ico-sm {
+          padding-left: 20px;
+
+          &::before {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      strong {
+        font-size: 18px;
+        letter-spacing: -0.18px;
+      }
+
+      .us-dollar {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 12px;
+        text-align: right;
+        margin-top: 1px;
+      }
+    }
+  }
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &.nft-ranking {
+    padding: 24px 20px 30px;
+    .define-scorp {
+      padding: 18px 0 0 0;
+
+      li {
+        list-style-type: none;
+        text-align: center;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          font-size: 12px;
+          color: #fff;
+          column-gap: 2px;
+
+          &:after {
+            content: "";
+            width: 24px;
+            height: 24px;
+            background: url("https://file.mir4global.com/xdraco/img/common/item-ranking/ico-outlink.webp")
+            0 0 / cover no-repeat;
+          }
+        }
+      }
+    }
+
+    .define-trade {
+      &.price {
+        .price {
+          &::before {
+            content: "";
+            width: 17px;
+            height: 17px;
+            background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-wemix-credit-logo.webp")
+            0 0 / cover no-repeat;
+          }
+        }
+      }
+      &.seller {
+        dd {
+          display: inline-flex;
+          flex-direction: row-reverse;
+          font-weight: normal;
+          &.character {
+            display: none;
+          }
+          .data-info {
+            display: inline-flex;
+            flex-direction: inherit;
+            align-items: center;
+            font-size: 14px;
+            color: rgba(#fff, 0.5);
+            font-weight: normal;
+            span {
+              margin: 0 4px;
+              &:first-child {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+        & + .define-trade {
+          dd {
+            text-align: right;
+            font-size: 14px;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+
+    .item-ranking__rank {
+      left: 18px;
+      padding-top: 18px;
+      background: url("https://file.mir4global.com/xdraco/img/common/item-ranking/bg-rank_red.webp") 0 0 /
+        cover no-repeat;
+      font-size: 16px;
+      color: #fff;
+      font-weight: bold;
+      em {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@include pc {
+  .item-ranking {
+    --ranking-padding: 24px 0 24px 32px;
+    --ranking-height: 392px;
+
+    flex-direction: row;
+    gap: 40px;
+    padding: var(--ranking-padding);
+    height: var(--ranking-height);
+    color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    box-shadow: none;
+
+    &__name {
+      display: block;
+    }
+
+    .wrap-define-detail {
+      display: flex;
+      margin-top: 16px;
+    }
+
+    .define-detail {
+      position: relative;
+      padding: 9px 16px;
+      line-height: 1.1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(#fff, 0.15);
+      }
+      dt {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 12px;
+      }
+      dd {
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: -0.36px;
+      }
+      .grade {
+        text-transform: uppercase;
+        &.grade-2 {
+          color: var(--color-uncommon);
+        }
+        &.grade-3 {
+          color: var(--color-rare);
+        }
+        &.grade-4 {
+          color: var(--color-epic);
+        }
+        &.grade-5 {
+          color: var(--color-legendary);
+        }
+      }
+      &:first-of-type {
+        padding-left: 0;
+
+        &::before {
+          content: none;
+        }
+      }
+    }
+    .wrap-define-trade {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 23px;
+    }
+    .define-trade {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 33.333%;
+
+      dt {
+        display: block;
+        margin-bottom: 4px;
+        line-height: 1.166;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      dd {
+        line-height: 1.33;
+        font-size: 18px;
+      }
+
+      .character {
+        display: block;
+      }
+
+      &.serial-number {
+        display: none;
+      }
+      &.price {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 16px;
+        border-bottom: 1px solid rgba(#fff, 0.2);
+        padding-bottom: 16px;
+        width: 100%;
+
+        strong {
+          font-size: 32px;
+        }
+
+        .price {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: row;
+          font-size: 32px;
+          letter-spacing: -0.64px;
+          font-weight: 700;
+
+          .ico-sm {
+            padding-left: 40px;
+
+            &::before {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+
+        .us-dollar {
+          margin-top: 2px;
+        }
+      }
+    }
+
+    .define-scorp {
+      display: flex;
+      justify-content: flex-end;
+      width: 33.333%;
+    }
+
+    &.nft-ranking {
+      .define-detail:first-of-type {
+        padding-left: 0;
+      }
+      .wrap-define-detail {
+        margin-top: 29px;
+      }
+      .wrap-define-trade {
+        margin-top: 29px;
+      }
+      .define-trade.price {
+        padding-bottom: 24px;
+        margin-bottom: 12px;
+      }
+      .item-ranking__rank {
+        background: url("https://file.mir4global.com/xdraco/img/common/item-ranking/bg-rank_red.webp") 0 0 /
+        cover no-repeat;
+        color: #fff;
+        left: 0;
+      }
+      .define-detail {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0;
+        white-space: nowrap;
+        padding: 5px 24px;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          justify-content: center;
+          flex: 0;
+        }
+        dt {
+          margin-bottom: 0;
+          height: 14px;
+        }
+        dd {
+          display: flex;
+          align-items: center;
+          height: 40px;
+          font-size: 24px;
+        }
+      }
+
+      .define-trade {
+        &.price {
+          .price {
+            font-size: 28px;
+
+            &::before {
+              content: "";
+              width: 33.3px;
+              height: 33.3px;
+              background: url("https://file.mir4global.com/xdraco/img/common/item-ranking/ico-wemix.webp")
+              0 0 / cover no-repeat;
+            }
+          }
+        }
+        &.seller {
+          dd {
+            font-size: 14px;
+          }
+        }
+        dd {
+          font-size: 12px;
+          .data-info {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 12px;
+            color: rgba($color: #fff, $alpha: 0.5);
+            span {
+              margin-left: 8px;
+            }
+          }
+        }
+        dt {
+          margin-bottom: 6px;
+          line-height: 0.766;
+        }
+      }
+    }
+  }
+
+  .nft {
+    .item-ranking__rank {
+      top: 12px;
+      left: 21px;
+    }
+    .exd-ranking .tab-rounds {
+      margin-bottom: 46px;
+    }
+    .define-trade.seller {
+      width: 46%;
+      .character {
+        margin: -1px 6px 0 0;
+      }
+    }
+    .define-trade.seller,
+    .define-trade.seller + .define-trade {
+      dt {
+        margin-bottom: 7px;
+      }
+      & + ul {
+        padding: 0;
+        li {
+          list-style-type: none;
+          a {
+            position: relative;
+            font-size: 12px;
+            font-weight: normal;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .exd-ranking .item-ranking {
+      margin-top: 0;
+    }
+  }
+  .nft-history {
+    .exd-ranking.exchange-list {
+      .wrap-suggest {
+        margin-right: -16px;
+        margin-left: -16px;
+      }
+
+      .exd-ranking-list {
+        margin-right: 0;
+        margin-left: 0;
+
+        .item-ranking.nft-ranking {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@include large-pc {
+  .collectible-history,
+  .nft-history {
+    .exd-ranking.exchange-list {
+      .wrap-suggest {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      .exd-ranking-list {
+        margin-top: 24px;
+      }
+    }
+  }
+}

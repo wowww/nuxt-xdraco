@@ -1,0 +1,214 @@
+.dialog-login {
+  .content {
+    padding: 32px;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    margin: 88px 0 16px;
+
+    em {
+      @include hide-text;
+    }
+    &::before {
+      background: url('https://file.mir4global.com/xdraco/img/mobile/popup/bi-mir4.webp') 0 0 / cover
+      no-repeat;
+    }
+  }
+  .sub-title {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: -0.14px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.sns-provider {
+  position: absolute;
+  bottom: 100px;
+  left: 32px;
+  right: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+
+  .accept-cookie-title {
+    font-size: 18px !important;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .accept-desc {
+    margin-top: -8px;
+    font-size: 14px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.43;
+    letter-spacing: -0.14px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .btn-agree {
+    --btn-fontsize: 18px;
+    --btn-color: #000;
+    --font-weight: 700;
+
+    display: flex;
+    border-radius: 90px;
+    width: 100%;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--btn-fontsize);
+    color: var(--btn-color);
+    text-align: center;
+    font-weight: normal;
+
+    &.btn-accept {
+      background-color: #2de677;
+    }
+
+    &.btn-decline {
+      border: 1px solid #00000010;
+    }
+  }
+
+  .btn-sns {
+    --btn-fontsize: 18px;
+    --btn-color: #000;
+    --font-weight: 700;
+
+    display: flex;
+    border-radius: 90px;
+    width: 100%;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-size: var(--btn-fontsize);
+    color: var(--btn-color);
+    text-align: center;
+    border: 1px solid #00000010;
+    font-weight: normal;
+
+    strong {
+      font-weight: var(--font-weight);
+      padding-left: 4px;
+    }
+    &::before {
+      @include pseudoIcon($width: 24px, $height: 24px, $margin: 0 8px 0 0);
+    }
+    &.btn-google {
+      &::before {
+        background: url('https://file.mir4global.com/xdraco/img/mobile/popup/bi-google.webp') 100% 100% /
+            contain no-repeat;
+      }
+    }
+    &.btn-apple {
+      &::before {
+        margin-top: -1px;
+        background: url('https://file.mir4global.com/xdraco/img/mobile/popup/bi-apple.webp') 100% 100% /
+            contain no-repeat;
+      }
+    }
+
+    &.btn-facebook {
+      &::before {
+        background: url('https://file.mir4global.com/xdraco/img/mobile/popup/bi-facebook.webp') 100%
+        100% / contain no-repeat;
+      }
+    }
+  }
+}
+
+.is-desktop {
+  .dialog-login {
+    .title {
+      &::before {
+        @include pseudoIcon($width: 126px, $height: 40px, $margin: 0 auto);
+        background: url('https://file.mir4global.com/xdraco/img/desktop/popup/bi-mir4.webp') 0 0 / cover no-repeat;
+      }
+    }
+
+    .sns-provider {
+      margin-bottom: 68px;
+    }
+  }
+
+  .sns-provider {
+    margin-top: 72px;
+
+    .btn-sns {
+      &::before {
+        @include pseudoIcon($width: 24px, $height: 24px, $margin: 0 8px 0 0);
+      }
+      &.btn-google {
+        &::before {
+          background: url('https://file.mir4global.com/xdraco/img/desktop/popup/bi-google.webp') 100% 100% / contain no-repeat;
+        }
+      }
+      &.btn-apple {
+        &::before {
+          margin-top: -1px;
+          background: url('https://file.mir4global.com/xdraco/img/desktop/popup/bi-apple.webp') 100% 100% / contain no-repeat;
+        }
+      }
+
+      &.btn-facebook {
+        &::before {
+          background: url('https://file.mir4global.com/xdraco/img/desktop/popup/bi-facebook.webp') 100% 100% / contain no-repeat;
+        }
+      }
+    }
+  }
+}
+
+.is-mobile {
+  .dialog-login {
+    --dialog-bgcolor: #ffffff;
+    --v-xsmall: 16px;
+
+    background-color: var(--dialog-bgcolor);
+    margin: 0;
+    border-radius: 0;
+    max-width: 100% !important;
+    min-height: 100%;
+
+    .btn-close {
+      top: var(--v-xsmall);
+      right: var(--v-xsmall);
+    }
+
+    .title {
+      &::before {
+        content: '';
+        display: block;
+        width: 126px;
+        height: 40px;
+        background: url('https://file.mir4global.com/xdraco/img/mobile/popup/bi-mir4.webp') 0 0 / cover
+        no-repeat;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .sns-provider {
+    position: absolute;
+    bottom: 100px;
+    left: 32px;
+    right: 32px;
+    margin: inherit;
+
+    .btn-sns {
+      &::before {
+        @include pseudoIcon($width: 24px, $height: 24px, $margin: 0 8px 0 0);
+      }
+    }
+  }
+}

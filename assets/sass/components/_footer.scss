@@ -1,0 +1,233 @@
+@import "~@/assets/sass/mixin";
+
+.footer {
+  --footer-height: 120px;
+  --footer-bgcolor: #0b0b2c;
+
+  position: relative;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--footer-bgcolor);
+
+  &__inner {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: var(--footer-height);
+    line-height: 18px;
+    color: #fff;
+  }
+
+  &__list-external {
+    display: flex;
+    visibility: visible;
+    padding-left: 0;
+
+    li {
+      list-style: none;
+      margin-left: clamp(10px, 1.5vw, 30px);
+      min-width: 56px;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        min-width: 56px;
+        padding: 0 10px;
+        height: 100%;
+
+        &[target='_blank'] {
+          &::after {
+            content: '';
+            display: block;
+            margin-left: 6px;
+            width: 9px;
+            height: 9px;
+            background: url('https://file.mir4global.com/xdraco/img/common/footer/icon-arrow.png') 0 0 / cover no-repeat;
+          }
+        }
+
+        img {
+          min-width: 56px;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 0;
+
+    &::before {
+      content: '';
+      display: block;
+      margin-right: 8px;
+      width: 51px;
+      height: 10px;
+      background: url('https://file.mir4global.com/xdraco/img/common/footer/bi-wemade.webp') 50% 0 / auto 100% no-repeat;
+    }
+  }
+
+  .powered-by {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    font-size: 12px;
+    margin-bottom: 0;
+
+    .brand-identity {
+      display: flex;
+      align-items: center;
+      column-gap: 2px;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 15px;
+        height: 15px;
+        mask: url('https://file.mir4global.com/xdraco/img/common/hsp-my-stake/currency-wemix.svg') 50% 50% / auto 100% no-repeat;
+        background-color: rgba(#fff, .7);
+      }
+    }
+  }
+
+  .wrap-links {
+    display: flex;
+    column-gap: 32px;
+
+    .link {
+      display: flex;
+      align-items: center;
+      height: 32px;
+      color: inherit;
+      font-size: 12px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    color: rgba(#fff, .3);
+    flex-direction: column;
+    height: auto;
+    line-height: 20px;
+  }
+}
+
+.init-intro-hydra,
+.init-intro-draco {
+  .footer {
+    margin-top: 96px;
+    bottom: 96px;
+  }
+}
+
+.init-mirage {
+  .footer {
+    margin-top: 230px;
+    bottom: 124px;
+  }
+
+  &.init-mirage-valley {
+    .footer {
+      margin-top: 128px;
+    }
+  }
+}
+
+.init-exd-trade {
+  .footer {
+    margin-top: 122px;
+    bottom: 96px;
+  }
+}
+
+.init-nft-trade,
+.init-collectibles-item {
+  .footer {
+    margin-top: 110px;
+    bottom: 96px;
+  }
+}
+
+.init-drain-part1 {
+  .footer {
+    background-color: #68a;
+  }
+}
+
+.init-drain-part2 {
+  .footer {
+    background-color: rgba(90, 95, 147, 0.5);
+  }
+}
+
+.init-inventory-item {
+  .footer {
+    margin-top: 200px;
+    bottom: 178px;
+  }
+}
+
+@include pc {
+  .footer {
+    .bottom {
+      flex-direction: row;
+      height: 32px;
+    }
+  }
+
+  .init-intro-hydra,
+  .init-intro-draco {
+    .footer {
+      margin-top: 125px;
+      bottom: 120px;
+    }
+  }
+
+  .init-exd-trade {
+    .footer {
+      margin-top: 208px;
+      bottom: 96px;
+    }
+  }
+
+  .init-mirage {
+    .footer {
+      margin-top: 222px;
+      bottom: 96px;
+    }
+
+    &.init-mirage-valley {
+      .footer {
+        margin-top: 98px;
+      }
+    }
+  }
+
+  .init-inventory-item {
+    .footer {
+      bottom: 0;
+    }
+  }
+}
+
+@include large-pc {
+  .init-exd-trade {
+    .footer {
+      margin-top: 128px;
+    }
+  }
+}

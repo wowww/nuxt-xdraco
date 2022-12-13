@@ -1,0 +1,409 @@
+@import '~@/assets/sass/mixin';
+
+.wrapper {
+  .banner {
+    --banner-height: 400px;
+    --inner-width: 320px;
+
+    height: var(--banner-height);
+    line-height: normal;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: auto 100%;
+    box-sizing: border-box;
+
+    &__reflect-alliance {
+      background-image: url('https://file.mir4global.com/xdraco/img/mobile/banner-reflect-alliance/bg-banner.webp');
+    }
+
+    &__enhancement {
+      background:  #002 url('https://file.mir4global.com/xdraco/img/desktop/banner-nft-enhancement/bg-banner.webp') 50% / cover no-repeat;
+
+      &--image {
+        padding-top: 151px;
+        max-width: 331px;
+        width: 100%;
+        height: auto;
+        font-size: 0;
+        background: url(https://file.mir4global.com/xdraco/img/mobile/banner-nft-enhancement/bi-banner.webp) 100% / cover no-repeat;
+      }
+
+      .banner__wrapper {
+        row-gap: 14px;
+      }
+    }
+
+    &__boss-raid {
+      background-image: url('https://file.mir4global.com/xdraco/img/mobile/banner-boss-raid/bg-banner.webp'),
+      radial-gradient(circle at 50% 50%, rgba(3, 2, 39, 0.25), #030227 92%);
+
+      &--title {
+        font-size: 0;
+        width: 158px;
+        height: 45px;
+        background: url('https://file.mir4global.com/xdraco/img/mobile/banner-boss-raid/bi-logo.webp')  0 0 / cover no-repeat;
+      }
+
+      .banner-boss-raid__message {
+        font-size: 1.5rem;
+      }
+
+      .banner--link {
+        margin-top: 40px;
+        margin-right: 1rem;
+        margin-left: 1rem;
+      }
+    }
+
+    &__wemix {
+      background-image: url('https://file.mir4global.com/xdraco/img/mobile/banner-wemix-play/bg-banner-open.webp'),
+      linear-gradient(to bottom, #002 0%, #002 39%, #1b1e27 56%, #0c2532 73%), linear-gradient(to bottom, #180b14, #180b14);
+
+      &--wrap {
+        padding-top: 118px;
+        row-gap: 2px;
+        width: var(--inner-width);
+      }
+
+      &--title {
+        max-width: 300px;
+        width: calc(100% - 2rem);
+        height: 56px;
+        font-size: 0;
+        color: transparent;
+        background: url('https://file.mir4global.com/xdraco/img/desktop/banner-wemix-play/img-banner-title.webp') 100% / 100% no-repeat;
+      }
+
+      &--message {
+        color: #000;
+        line-height: 1;
+        font-size: 32px;
+        text-align: center;
+        font-weight: bold;
+
+        &-space {
+          display: block;
+        }
+      }
+    }
+
+    &__mirax {
+      background-image:  url('https://file.mir4global.com/xdraco/img/mobile/banner-mirax/bg-banner-open.webp'),
+      linear-gradient(180deg,#002,#002 39%,#002 56%,#002 73%),linear-gradient(180deg,#002,#002);
+
+      &__wrapper {
+        padding-top: 120px;
+        row-gap: 2px;
+      }
+
+      &--title {
+        margin-bottom: 4px;
+        color: #fff;
+        font-size: 4rem;
+      }
+
+      &--message {
+        color: #fff;
+        font-size: 1.125rem;
+        font-weight: 700;
+        text-align: center;
+        padding: 0 1rem;
+      }
+
+      &--link {
+        &.banner__mirax--link {
+          margin-top: 40px;
+          width: auto;
+        }
+      }
+    }
+
+    &__hsp {
+      background-image: url('https://file.mir4global.com/xdraco/img/mobile/banner-hsp-staking/bg-banner.webp'), linear-gradient(to bottom, #010332 57%, #030356 97%),
+      linear-gradient(to bottom, #010332 0%, #030356 100%);
+
+      .banner__wrapper {
+        row-gap: 2px;
+        padding-top: 140px;
+
+        .banner__hsp--link {
+          margin-top: 20px;
+          padding: 0 15px;
+          width: auto;
+          color: #000;
+          font-size: 1.25rem;
+          border-image-source: linear-gradient(to bottom, #fff 0%, #a70 100%);
+          background-image: linear-gradient(90deg, #ffb800 0%, #e80 23%, #ffd84d 51%, #e80 77%, #ffb800 100%);
+          box-shadow: 0 16px 16px 0 rgb(0 0 0 / 25%);
+
+          &::after {
+            background-image: url('https://file.mir4global.com/xdraco/img/mobile/banner-hsp-staking/icon-link-arrow.webp');
+          }
+        }
+      }
+
+      &--title {
+        font-size: 0;
+        width: 296px;
+        height: 78px;
+        background-image: url(https://file.mir4global.com/xdraco/img/mobile/banner-hsp-staking/title-hsp.webp);
+        background-size: auto 100%;
+      }
+
+      &--message {
+        font-size: 0;
+      }
+    }
+
+    &.banner__enhancement,
+    &.banner__boss-raid,
+    &.banner__mirax {
+      .banner--link {
+        padding: 0 32px 0 44px;
+        border-image-source: linear-gradient(to bottom, #dd714e 0%, #620 100%);
+        border-style: solid;
+        background-image: linear-gradient(to right, #620 0%, #f40 51%, #620 100%);
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 2px;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__image {
+      margin-bottom: 16px;
+      width: 100%;
+      max-width: 240px;
+      height: 76px;
+      color: transparent;
+
+      &--reflect-alliance {
+        background: url('https://file.mir4global.com/xdraco/img/desktop/banner-reflect-alliance/bi-banner.webp') 100% / 100% no-repeat;
+      }
+    }
+
+    &--title {
+      margin: 0;
+      color: #fff;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: bold;
+      width: 100%;
+
+      &-main {
+        display: block;
+        line-height: 1;
+        width: 100%;
+        margin: 0;
+        font-size: 1.5rem;
+
+        &:first-child {
+          margin-bottom: 20px;
+        }
+      }
+
+      &-sub {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+
+    &--link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      margin-right: 1rem;
+      margin-left: 1rem;
+      max-width: 292px;
+      width: calc(100% - 32px);
+      height: 48px;
+      padding: 0;
+      border-style: solid;
+      border-width: 1px;
+      border-image-source: linear-gradient(to bottom, #fff 0%, rgba(255, 255, 255, 0) 100%);
+      border-image-slice: 1;
+      background-image: linear-gradient(45deg, #ff1c53 0%, #ea49f8 44%, #323cff 89%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      box-sizing: border-box;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-left: 4px;
+        background: url(https://file.mir4global.com/xdraco/img/desktop/banner-mirage/icon-link-arrow.webp) no-repeat 0 0/100%;
+
+      }
+    }
+
+    &__message {
+      margin-top: 1px;
+      color: #fff;
+      line-height: 1.15;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: bold;
+
+      &--break {
+        display: block;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .wrapper {
+    .banner {
+      &__enhancement {
+        &--image {
+          padding-top: 43%;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      &__hsp {
+        &--title {
+          width: calc(100% - 2rem);
+          background-size: contain;
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .wrapper {
+    .banner {
+      --banner-height: 460px;
+      --inner-width: 660px;
+
+      &__wrapper {
+        row-gap: 14px;
+      }
+
+      &__image {
+        width: 264px;
+        height: 90px;
+      }
+
+      &--title {
+        &-sub {
+          font-size: 1.5rem;
+        }
+
+        &-main {
+          font-size: 2.75rem;
+          margin-bottom: 20px;
+        }
+
+      }
+
+      &__reflect-alliance {
+        background: #000 url('https://file.mir4global.com/xdraco/img/desktop/banner-reflect-alliance/bg-banner.webp') 100% / cover no-repeat;
+      }
+
+      &__enhancement {
+        &--image {
+          padding: inherit;
+          max-width: 100%;
+          width: 441px;
+          height: 205px;
+          background-image: url('https://file.mir4global.com/xdraco/img/desktop/banner-nft-enhancement/bi-banner.webp');
+        }
+
+        .banner__wrapper {
+          row-gap: 12px;
+        }
+
+        .banner__message {
+          font-size: 1.5rem;
+        }
+      }
+
+      &__boss-raid {
+        background-image: url('https://file.mir4global.com/xdraco/img/desktop/banner-boss-raid/bg-banner.webp'), linear-gradient(to bottom, #030227, #030227),
+        linear-gradient(to bottom, #784237 0%, #96593d 41%, #1b1e27 56%, #0c2532 73%);
+
+        &--title {
+          width: 326px;
+          height: 68px;
+          background: url('https://file.mir4global.com/xdraco/img/desktop/banner-boss-raid/bi-logo.webp') 50% /contain no-repeat;
+        }
+
+        .banner-boss-raid__message {
+          font-size: 3rem;
+        }
+      }
+
+      &__wemix {
+        background-image: url('https://file.mir4global.com/xdraco/img/desktop/banner-wemix-play/bg-banner-open.webp'),
+        linear-gradient(to bottom, #e3d4eb, #dbcee5);
+
+        &--wrap {
+          row-gap: 14px;
+          padding-top: 124px;
+        }
+
+        &--title {
+          max-width: 100%;
+          width: 387px;
+          height: 72px;
+        }
+
+        &--message {
+          font-size: 40px;
+        }
+      }
+
+      &__mirax {
+        background-image: url(https://file.mir4global.com/xdraco/img/desktop/banner-mirax/bg-banner-open.webp),linear-gradient(180deg,#002,#002 39%,#002 56%,#002 73%),linear-gradient(180deg,#002,#002);
+
+        .banner__wrapper {
+          padding-top: 100px;
+          row-gap: 8px;
+        }
+
+        &--title {
+          font-size: 4.5rem;
+        }
+
+        &--message {
+          font-size: 1.5rem;
+        }
+      }
+
+      &__hsp {
+        background-image: url('https://file.mir4global.com/xdraco/img/desktop/banner-hsp-staking/bg-banner.webp'), linear-gradient(to bottom, #010332 57%, #030356 97%),
+          linear-gradient(to bottom, #010332 0%, #030356 100%);
+
+        .banner__wrapper {
+          padding-top: 196px;
+        }
+
+        &--title {
+          width: 684px;
+          height: 72px;
+          background: url('https://file.mir4global.com/xdraco/img/desktop/banner-hsp-staking/title-hsp.webp') no-repeat 50% 50% / 100% auto;
+        }
+
+        &--message {
+          margin-top: 4px;
+          color: #fff;
+          font-size: 1.25rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

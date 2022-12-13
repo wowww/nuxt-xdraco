@@ -1,0 +1,106 @@
+.contents.mirage {
+  .mirage-latest-raid-result {
+    margin: 32px 0;
+
+    .caution-update {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2px;
+      padding: 18px 30px;
+      background-image: linear-gradient(to right, rgb(255 255 255 / 0%) 0%, rgb(255 255 255 / 15%) 49%, rgb(255 255 255 / 0%) 100%);
+      text-align: center;
+
+      .caution-txt {
+        margin: 0 4px 0 0;
+        font-size: 14px;
+        line-height: 1.43;
+        color: #fff;
+      }
+    }
+
+    .raid-date {
+      display: none;
+    }
+
+    .col-reward {
+      min-width: 164px;
+    }
+
+    .wrap-round-raid-info {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+      padding: 16px 12px;
+      background-color: #ffffff1a;
+
+      .mirage-round-raid-info {
+        flex: 1;
+      }
+
+      .btn-mirage {
+        column-gap: 4px;
+        max-width: 160px;
+        padding: 9px 13px;
+        height: auto;
+        font-weight: 400;
+
+        &::before {
+          content: '';
+          flex-shrink: 0;
+          width: 20px;
+          height: 20px;
+          background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-20-ranking.webp') 0 0 / 100% auto no-repeat;
+        }
+      }
+    }
+
+    .wrap-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+
+      .btn {
+        background-color: #ffffff1a;
+
+        .ico-calendar {
+          position: relative;
+          padding-left: 26px;
+          font-size: 14px;
+          line-height: normal;
+          font-weight: normal;
+          letter-spacing: normal;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-18-calendar.webp') 0 0 / 100% auto no-repeat;
+          }
+        }
+      }
+
+      .btn-mirage-history {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 197px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 14px;
+        padding: 16px;
+
+        &:before {
+          content: "";
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+          background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-history-calendar.webp') 0 0 / cover no-repeat;
+        }
+      }
+    }
+  }
+}

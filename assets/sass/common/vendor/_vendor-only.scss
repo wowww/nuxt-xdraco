@@ -1,0 +1,22 @@
+@import '~@/assets/sass/mixin';
+
+@include pc {
+  .viewer-container {
+    .viewer-button {
+      &.viewer-close {
+        top: 0;
+        right: 0;
+        width: auto;
+        height: auto;
+
+        &::before {
+          content: '';
+          position: static;
+          width: 56px;
+          height: 56px;
+          background: url('https://file.mir4global.com/xdraco/img/desktop/btn-close.webp') 50% 50% / cover no-repeat;
+        }
+      }
+    }
+  }
+}

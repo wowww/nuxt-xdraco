@@ -1,0 +1,466 @@
+.subnav {
+  border-bottom: 1px solid rgba(#fff, 0.1);
+  width: 100%;
+
+  .wrap-sub {
+    margin: 0 auto;
+  }
+
+  .nav-dsp {
+    background-color: transparent;
+    color: #fff;
+
+    .v-list-item-group {
+      display: flex;
+    }
+
+    .v-list-item {
+      min-height: var(--navdsp-height);
+      padding: 0;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: normal;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: inherit;
+        bottom: 0;
+        content: '';
+        pointer-events: none;
+        transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+        background-color: red;
+        width: 100%;
+        height: 2px;
+      }
+
+      span {
+        white-space: nowrap;
+      }
+
+      &:not(.v-list-item--active):not(.v-list-item--disabled) {
+        color: rgba(#fff, .4) !important;
+      }
+
+      &.v-list-item--active {
+        &::before,
+        &:hover::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.v-sheet.v-list:not(.v-sheet--outlined) {
+      box-shadow: none;
+    }
+
+    &.v-list {
+      padding: 0;
+    }
+  }
+
+  &.exd {
+    .nav-dsp {
+      .v-list-item {
+        &::before {
+          background-color: var(--color-exd);
+        }
+      }
+    }
+  }
+}
+
+.init--collectible-banner,
+.init-inventory {
+  .subnav {
+    display: none;
+  }
+
+  .subnav-block {
+    display: none;
+  }
+}
+
+.subnav-block {
+  height: var(--navdsp-height);
+}
+
+.subnav {
+  &--detail {
+    padding: 0;
+    height: var(--navdsp-height);
+    transition: all 400ms ease;
+
+    .wrap-sub {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 95%;
+      height: 100%;
+    }
+
+    .logo {
+      display: block;
+      width: 117px;
+      height: 48px;
+      font-size: 0;
+      background: url("https://file.mir4global.com/xdraco/img/desktop/subnav/logo-dsp.webp") 0 0 / auto 100% no-repeat;
+    }
+
+    .nav-dsp {
+      display: flex;
+
+      .v-list-item-group {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+
+      .v-list-item {
+        min-height: 34px;
+        margin-left: 33px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &.exchange {
+      .logo {
+        width: 159px;
+        height: 27px;
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/logo-exchange.webp");
+      }
+    }
+
+    &.exd {
+      .logo {
+        width: 117px;
+        height: 48px;
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/logo-exd.webp");
+      }
+    }
+
+    &.nft {
+      .logo {
+        width: 94px;
+        height: 41px;
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/logo-nft.webp");
+      }
+    }
+
+    &.collectibles {
+      .logo {
+        width: 212px;
+        height: 40px;
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/logo-collectibles.webp");
+      }
+    }
+
+    &.hsp {
+      .logo {
+        width: 107px;
+        height: 44px;
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/logo-hsp.webp");
+      }
+    }
+
+    &.mirage {
+      .logo {
+        width: 139px;
+        height: 44px;
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/logo-mirage.webp");
+      }
+    }
+
+    &.inventory {
+      .logo {
+        width: 350px;
+        height: 44px;
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/logo-inventory.webp");
+      }
+    }
+
+    &.coin {
+      &.light {
+        background-color: transparent !important;
+        border-bottom: 1px solid rgb(0 0 0 / 10%);
+        backdrop-filter: blur(8px);
+
+        .nav-dsp {
+          color: #01113e;
+        }
+
+        .logo {
+          background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/logo-token-light.webp");
+        }
+
+        .v-list-item {
+          &:not(.v-list-item--active):not(.v-list-item--disabled) {
+            color: rgba(#01113e, 0.6) !important;
+          }
+
+          &::before {
+            background-color: #29638b;
+          }
+        }
+
+        .text {
+          color: #01113e;
+
+          &.price {
+            background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/ico-coin-price-light.webp");
+          }
+
+          &.hydra {
+            background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/ico-coin-hydra-light.webp");
+          }
+
+          &.draco {
+            background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/ico-coin-draco-light.webp");
+          }
+
+          &.drain {
+            background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/ico-coin-drain-light.webp");
+          }
+
+          &.hydra.payments {
+            background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/ico-coin-hydra-payment-light.webp");
+          }
+        }
+      }
+
+      .logo {
+        width: 173px;
+        height: 40px;
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/logo-token.webp");
+      }
+
+      .v-list-item {
+        min-height: 40px;
+        font-size: 20px;
+
+        &::before {
+          background-color: #fff;
+        }
+
+        &.v-list-item--active {
+          .text {
+            opacity: 1.0;
+          }
+        }
+      }
+
+      .text {
+        display: flex;
+        align-items: center;
+        height: 32px;
+        padding-left: 32px;
+        background-repeat: no-repeat;
+        background-position: 0 50%;
+        background-size: 28px 28px;
+        opacity: 0.6;
+        color: #fff;
+        justify-content: center;
+        font-size: 18px;
+
+        &.price {
+          background-color: transparent;
+          background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/ico-coin-price.webp");
+        }
+
+        &.hydra {
+          background-color: transparent;
+          background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/ico-coin-hydra.webp");
+        }
+
+        &.draco {
+          background-color: transparent;
+          background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/ico-coin-draco.webp");
+        }
+
+        &.drain {
+          background-color: transparent;
+          background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/ico-coin-drain.webp");
+        }
+
+        &.hydra.payments {
+          background-size: 42px 28px;
+          padding-left: 46px;
+          background-image: url("https://file.mir4global.com/xdraco/img/desktop/subnav/ico-coin-hydra-payment.webp");
+        }
+      }
+    }
+  }
+
+  .headroom--not-top {
+    .subnav {
+      &.coin {
+        &.light {
+          background-color: transparent !important;
+          backdrop-filter: blur(8px);
+        }
+      }
+    }
+  }
+}
+
+.subnav {
+  &--simple {
+    display: block;
+
+    .wrap-sub {
+      position: relative;
+      width: 100%;
+      height: var(--navdsp-height);
+    }
+
+    .nav-dsp {
+      width: 100%;
+
+      .v-list-item-group {
+        width: 100%;
+      }
+
+      .v-list-item {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &.coin {
+      .nav-dsp {
+        .v-list-item {
+          &::before {
+            background-color: #fff;
+          }
+
+          &.v-list-item--active {
+            .text {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .text {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 28px 28px;
+        background-color: transparent;
+        font-size: 0;
+        opacity: 0.4;
+
+        &.price {
+          background-image: url("https://file.mir4global.com/xdraco/img/mobile/subnav/ico-coin-price.webp");
+        }
+
+        &.hydra {
+          background-image: url("https://file.mir4global.com/xdraco/img/mobile/subnav/ico-coin-hydra.webp");
+        }
+
+        &.draco {
+          background-image: url("https://file.mir4global.com/xdraco/img/mobile/subnav/ico-coin-draco.webp");
+        }
+
+        &.drain {
+          background-image: url("https://file.mir4global.com/xdraco/img/mobile/subnav/ico-coin-drain.webp");
+        }
+
+        &.hydra.payments {
+          background-size: 42px 28px;
+          background-image: url("https://file.mir4global.com/xdraco/img/mobile/subnav/ico-coin-hydra-payment.webp");
+        }
+      }
+
+      &.light {
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+        transition: background-color 400ms ease;
+        background-color: rgba(#161630, .6) !important;
+        backdrop-filter: blur(5px);
+
+        .nav-dsp {
+          .v-list-item {
+            &::before {
+              background-color: #000;
+            }
+          }
+        }
+
+        .text {
+          &.price {
+            background-image: url("https://file.mir4global.com/xdraco/img/mobile/subnav/ico-coin-price-light.webp");
+          }
+
+          &.hydra {
+            background-image: url("https://file.mir4global.com/xdraco/img/mobile/subnav/ico-coin-hydra-light.webp");
+          }
+
+          &.draco {
+            background-image: url("https://file.mir4global.com/xdraco/img/mobile/subnav/ico-coin-draco-light.webp");
+          }
+
+          &.drain {
+            background-image: url("https://file.mir4global.com/xdraco/img/mobile/subnav/ico-coin-drain-light.webp");
+          }
+
+          &.hydra.payments {
+            background-image: url("https://file.mir4global.com/xdraco/img/mobile/subnav/ico-coin-hydra-payment-light.webp");
+          }
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .init--collectible-banner,
+  .init-inventory {
+    .subnav {
+      display: block;
+    }
+
+    .subnav-block {
+      display: block;
+    }
+  }
+}
+
+@include large-pc {
+  .subnav {
+    &--detail {
+      padding: 0;
+      height: var(--navdsp-height);
+      transition: all 400ms ease;
+
+      .wrap-sub {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        height: 100%;
+      }
+
+      &.coin {
+        .text {
+          font-size: 20px;
+        }
+
+        .logo {
+          height: 41px;
+        }
+      }
+      .nav-dsp {
+        .v-list-item {
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+}
+

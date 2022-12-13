@@ -1,0 +1,680 @@
+@import '~@/assets/sass/mixin';
+
+.round {
+  --round-padding: 20px;
+  --round-width: 100%;
+  --round-height: 408px;
+  --round-fontcolor: 255, 255, 255;
+  --round-fontsize: 14px;
+  --round-message-color: #ffe600;
+
+  position: relative;
+  border: 1px solid #5e4d8d;
+  border-image-source: linear-gradient(to bottom, #5e4d8d, rgba(#5e4d8d, 0.3));
+  border-image-slice: 1;
+  padding: 32px 20px;
+  margin-bottom: 16px;
+  width: var(--round-width);
+  color: rgba(var(--round-fontcolor), 0.6);
+  font-size: var(--round-fontsize);
+  background-image: linear-gradient(114deg, #362064 27%, #080622 62%, #101541 100%);
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    line-height: 1.18;
+  }
+
+  &__title {
+    margin-right: 48px;
+    line-height: 1.4;
+    font-size: calc(var(--round-fontsize) + 12px);
+    &__category {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  .message {
+    text-align: left;
+  }
+
+  .block2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 24px 0 0;
+    text-align: center;
+    width: 100%;
+    flex: 1;
+  }
+
+  .card {
+    margin: 0 auto;
+  }
+
+  .wrap-button {
+    margin-top: 16px;
+    width: 100%;
+
+    .btn {
+      width: 100%;
+      justify-content: center;
+      .btn-message {
+        margin: 0 10px;
+        line-height: 1.5;
+        font-size: calc(var(--round-fontsize) - 2px);
+        color: var(--round-message-color);
+      }
+    }
+
+    & + .message {
+      margin-top: 8px;
+      line-height: 1.34;
+      color: rgb(var(--round-fontcolor));
+      font-size: calc(var(--round-fontsize) - 2px);
+      text-align: center;
+    }
+  }
+
+  .wrap-tick {
+    margin: 8px 0;
+  }
+
+  .wrap-balance {
+    margin-bottom: 16px;
+    border-top: 1px solid rgba(#fff, .1);
+    padding-top: 4px;
+    width: 100%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__define {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      height: 21px;
+
+      dt {
+        display: flex;
+        align-items: center;
+        line-height: 1.15;
+        color: rgb(var(--round-fontcolor));
+      }
+
+      dd {
+        display: flex;
+        align-items: center;
+        position: relative;
+        line-height: 1.1;
+        font-weight: 700;
+        font-size: calc(var(--round-fontsize) + 4px);
+        color: #fff;
+        letter-spacing: -0.4px;
+
+        &::before {
+          display: block;
+          margin-right: 4px;
+          width: 20px;
+          height: 20px;
+          background-position: 0 0;
+          background-size: auto 100%;
+          background-repeat: no-repeat;
+        }
+
+        span,
+        > em {
+          max-width: 100%;
+          vertical-align: top;
+          @include text-overflow();
+        }
+
+        em {
+          color: #aa00ff;
+        }
+
+        &.odds,
+        &.draco {
+          span {
+            max-width: calc(100% - 20px - 4px);
+          }
+        }
+
+        &.odds {
+          &::before {
+            content: '';
+            background: url('https://file.mir4global.com/xdraco/img/mobile/round/icon-trophy.webp') 0 0 / auto 100% no-repeat;
+          }
+
+          span {
+            max-width: 80px;
+          }
+        }
+
+        &.draco {
+          &::before {
+            content: '';
+            background-image: url('https://file.mir4global.com/xdraco/img/mobile/round/icon-draco.webp');
+          }
+        }
+      }
+    }
+
+    .define-winner {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+
+      dt {
+        @include hidden();
+      }
+
+      dd {
+        margin-left: 6px;
+        color: rgb(var(--round-fontcolor));
+
+        &.thumbs {
+          margin-left: 0;
+          width: 24px;
+          height: 24px;
+          box-sizing: border-box;
+
+          img {
+            display: block;
+            border-radius: 50%;
+            width: 100%;
+          }
+        }
+
+        &.nickname {
+          line-height: 1.333;
+          font-weight: 700;
+          font-size: calc(var(--round-fontsize) + 4px);
+          letter-spacing: -0.18px;
+        }
+
+        &.server {
+          margin-top: 4px;
+          line-height: 1.2;
+        }
+      }
+    }
+
+    &.horizontal {
+      margin-top: 16px;
+      border-width: 0;
+      padding-top: 0;
+      justify-content: center;
+
+      .wrap-balance__define {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 6px;
+        min-width: auto;
+        height: 16px;
+
+        dt {
+          margin-right: 8px;
+          margin-bottom: 0;
+        }
+
+        dd {
+          font-size: var(--round-fontsize);
+
+          &::before {
+            width: 16px;
+            height: 16px;
+          }
+
+          > span {
+            max-width: none;
+          }
+        }
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+
+      & + .title-define-balance {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  .block-border {
+    .wrap-balance {
+      margin-bottom: 0;
+      border-width: 0;
+      padding-top: 0;
+
+      &__define {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+
+        dd {
+          margin-top: 8px;
+        }
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .title-define-balance {
+    overflow: hidden;
+    margin: 8px 0;
+    border-bottom: 1px solid rgba(#fff, 0.1);
+    width: 100%;
+    height: 22px;
+    color: rgba(var(--round-fontcolor), 0.3);
+    font-weight: 400;
+    font-size: calc(var(--round-fontsize) - 2px);
+    text-align: left;
+
+    & + .wrap-balance {
+      border-width: 0;
+      padding-top: 0;
+    }
+  }
+
+  .message-result {
+    line-height: 1.2;
+    font-weight: 700;
+    font-size: calc(var(--round-fontsize) + 16px);
+    color: var(--round-message-color);
+    letter-spacing: -0.32px;
+  }
+
+  &__info {
+    &__msg {
+      margin-bottom: 4px;
+      font-size: calc(var(--round-fontsize) + 6px);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.24px;
+    }
+
+    &__date {
+      &--upcoming {
+        margin-bottom: 4px;
+        line-height: 1.26;
+        font-size: calc(var(--round-fontsize) + 6px);
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.32px;
+        text-align: center;
+      }
+      &--closed {
+        font-size: calc(var(--round-fontsize) - 2px);
+      }
+    }
+  }
+
+  &[aria-current="won"] {
+    &::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      z-index: 1;
+      width: 124px;
+      height: 124px;
+      background: url('https://file.mir4global.com/xdraco/img/mobile/round/bg-badge-winner.webp') 0 0 / cover no-repeat;
+    }
+
+    .round__detail {
+      justify-content: flex-end;
+    }
+
+    .wrap-button {
+      .btn {
+        .emp {
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+.wrap-rounds {
+  &--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    height: 220px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@include pc {
+  .round {
+    --round-padding: 32px;
+    --round-width: 100%;
+    --round-fontsize: 16px;
+
+    padding: var(--round-padding);
+    height: var(--round-height);
+    box-sizing: border-box;
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 272px;
+    }
+
+    .card {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__number {
+      top: 0;
+      right: 0;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 160px;
+
+      &__msg {
+        margin-bottom: 16px;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.24px;
+
+        & + .closed-date {
+          margin-top: -10px;
+        }
+      }
+
+      &__date {
+        &--upcoming {
+          margin-bottom: 16px;
+          line-height: 1.26;
+          font-size: 32px;
+          font-weight: 700;
+          color: #fff;
+          letter-spacing: -0.32px;
+          text-align: center;
+        }
+
+        &--closed {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .block2 {
+      margin-top: 24px;
+      height: 80px;
+      font-size: calc(var(--round-fontsize) - 2px);
+    }
+
+    .block-border {
+      margin-top: 16px;
+      border: 1px solid rgba(#fff, 0.1);
+      border-width: 1px 0;
+      padding: 18px 0 26px;
+    }
+
+    .wrap-button {
+      margin-top: 20px;
+      .btn {
+        height: 56px;
+
+        .btn-message {
+          font-size: var(--round-fontsize);
+        }
+      }
+    }
+    .wrap-tick {
+      margin-bottom: 16px;
+    }
+
+    .wrap-balance {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      width: 100%;
+
+      &__define {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+
+        dt {
+          display: block;
+          margin-bottom: 6px;
+          line-height: 1.15;
+          font-size: calc(var(--round-fontsize) - 2px);
+        }
+
+        dd {
+          display: flex;
+          align-items: center;
+          position: relative;
+          line-height: 1.1;
+          font-weight: 700;
+          font-size: calc(var(--round-fontsize) + 4px);
+          color: #fff;
+          letter-spacing: -0.4px;
+
+          &::before {
+            display: block;
+            margin-right: 4px;
+            width: 25px;
+            height: 24px;
+            background-position: 0 0;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+          }
+
+          span,
+          > em {
+            max-width: 100%;
+            vertical-align: top;
+            @include text-overflow();
+          }
+
+          em {
+            color: #aa00ff;
+            font-size: calc(var(--round-fontsize) + 2px);
+          }
+
+          &.odds,
+          &.draco {
+            span,
+            em {
+              max-width: calc(100% - 24px - 4px);
+            }
+          }
+
+          &.odds {
+            &::before {
+              content: '';
+              background: url('https://file.mir4global.com/xdraco/img/desktop/round/icon-trophy.webp') 0 0 / auto 100% no-repeat;
+            }
+
+            span {
+              max-width: 88px;
+            }
+          }
+
+          &.draco {
+            &::before {
+              content: '';
+              width: 24px;
+              background-image: url('https://file.mir4global.com/xdraco/img/desktop/round/icon-draco.webp');
+            }
+          }
+        }
+      }
+
+      .define-winner {
+        position: relative;
+        padding-left: 48px;
+        min-width: 170px;
+
+        dt {
+          @include hidden();
+        }
+
+        dd {
+          color: rgb(var(--round-fontcolor));
+
+          &.thumbs {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            box-sizing: border-box;
+
+            img {
+              display: block;
+              border-radius: 50%;
+              width: 100%;
+            }
+          }
+
+          &.nickname {
+            line-height: 1.333;
+            font-weight: 700;
+            font-size: calc(var(--round-fontsize) + 2px);
+            letter-spacing: -0.18px;
+          }
+
+          &.server {
+            margin-top: 4px;
+            line-height: 1.2;
+            font-size: calc(var(--round-fontsize) - 4px);;
+          }
+        }
+      }
+
+      & + .message-result {
+        margin-top: 36px;
+      }
+
+      &.horizontal {
+        margin-top: 16px;
+        justify-content: center;
+
+        .wrap-balance__define {
+          flex-direction: row;
+          align-items: center;
+          margin-left: 32px;
+          min-width: auto;
+
+          dt {
+            margin-right: 8px;
+            margin-bottom: 0;
+          }
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .title-define-balance {
+      overflow: hidden;
+      margin: 16px 0 8px;
+      border-bottom: 1px solid rgba(#fff, 0.1);
+      width: 100%;
+      height: 21px;
+      color: rgba(var(--round-fontcolor), 0.3);
+      font-weight: 400;
+      font-size: calc(var(--round-fontsize) - 4px);
+    }
+
+    .message-result {
+      line-height: 1.2;
+      font-weight: 700;
+      font-size: 32px;
+      color: var(--round-message-color);
+      letter-spacing: -0.32px;
+    }
+
+    &[aria-current="won"] {
+      &::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        z-index: 2;
+        width: 124px;
+        height: 124px;
+        background: url('https://file.mir4global.com/xdraco/img/desktop/round/bg-badge-winner.webp') 0 0 / cover no-repeat;
+      }
+
+      .round__detail {
+        justify-content: flex-end;
+      }
+
+      .wrap-button {
+        .btn {
+          .emp {
+            color: #000;
+          }
+        }
+      }
+    }
+
+    &[aria-current="lose"] {
+      .wrap-button {
+        margin-top: 16px;
+      }
+
+      .wrap-balance {
+        &__define {
+          dt {
+            margin-bottom: 4px;
+          }
+        }
+      }
+    }
+
+    &[aria-current="noplayer"] {
+      .round__detail {
+        justify-content: space-between;
+      }
+
+      .round__info {
+        height: 246px;
+      }
+    }
+  }
+}

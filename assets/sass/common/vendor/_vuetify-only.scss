@@ -1,0 +1,13 @@
+.is-desktop {
+  .v-application {
+    p {
+      margin-bottom: 0;
+    }
+    &--wrap {
+      .v-main {
+        margin: 0 auto;
+        padding-left: 0 !important;
+      }
+    }
+  }
+}

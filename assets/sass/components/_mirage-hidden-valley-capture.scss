@@ -1,0 +1,502 @@
+@import '~@/assets/sass/mixin';
+
+.mirage-valley {
+  position: relative;
+  min-height: 300px;
+  background: #030227;
+  line-height: normal;
+  color: #fff;
+  width: 100%;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &__header,
+  &__contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  &__title {
+    font-size: 20px;
+    height: 55px;
+    text-align: start;
+    width: 100%;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+
+  .valley-notice {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 16px;
+
+    &__icon {
+      margin-right: 16px;
+      width: 40px;
+      height: 40px;
+      max-width: 100%;
+    }
+    &__desc {
+      flex: 1;
+      padding-right: 10px;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.43;
+      word-break: break-all;
+    }
+
+    &__date {
+      width: 100%;
+      margin-top: 4px;
+      padding-left: 56px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &__contents {
+    display: grid;
+    grid-column-gap: 1px;
+    grid-template-columns: repeat(2, 1fr);
+
+    .server-info {
+      display: flex;
+      flex-direction: column;
+      height: 189px;
+      padding: 16px;
+      background-image: linear-gradient(to bottom, rgba(230, 219, 255, 0.1) 0%, rgba(230, 219, 255, 0.2) 100%);
+      text-align: center;
+      width: 100%;
+
+      &__title {
+        line-height: 1.333;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4px;
+
+        &__capacity {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+          padding-bottom: 16px;
+          width: 100%;
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.6);
+
+          em {
+            color: #fff;
+          }
+        }
+
+        &__btn {
+          display: flex;
+          width: 100%;
+
+          .btn {
+            flex: 1;
+
+            &-primary-mirage {
+              height: 40px !important;
+              border-style: solid;
+              border-width: 1px;
+              border-image-source: linear-gradient(to bottom, #dd714e 0%, #620 100%);
+              border-image-slice: 1;
+              background-image: linear-gradient(to right, #620 0%, #f40 51%, #620 100%);
+            }
+
+            &:disabled {
+              pointer-events: none;
+              border: 0;
+              background: rgba(255, 255, 255, 0.1);
+              color: rgba(255, 255, 255, 0.2);
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .class-info {
+          &__title {
+            opacity: 0;
+          }
+          &__list {
+            opacity: 1;
+          }
+        }
+      }
+
+      .class-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+        column-gap: 8px;
+        row-gap: 8px;
+        position: relative;
+        margin: 8px 0;
+        height: 40px;
+        text-align: left;
+
+        &__title {
+          display: block;
+          width: 100%;
+          font-size: 14px;
+          text-align: center;
+          transition: opacity 400ms ease;
+        }
+
+        &__count {
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        &__list {
+          opacity: 0;
+          display: flex;
+          position: absolute;
+          justify-content: center;
+          column-gap: 8px;
+          width: 100%;
+          top: 0;
+          left: 0;
+          transition: opacity 400ms ease;
+
+          > li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 40px;
+            line-height: 16px;
+            column-gap: 4px;
+
+            &[data-character-class="1"] {
+              .logo {
+                &::after {
+                  background-position-x: -25px;
+                }
+              }
+            }
+            &[data-character-class="2"] {
+              .logo {
+                &::after {
+                  background-position-x: -42px;
+                }
+              }
+            }
+            &[data-character-class="3"] {
+              .logo {
+                &::after {
+                  background-position-x: -59px;
+                }
+              }
+            }
+            &[data-character-class="5"] {
+              .logo {
+                &::after {
+                  background-position-x: -76px;
+                }
+              }
+            }
+            &[data-character-class="4"] {
+              .logo {
+                &::after {
+                  background-position-x: -93px;
+                }
+              }
+            }
+          }
+
+          .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: url('https://file.mir4global.com/xdraco/img/common/mirage/sp-valley-class-icon.png') 0 0 / auto 24px no-repeat;
+            line-height: 0;
+            font-size: 0;
+
+            &::after {
+              content: '';
+              display: block;
+              width: 16px;
+              height: 16px;
+              background: url('https://file.mir4global.com/xdraco/img/common/mirage/sp-valley-class-icon.png') 0 -4px / auto 24px no-repeat;
+            }
+          }
+          .quantity {
+            display: block;
+            font-size: 14px;
+          }
+        }
+      }
+
+      &.empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to top, rgba(134, 134, 134, 0.2) 0%, rgba(134, 134, 134, 0) 100%);
+
+        &::before {
+          content: '';
+          width: 77px;
+          height: 89px;
+          background: url('https://file.mir4global.com/xdraco/img/common/mirage/logo-mirage.webp') 0 0  / cover no-repeat;
+        }
+      }
+    }
+  }
+
+  &__count-down {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    column-gap: 1px;
+
+    .count {
+      display: flex;
+    }
+
+    li {
+      display: flex;
+      height: 32px;
+      font-weight: bold;
+      align-items: stretch;
+      column-gap: 0;
+      font-size: 14px;
+
+      &:last-child {
+        flex: 1;
+        h4 {
+          flex: 1;
+          justify-content: flex-end;
+        }
+      }
+
+      h4 {
+        display: flex;
+        font-size: 16px;
+        align-items: center;
+        margin-right: 1px;
+        padding: 0 11px;
+        background-image: linear-gradient(to bottom, #e40 0%, #810 100%);
+      }
+    }
+
+    &__day {
+      display: flex;
+      align-items: center;
+      gap: 1px;
+      font-size: 18px;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 100%;
+        background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty.png') 50% 0 / cover no-repeat;
+      }
+    }
+
+    .icon-battle {
+      position: relative;
+      padding-left: 31px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 12px);
+        left: 0;
+        width: 27px;
+        height: 24px;
+        background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-27-battle.webp') 0 0 / 100% no-repeat;
+      }
+    }
+
+    .icon-battle {
+      padding-left: 24px;
+
+      &::before {
+        top: calc(50% - 9px);
+        width: 20px;
+        height: 18px;
+      }
+    }
+
+    .icon-locked {
+      width: 32px;
+      height: 32px;
+      background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-locked-dark.webp') 0 0 / cover no-repeat;
+      font-size: 0;
+    }
+  }
+
+  &.is-locked {
+    .mirage-valley__count-down {
+      &__day {
+        span {
+          background-image: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty-dark.png');
+        }
+      }
+
+      > li {
+        h4 {
+          background-image: linear-gradient(to bottom, #333 0%, #111 100%);
+        }
+      }
+      .icon-locked {
+        width: 28px;
+        background-image: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-locked-dark-m.webp');
+      }
+
+      .tick-mirage {
+        .tick-flip-card {
+          .tick-flip-panel-front {
+            background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty-dark.png') 50% 0% / 48px 40px no-repeat;
+          }
+
+          .tick-flip-panel-back {
+            background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty-dark.png') 50% 100% / 48px 40px no-repeat;
+          }
+        }
+
+        .tick-flip {
+          background-image: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty-dark.png');
+
+          &:before {
+            background-color: rgba(0, 0, 0, 0.2);
+          }
+        }
+        .tick-group {
+          .tick-label {
+            background-position-y: calc(var(--tick-height)*-1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .mirage-valley {
+    background: #121133 url('https://file.mir4global.com/xdraco/img/common/mirage/bg-valley.webp') 50% 0 / contain no-repeat;
+
+    &__header {
+      flex-direction: row;
+      padding: 24px;
+    }
+
+    &__title {
+      font-size: 24px;
+      height: auto;
+      padding-left: 0;
+    }
+
+    .valley-notice {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 24px 23px 12px;
+
+      > div {
+        display: flex;
+        align-items: center;
+      }
+
+      &__date {
+        width: auto;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &__contents {
+      grid-gap: 2px;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 0 23px;
+      padding-bottom: 24px;
+
+      .server-info {
+        background-image: linear-gradient(0deg,rgba(230,219,255,.2),rgba(230,219,255,0));
+        &:hover {
+          .class-info {
+            &__title {
+              opacity: 0;
+            }
+          }
+        }
+
+        .class-info {
+          &__list {
+            column-gap: 14px;
+          }
+        }
+      }
+    }
+
+    &__count-down {
+      column-gap: 16px;
+
+      li {
+        align-items: center;
+        column-gap: 13px;
+
+        h4 {
+          background-image: none;
+        }
+      }
+
+      &__day {
+        font-size: 20px;
+
+        span {
+          width: 24px;
+          height: 32px;
+        }
+      }
+
+      .icon-battle {
+        white-space: nowrap;
+      }
+    }
+
+    &.is-locked {
+      .mirage-valley__count-down {
+
+        li {
+          h4 {
+            background: transparent;
+          }
+        }
+
+        .tick-mirage {
+          .tick-group {
+            .tick-label {
+              background-position-y: calc(var(--tick-height)*-1 - 12px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

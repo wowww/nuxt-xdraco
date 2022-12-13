@@ -1,0 +1,26 @@
+[
+  {
+    "from": "/coin",
+    "to": "/coin/price"
+  },
+  {
+    "from": "/exd",
+    "to": "/exd/list"
+  },
+  {
+    "from": "/dsp",
+    "to": "/dsp/rounds"
+  },
+  {
+    "from": "/hsp",
+    "to": "/hsp/stake"
+  },
+  {
+    "from": "/nft",
+    "to": "/nft/list"
+  },
+  {
+    "from": "/mirage",
+    "to": "/mirage/dashboard"
+  }
+]

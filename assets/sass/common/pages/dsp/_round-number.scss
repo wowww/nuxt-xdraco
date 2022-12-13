@@ -1,0 +1,46 @@
+.round {
+  &__number {
+    padding: 7px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px rgba(#fff, 0.2);
+    box-sizing: border-box;
+    line-height: normal;
+
+    &__name,
+    &__value {
+      display: block;
+      color: #fff;
+      text-align: center;
+    }
+
+    &__name {
+      font-size: 10px;
+    }
+
+    &__value {
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: -0.44px;
+      margin-top: 2px;
+    }
+  }
+}
+
+@include pc {
+  .round {
+    &__number {
+      &__name,
+      &__value {
+        padding-top: 2px;
+        font-weight: 700;
+      }
+
+      &__name {
+        font-size: 8px;
+      }
+    }
+  }
+}

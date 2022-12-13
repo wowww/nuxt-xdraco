@@ -1,0 +1,222 @@
+@import '~@/assets/sass/mixin';
+
+.collectible-main-banner {
+  --banner-height: 620px;
+
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: inherit;
+  padding-top: 0;
+  height: auto;
+  background-image: none;
+  background-color: transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(to top, #0d0d39, rgba(2, 2, 25, 0.7));
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--section-inner-width);
+  }
+  .wrap-video {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    overflow: hidden;
+    left: 0;
+    width: 100%;
+    height: 300px;
+
+    .video {
+      opacity: 0;
+      transition: opacity 800ms 0.2s ease-in;
+      position: absolute;
+      top: 0;
+      left: calc(50% - 400px);
+      width: 800px;
+      height: 450px;
+    }
+  }
+  .wrap-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 720px;
+    color: #fff;
+    line-height: 1.3;
+    font-size: 17px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+    padding: 0 24px;
+    height: 300px;
+
+    em {
+      font-weight: 700;
+      color: #0a0;
+    }
+    .subject {
+      margin-bottom: 12px;
+      line-height: 1.1;
+      font-weight: 700;
+      font-size: 40px;
+    }
+  }
+  .wrap-define {
+    display: block;
+
+    .define {
+      position: relative;
+      padding: 24px;
+      height: 280px;
+      line-height: 1.43;
+      font-size: 14px;
+      color: rgba(#fff, 0.5);
+      box-sizing: border-box;
+      flex: none;
+      width: 100%;
+      text-align: center;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          125deg,
+          #1d1d50 0%,
+          rgba(12, 12, 44, 0.5) 100%
+        );
+      }
+      dt {
+        display: block;
+        margin-bottom: 16px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #0a0;
+      }
+      dd {
+        word-break: break-word;
+      }
+      &.type1 {
+        background: url('https://file.mir4global.com/xdraco/img/common/banner/collectible-main-banner/bg-collectible-define1.webp')
+          100% 100% / 242px 184px no-repeat;
+      }
+      &.type2 {
+        background: url('https://file.mir4global.com/xdraco/img/common/banner/collectible-main-banner/bg-collectible-define2.webp')
+          100% 100% / 303px 160px no-repeat;
+      }
+      &.type3 {
+        background: url('https://file.mir4global.com/xdraco/img/common/banner/collectible-main-banner/bg-collectible-define3.webp')
+          100% 100% / 218px 205px no-repeat;
+      }
+    }
+  }
+  .swiper-pagination {
+    margin-top: 20px;
+  }
+
+  .init--collectible-banner & {
+    .wrap-video {
+      .video {
+        opacity: 1;
+      }
+    }
+  }
+
+  .mobile-size--slide {
+    display: block;
+  }
+
+  .desktop-size--slide {
+    display: none;
+  }
+
+  .swiper-pagination {
+    top: calc(50% + 7px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0;
+    height: 40px;
+
+    &-container {
+      width: 100%;
+      height: 40px;
+    }
+  }
+}
+
+@include pc {
+  .collectible-main-banner {
+    padding-top: 100px;
+    height: var(--banner-height);
+    background-color: #000;
+    margin-bottom: 40px;
+
+    &::before {
+      height: 100%;
+    }
+
+    .wrap-video {
+      left: calc(50% - 600px);
+      width: 1200px;
+      height: inherit;
+
+      .video {
+        width: 1200px;
+        height: 675px;
+      }
+    }
+
+    .wrap-message {
+      padding-top: 4px;
+      height: 240px;
+
+      .subject {
+        font-size: 56px;
+      }
+    }
+
+    .wrap-define {
+      display: flex;
+
+      .define {
+        flex: 1;
+        width: 400px;
+        text-align: left;
+      }
+    }
+
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 33.333% !important;
+        }
+      }
+    }
+  }
+  .mobile-size--slide {
+    display: none;
+  }
+
+  .desktop-size--slide {
+    display: block;
+  }
+}

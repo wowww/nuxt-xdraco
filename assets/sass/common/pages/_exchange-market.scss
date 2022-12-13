@@ -1,0 +1,1688 @@
+@import '~@/assets/sass/mixin';
+
+.contents {
+  &[class*="market"] {
+    background-position: 50% 0;
+    background-size: 960px 630px;
+    background-repeat: no-repeat;
+
+    &.bg-legendary,
+    &.bg-grade-5 {
+      background-image: url('https://file.mir4global.com/xdraco/img/mobile/market/bg-item-legendary.webp');
+    }
+
+    &.bg-epic,
+    &.bg-grade-4 {
+      background-image: url('https://file.mir4global.com/xdraco/img/mobile/market/bg-item-epic.webp');
+    }
+
+    &.bg-rare,
+    &.bg-grade-3 {
+      background-image: url('https://file.mir4global.com/xdraco/img/mobile/market/bg-item-rare.webp');
+    }
+
+    &.bg-grade-2 {
+      background-image: url('https://file.mir4global.com/xdraco/img/mobile/market/bg-item-grade2.webp');
+    }
+  }
+
+  .function {
+    display: none;
+  }
+
+  .function + .wrap-grid {
+    padding-top: 0;
+  }
+
+  .wrap-suggest {
+    padding: 16px 0 0;
+
+    &__item {
+      display: flex;
+      min-height: 80px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      margin: 19px 0 0;
+      box-sizing: border-box;
+      background-color: rgba(#fff, 0.05);
+
+      .item-info {
+        --card-width: 46px;
+        --card-height: 46px;
+
+        &__img {
+          img {
+            width: 36px;
+          }
+        }
+      }
+    }
+
+    &__view-more {
+      display: flex;
+      align-items: center;
+
+      &__link {
+        font-size: 12px;
+        font-weight: normal;
+        color: #a0f;
+        white-space: nowrap;
+      }
+    }
+
+    &__filter {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      margin-top: 12px;
+    }
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+
+      > li:not(&__header, &__contents) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 20px;
+        position: relative;
+        justify-content: space-between;
+
+        &:after {
+          content: "";
+          position: absolute;
+          width: calc(100% - 40px);
+          height: 1px;
+          bottom: 0;
+          background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        dl {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-between;
+
+          dt {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+          }
+
+          dd {
+            font-size: 14px;
+            color: #fff;
+          }
+
+          &.price {
+            margin-top: 16px;
+            padding-top: 16px;
+            position: relative;
+
+            &:before {
+              content: "";
+              position: absolute;
+              top: 0;
+              width: 100%;
+              height: 1px;
+              background-color: rgba(255, 255, 255, 0.15);;
+            }
+
+            strong {
+              font-size: 18.5px;
+            }
+          }
+        }
+      }
+
+      &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 12px 0;
+
+        em {
+          font-size: 10px;
+          color: rgba(255, 255, 255, 0.75);
+
+          &.enhance {
+            width: 20%;
+          }
+
+          &.score,
+          &.seller {
+            width: 25%;
+          }
+
+          &.price {
+            width: 30%;
+          }
+        }
+      }
+
+      &__contents {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 0;
+
+        .enhance {
+          width: 20%;
+        }
+
+        .score,
+        .seller {
+          width: 25%;
+        }
+
+        .seller {
+          strong {
+            font-size: 12px;
+            font-weight: normal;
+          }
+        }
+
+        span {
+          display: none;
+        }
+
+        .price {
+          width: 30%;
+
+          .us-dollar {
+            display: none;
+          }
+        }
+
+        strong {
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .wrap-button {
+      margin: 16px auto 24px;
+      text-align: center;
+
+      .btn-viewmore {
+        @include btn-viewmore($width: calc(100% - 40px));
+      }
+    }
+
+    &:only-child {
+      padding-top: 10px;
+    }
+
+    &.suggested {
+      min-height: calc(100vh - 356px);
+
+      .wrap-suggest__list {
+        padding: 0 20px;
+      }
+      .wrap-suggest__item {
+        margin: 19px 16px;
+        padding: 0 16px;
+      }
+
+      .wrap-filter {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.exchange-market {
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+
+  .title {
+    font-size: 16px !important;
+    font-weight: 700;
+    line-height: normal;
+    color: #fff;
+  }
+
+  .list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    border-bottom: 1px solid rgba(#fff, 0.15);
+
+    li {
+      border-top: 1px solid rgba(#fff, 0.15);
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  .wrap-addition,
+  .wrap-addition__detail {
+    margin-top: 40px;
+
+    .wrap-card {
+      padding-top: 48px;
+
+      .card {
+        margin: 0 auto;
+      }
+    }
+
+    .character-equip {
+      &__wrapper {
+        position: relative;
+        width: 328px;
+        height: 364px;
+        margin: 0 auto;
+        padding-top: 32px;
+
+        + .option-detail {
+          .item-manual {
+            text-align: center;
+          }
+        }
+
+        .item-manual .item-title {
+          margin-top: 18px;
+        }
+      }
+
+      &--thumbs {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        max-width: 320px;
+        z-index: 1;
+      }
+
+      &--list {
+        --equip-size: 56px;
+        --item-slot-default-size: 48px;
+
+        position: relative;
+        z-index: 2;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://file.mir4global.com/xdraco/img/common/nft-detail/bg-character-equip.webp') 24px 28px / auto 280px no-repeat;
+
+        &__item {
+          list-style: none;
+          position: absolute;
+          left: 0;
+          z-index: 2;
+          width: var(--equip-size);
+          height: var(--equip-size);
+
+          .front {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: inherit;
+            height: inherit;
+            background: url('https://file.mir4global.com/xdraco/img/common/nft-detail/sp-item-frame.webp') 0 0 / var(--equip-size) auto no-repeat;
+
+            .item-slot-default {
+              top: calc(50% - (var(--item-slot-default-size) / 2));
+              left: calc(50% - (var(--item-slot-default-size) / 2));
+              width: var(--item-slot-default-size);
+              height: var(--item-slot-default-size);
+              background: url('https://file.mir4global.com/xdraco/img/common/nft-detail/item-slot-default.png') 0 0 / 100% auto no-repeat;
+            }
+
+            .item-image {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+
+              & + .item-slot-default {
+                visibility: hidden;
+              }
+            }
+          }
+
+          .item-tier {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: -3px;
+            left: -3px;
+            border: 2px solid #9f916c;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            color: #fff;
+            line-height: 1;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: -0.13px;
+            background-color: #333;
+            box-sizing: border-box;
+          }
+
+          .item-enchance {
+            position: absolute;
+            top: 0;
+            right: 0;
+            line-height: 1;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            text-shadow: 0 1.1px 1.1px #000;
+            color: #fff;
+          }
+
+          &[data-item-grade='uncommon'], &[data-item-grade='grade-2'] {
+            .front {
+              background-position-y: calc(-1 * var(--equip-size));
+            }
+          }
+
+          &[data-item-grade='rare'], &[data-item-grade='grade-3'] {
+            .front {
+              background-position-y: calc(-2 * var(--equip-size));
+            }
+          }
+
+          &[data-item-grade='epic'], &[data-item-grade='grade-4'] {
+            .front {
+              background-position-y: calc(-3 * var(--equip-size));
+            }
+          }
+
+          &[data-item-grade='legendary'], &[data-item-grade='grade-5'] {
+            .front {
+              background-position-y: calc(-4 * var(--equip-size));
+            }
+          }
+
+          &[data-item-type='weapon'], &[data-item-type='slot-1'] {
+            top: 8px;
+            left: 82px;
+
+            .front {
+              .item-slot-default {
+                background-position-y: 0;
+              }
+            }
+          }
+
+          &[data-item-type='subWeapon'], &[data-item-type='slot-9'] {
+            top: 52px;
+            left: 25px;
+
+            .front {
+              .item-slot-default {
+                background-position-y: calc(-1 * var(--item-slot-default-size));
+              }
+            }
+          }
+
+          &[data-item-type='top'], &[data-item-type='slot-5'] {
+            top: 118px;
+            left: 2px;
+
+            .front {
+              .item-slot-default {
+                background-position-y: calc(-2 * var(--item-slot-default-size));
+              }
+            }
+          }
+
+          &[data-item-type='bottom'], &[data-item-type='slot-6'] {
+            top: 186px;
+            left: 8px;
+
+            .front {
+              .item-slot-default {
+                background-position-y: calc(-3 * var(--item-slot-default-size));
+              }
+            }
+          }
+
+          &[data-item-type='gloves'], &[data-item-type='slot-7'] {
+            top: 246px;
+            left: 38px;
+
+            .front {
+              .item-slot-default {
+                background-position-y: calc(-4 * var(--item-slot-default-size));
+              }
+            }
+          }
+
+          &[data-item-type='boots'], &[data-item-type='slot-8'] {
+            bottom: 7px;
+            left: 100px;
+
+            .front {
+              .item-slot-default {
+                background-position-y: calc(-5 * var(--item-slot-default-size));
+              }
+            }
+          }
+
+          &[data-item-type='neaklace'], &[data-item-type='slot-2'] {
+            bottom: 6px;
+            left: 168px;
+
+            .front {
+              .item-slot-default {
+                background-position-y: calc(-6 * var(--item-slot-default-size));
+              }
+            }
+          }
+
+          &[data-item-type='bracelet'], &[data-item-type='slot-3'] {
+            top: 232px;
+            left: 232px;
+
+          .front {
+            .item-slot-default {
+              background-position-y: calc(-7 * var(--item-slot-default-size));
+            }
+          }
+        }
+
+          &[data-item-type='ring'], &[data-item-type='slot-4'] {
+            top: 166px;
+            left: 272px;
+
+            .front {
+              .item-slot-default {
+                background-position-y: calc(-8 * var(--item-slot-default-size));
+              }
+            }
+          }
+
+          &[data-item-type='earring'], &[data-item-type='slot-10'] {
+            top: 102px;
+            left: 266px;
+
+            .front {
+              .item-slot-default {
+                background-position-y: calc(-9 * var(--item-slot-default-size));
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__detail {
+      .wrap-option {
+        position: relative;
+        margin-top: 48px;
+
+        ul {
+          padding: 0;
+          list-style: none;
+        }
+
+        &__title {
+          font-size: 16px;
+        }
+
+        &__score {
+          position: absolute;
+          top: -6px;
+          right: 0;
+
+          .ico-total {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.48px;
+            line-height: normal;
+            color: #fff;
+            padding-left: 28px;
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translate(0, -50%);
+              display: inline-block;
+              width: 24px;
+              height: 24px;
+              vertical-align: middle;
+              filter: invert(1);
+              background: url('https://file.mir4global.com/xdraco/img/common/tab-score/icon-power.webp') 50% 0 /contain no-repeat;
+              margin-right: 4px;
+            }
+          }
+        }
+
+        &__list {
+          margin-top: 24px;
+
+          li {
+            min-height: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            letter-spacing: -0.01em;
+            color: #fff;
+            border: solid hsla(0,0%,100%,.15);
+            border-width: 1px 0 0;
+
+            span[class^='ico-'] {
+              width: 32px;
+              height: 32px;
+              margin-right: 8px;
+              border: 1px dashed gray;
+            }
+
+            .skill-desc {
+              flex: 1;
+              text-align: left;
+              font-size: 14px;
+              font-weight: normal;
+              color: rgba(#fff, 0.75);
+            }
+
+            .rate {
+              font-size: 16px;
+              font-weight: 700;
+            }
+
+            .value {
+              font-size: 14px;
+              font-weight: 400;
+            }
+
+            a[target='_blank'] {
+              display: flex;
+              align-items: center;
+              gap: 4px;
+
+              &::after {
+                content: '';
+                display: block;
+                width: 24px;
+                height: 24px;
+                background: url('https://file.mir4global.com/xdraco/img/common/nft-detail/ico-outlink.webp') 50% 50% / contain no-repeat;
+              }
+            }
+
+            &:first-of-type {
+              border-top-width: 0;
+            }
+          }
+        }
+      }
+
+      .wrap-item-desc {
+        margin-bottom: 48px;
+
+        .wrap-form {
+          &__title {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #fff;
+          }
+
+          .title + .fieldset {
+            margin-top: 16px;
+          }
+        }
+
+        .wrap-form + .wrap-button {
+          margin-top: 16px;
+        }
+
+        .wrap-button {
+          margin: 32px 0 16px;
+
+          .btn {
+            box-sizing: border-box;
+            width: 100%;
+
+            .price {
+              span {
+                display: none;
+              }
+            }
+          }
+
+          .price {
+            display: inline-block;
+
+            .ico-draco {
+              font-size: 24px;
+              font-weight: 700;
+              letter-spacing: -0.48px;
+              color: #fff;
+            }
+
+            .rate {
+              display: block;
+              text-align: center;
+              font-size: 12px;
+              font-weight: normal;
+              line-height: 1;
+              margin-top: 4px;
+            }
+          }
+
+          &.price-button {
+            margin-top: 28px;
+
+            .btn {
+              height: 66px;
+            }
+          }
+        }
+
+        .item-title + .item-subtitle {
+          margin-top: 6px;
+        }
+
+        .item-manual {
+          .item-detail-table {
+            margin-top: 26px;
+
+            li {
+              padding: 4px 8px;
+
+              strong {
+                margin-top: 0;
+              }
+
+              &.level,
+              &.power {
+                strong {
+                  margin-top: -1px;
+                }
+              }
+
+              &.power {
+                strong {
+                  font-size: 20px;
+                }
+              }
+            }
+
+            &.size-lg {
+              strong {
+                height: 32px;
+                line-height: 32px;
+                font-size: 24px;
+              }
+            }
+          }
+        }
+
+        .wrap-credit {
+          margin-top: 24px;
+
+          .info {
+            margin-top: 8px;
+          }
+        }
+      }
+
+      .wrap-collectible-info {
+        margin: 24px 0;
+        line-height: 1.2;
+        color: #000;
+
+        .wrap-info {
+          display: flex;
+          flex-wrap: wrap;
+
+          .define {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border: 1px solid #000;
+            border-width: 0 0 1px 1px;
+            padding: 11px 16px;
+            width: 50%;
+            min-height: 61px;
+            font-size: 12px;
+            box-sizing: border-box;
+
+            &:nth-of-type(2n + 1) {
+              border-left-width: 0;
+            }
+
+            dt {
+              display: block;
+              width: 100%;
+              font-size: 12px;
+            }
+
+            dd {
+              font-size: 16px;
+              font-weight: 700;
+            }
+          }
+        }
+
+        .info-message {
+          padding: 16px;
+          min-height: 48px;
+          font-size: 14px;
+          box-sizing: border-box;
+
+          p {
+            margin-bottom: 0;
+          }
+        }
+
+        &[data-item-grade='5'] {
+          background-image: linear-gradient(to bottom, rgba(219, 255, 0, 0.05), rgba(219, 255, 0, 0.05)),
+          linear-gradient(95deg, #be8d15 0%, #fd9 51%, #be8d15 100%);
+        }
+
+        &[data-item-grade='4'] {
+          background-image: linear-gradient(to bottom, rgba(219, 255, 0, 0.05), rgba(219, 255, 0, 0.05)),
+          linear-gradient(95deg, #ea5c3d 0%, #fb9 50%, #ee5a3b 100%);
+        }
+
+        &[data-item-grade='3'] {
+          background-image: linear-gradient(to bottom, rgba(219, 255, 0, 0.05), rgba(219, 255, 0, 0.05)),
+          linear-gradient(95deg, #46a 0%, #b1c3ff 49%, #46a 100%);
+        }
+      }
+    }
+
+    .wrap-fire {
+      margin-top: 40px;
+
+      ul.list {
+        margin-top: 0;
+
+        li {
+          display: block;
+          justify-content: initial;
+          align-items: initial;
+          min-height: inherit;
+          padding: 16px 0;
+          line-height: normal;
+
+          &:first-of-type {
+            border-top: 0;
+          }
+
+          strong {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: normal;
+            color: #fff;
+          }
+
+          p {
+            font-size: 14px;
+            font-weight: normal;
+            line-height: normal;
+            letter-spacing: -0.14px;
+            color: rgba(#fff, 0.75);
+
+            .point {
+              color: #f6e0a3;
+            }
+
+            .time {
+              color: #1ddb16;
+            }
+          }
+        }
+      }
+    }
+
+    .wrap-seller {
+      margin-top: 40px;
+
+      .title {
+        font-size: 12px !important;
+        font-weight: normal;
+        letter-spacing: -0.12px;
+        color: #fff;
+      }
+
+      .seller {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 8px;
+
+        .char-info {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          font-weight: normal;
+          line-height: normal;
+          justify-content: flex-start;
+          align-items: flex-start;
+          row-gap: 8px;
+
+          strong {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 4px;
+            color: #fff;
+          }
+        }
+
+        .completed,
+        .sale {
+          flex: 1;
+          margin-left: 16px;
+          font-size: 12px;
+          font-weight: normal;
+          line-height: normal;
+          text-align: right;
+        }
+      }
+    }
+
+    .wrap-item-desc {
+      .wrap-button {
+        .btn {
+          &[disabled="disabled"] {
+            background-color: rgba(255, 255, 255, .05);
+
+            strong {
+              display: none;
+            }
+
+            .rate {
+              display: block !important;
+              color: rgba(255, 255, 255, .2);
+              font-size: 20px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .title-sub-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 40px;
+    margin: 48px 0 16px;
+    height: 40px;
+    color: #fff;
+    font-weight: bold;
+
+    .sub {
+      font-size: 0.75em;
+      font-weight: 400;
+      opacity: .6;
+    }
+  }
+
+  .wrap-overall {
+    padding: 51px 0 0;
+    margin-bottom: 24px;
+
+    &__title {
+      font-size: 16px;
+    }
+
+    &__list {
+      margin-top: 8px;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+          flex: 0 1 100%;
+          margin-top: 8px;
+
+          .wrap-price {
+            .price {
+              align-items: flex-start;
+              row-gap: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .wrap-suggest + .wrap-overall {
+    padding: 48px 0 0;
+    border-top: 0;
+  }
+}
+
+.float-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+
+  .fieldset.editable {
+    @include fieldset-editable();
+  }
+
+  .register {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 96px;
+
+    padding: 16px 20px;
+    box-sizing: border-box;
+    -webkit-backdrop-filter: blur(80px);
+    backdrop-filter: blur(80px);
+    background-color: rgba(#fff, 0.1);
+
+    .wrap-buy {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .price {
+        text-align: left;
+        width: auto;
+
+        strong {
+          display: inline-block;
+          font-size: 24px;
+          font-weight: 700;
+          letter-spacing: -0.48px;
+          line-height: normal;
+          color: #fff;
+        }
+
+        .rate {
+          display: block;
+          font-size: 12px;
+          font-weight: normal;
+          line-height: 1.67;
+          color: rgba(#fff, 0.5);
+        }
+      }
+
+      .btn {
+        min-width: 161px;
+        margin-left: 20px;
+      }
+    }
+
+    &__validation {
+      width: 100%;
+
+      .wrap-button {
+        margin: 24px -20px -16px;
+
+        .btn {
+          width: 100%;
+          color: #fff;
+        }
+      }
+    }
+
+    .wrap-form {
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        line-height: normal;
+        margin-bottom: 8px;
+      }
+
+      &__title {
+        font-size: 12px !important;
+        font-weight: 700;
+        letter-spacing: -0.12px;
+        color: #fff;
+      }
+
+      &--notice {
+        font-size: 12px;
+        font-weight: normal;
+        color: #fff;
+
+        em {
+          font-style: normal;
+          font-size: 12px;
+          font-weight: 700;
+          color: #ffe600;
+        }
+      }
+    }
+
+    .wrap-buy {
+      .btn {
+        color: #fff;
+      }
+    }
+
+    .item-info {
+      display: none;
+    }
+
+    &.nft {
+      padding: 16px;
+    }
+  }
+
+  &.collectibles {
+    .register {
+      .item-info {
+        &__desc {
+          row-gap: 0;
+        }
+      }
+    }
+  }
+}
+
+.exd-detail-bottom {
+  @include fieldset-editable();
+}
+
+@include pc {
+  .contents {
+    &[class*="market"] {
+      background-position: calc(50% - 100px) 0;
+      background-size: 1920px 504px;
+
+      &.bg-legendary,
+      &.bg-grade-5 {
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/market/bg-item-legendary.webp");
+      }
+
+      &.bg-epic,
+      &.bg-grade-4 {
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/market/bg-item-epic.webp");
+      }
+
+      &.bg-rare,
+      &.bg-grade-3 {
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/market/bg-item-rare.webp");
+      }
+
+      &.bg-grade-2 {
+        background-image: url("https://file.mir4global.com/xdraco/img/desktop/market/bg-item-grade2.webp");
+      }
+
+      &.single {
+        background-position-x: 50%;
+      }
+    }
+
+    .function {
+      display: block;
+      padding: 40px 0 16px;
+      height: auto;
+
+      .backtolist {
+        position: relative;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: normal;
+        color: #fff;
+        padding-left: 24px;
+        margin-left: 16px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+          width: 16px;
+          height: 16px;
+          margin-top: -1px;
+          background: url('https://file.mir4global.com/xdraco/img/desktop/market/ico-arrow-left-light.webp') 50% 0 / cover no-repeat;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: -8px;
+          right: -8px;
+          top: -8px;
+          bottom: -8px;
+        }
+      }
+    }
+  }
+
+  .exchange-market {
+    width: 100%;
+    max-width: 896px;
+
+    .title {
+      font-size: 20px;
+    }
+
+    .list {
+      li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border: 1px solid rgba(#fff, 0.15);
+        border-width: 1px 0 0;
+      }
+    }
+
+    .fieldset.editable {
+      @include fieldset-editable();
+    }
+
+    .wrap-addition,
+    .wrap-addition__detail {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 56px;
+      padding-bottom: 32px;
+
+      hr {
+        margin: 24px 0;
+        border-width: 1px 0 0;
+        border-color: rgba(#fff, 0.15);
+      }
+
+      .character-equip {
+        &__wrapper {
+          width: 480px;
+          height: 498px;
+
+          & + .option-detail {
+            margin-left: 40px;
+          }
+        }
+
+        &--thumbs {
+          position: absolute;
+          top: -24px;
+        }
+
+        &--list {
+          --equip-size: 72px;
+          --item-slot-default-size: 48px;
+
+          background: url('https://file.mir4global.com/xdraco/img/common/nft-detail/bg-character-equip.webp') 32px 32px / auto 423px no-repeat;
+
+          &__item {
+            .item-tier {
+              bottom: 0;
+              left: 0;
+            }
+
+            .item-enchance {
+              font-size: 18px;
+              letter-spacing: -0.01em;
+              text-shadow: 0 1.1px 1.1px #000;
+            }
+
+            &[data-item-type='weapon'], &[data-item-type='slot-1'] {
+              top: 10px;
+              left: 118px;
+            }
+
+            &[data-item-type='subweapon'], &[data-item-type='slot-9'] {
+              top: 79px;
+              left: 40px;
+            }
+
+            &[data-item-type='top'], &[data-item-type='slot-5'] {
+              top: 176px;
+              left: 0;
+            }
+
+            &[data-item-type='bottom'], &[data-item-type='slot-6'] {
+              top: 277px;
+            }
+
+            &[data-item-type='gloves'], &[data-item-type='slot-7'] {
+              top: 358px;
+              left: 60px;
+            }
+
+            &[data-item-type='boots'], &[data-item-type='slot-8'] {
+              bottom: -16px;
+              left: 144px;
+            }
+
+            &[data-item-type='neaklace'], &[data-item-type='slot-2'] {
+              bottom: -20px;
+              left: 242px;
+            }
+
+            &[data-item-type='bracelet'], &[data-item-type='slot-3'] {
+              top: 370px;
+              left: 334px;
+            }
+
+            &[data-item-type='ring'], &[data-item-type='slot-4'] {
+              top: 294px;
+              left: 396px;
+            }
+
+            &[data-item-type='earring'], &[data-item-type='slot-10'] {
+              top: 194px;
+              left: 408px;
+            }
+          }
+        }
+      }
+
+      &__detail {
+        flex: 1;
+        flex-direction: column;
+        margin-left: 64px;
+
+        .wrap-option {
+          &__title {
+            font-size: 20px;
+          }
+          &__list {
+            margin-top: 32px;
+            border-bottom-width: 0;
+
+            li {
+              span[class^='ico-'],
+              img {
+                margin-right: 8px;
+              }
+            }
+          }
+        }
+
+        .wrap-item-desc {
+          .wrap-form {
+            &__header {
+              display: flex;
+              justify-content: space-between;
+              line-height: normal;
+              margin-bottom: 16px;
+            }
+
+            &--notice {
+              font-size: 12px;
+              font-weight: normal;
+              color: #fff;
+
+              em {
+                font-style: normal;
+                font-size: 12px;
+                font-weight: 700;
+                color: #ffe600;
+              }
+            }
+          }
+
+          .wrap-button {
+            margin: 24px 0 16px;
+
+            .price {
+              .rate, .us-dollar {
+                display: block;
+                text-align: center;
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 1;
+                margin-top: 4px;
+              }
+            }
+          }
+
+          .wrap-credit {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(#fff, 0.15);
+            margin-top: 0;
+
+            .credit-info {
+              .category {
+                font-size: 12px;
+                font-weight: normal;
+                letter-spacing: -0.12px;
+                line-height: normal;
+                color: #fff;
+              }
+
+              .info {
+                margin-top: 4px;
+                line-height: normal;
+
+                span[class^='ico-'] {
+                  margin: 0;
+                  font-size: 32px;
+                  font-weight: 700;
+                  line-height: normal;
+                  letter-spacing: -0.64px;
+                  color: #fff;
+                  white-space: normal;
+                  word-break: break-all;
+                  word-wrap: break-word;
+
+                  &.add-inside {
+                    padding-left: 32px;
+
+                    &::before {
+                      width: 28px;
+                      height: 28px;
+                    }
+                  }
+                }
+
+                .add-inside {
+                  width: fit-content;
+                }
+              }
+            }
+
+            .wrap-button {
+              margin-top: 0;
+              min-width: 284px;
+            }
+          }
+        }
+
+        .wrap-collectible-info {
+          .wrap-info {
+            .define {
+              flex: 1;
+              width: 25%;
+
+              &:first-of-type {
+                border-left-width: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .wrap-fire {
+        margin-top: 48px;
+      }
+
+      .wrap-seller {
+        margin-top: 48px;
+
+        .seller {
+          .char-info {
+            flex: 1;
+          }
+
+          .completed,
+          .sale {
+            width: 120px;
+            margin-left: 40px;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: normal;
+            text-align: right;
+          }
+        }
+      }
+
+      & + .wrap-overall {
+        margin-top: -57px;
+        border-top-width: 0;
+      }
+
+      .nft & {
+        padding-bottom: 0;
+        border-bottom-width: 0;
+      }
+    }
+
+    .wrap-addition {
+      border-bottom: 1px solid rgba(#fff, 0.15);
+    }
+
+    .wrap-overall {
+      padding: 48px 0 0;
+      border-top: 1px solid rgba(#fff, 0.15);
+      margin-bottom: 80px;
+
+      &__title {
+        font-size: 20px;
+      }
+
+      &__list {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+
+          li {
+            flex: 0 1 440px;
+            margin-top: 16px;
+          }
+        }
+      }
+    }
+
+    .wrap-button {
+      margin-top: 24px;
+
+      .btn-viewmore {
+        @include btn-viewmore($width: 100%);
+      }
+    }
+
+    .title-sub-detail {
+      margin: 64px 0 24px;
+      line-height: 1.15;
+    }
+
+    .nft & {
+      color: #fff;
+    }
+  }
+
+  .float-bottom {
+    .register {
+      .wrap-buy {
+        justify-content: flex-end;
+
+        .price {
+          text-align: right;
+          width: auto;
+
+          strong {
+            font-size: 28px;
+            letter-spacing: -0.56px;
+
+            em {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .item-info {
+        display: flex;
+        column-gap: 16px;
+
+        .wrap-name {
+          display: flex;
+          column-gap: 20px;
+        }
+
+        &__name {
+          font-size: 24px;
+        }
+
+        &__desc {
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          row-gap: 4px;
+
+          p {
+            font-size: 12px;
+            margin: 0;
+          }
+        }
+
+        .item-manual {
+          margin: 0;
+          &__detail {
+            margin: 0;
+            li {
+              span {
+                font-size: 14px;
+              }
+
+              strong {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                margin-top: 4px;
+                height: 28px;
+              }
+            }
+          }
+        }
+      }
+
+      &.nft {
+        .item-info {
+          column-gap: 56px;
+        }
+      }
+    }
+
+  }
+
+  .wrap-suggest {
+    &__header {
+      &__title {
+        margin-bottom: 32px;
+      }
+    }
+
+    &__item {
+      display: flex;
+      min-height: 96px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+      box-sizing: border-box;
+      background-color: rgba(#fff, 0.05);
+    }
+
+    &__view-more {
+      padding: 0 16px 0 0;
+
+      &__link {
+        font-size: 12px;
+        font-weight: normal;
+        color: #a0f;
+      }
+    }
+
+    &__filter {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      margin: 12px 0;
+    }
+
+    .wrap-button {
+      margin-top: 24px;
+
+      .btn-viewmore {
+        @include btn-viewmore($width: 100%);
+      }
+    }
+
+    & + .wrap-overall {
+      padding: 48px 0 0;
+      border-top: 0;
+    }
+  }
+
+  .contents {
+    .wrap-suggest {
+      &__list {
+        &__contents {
+          .enhance,
+          .score,
+          .price {
+            span {
+              display: block;
+              font-size: 12px;
+              color: rgba(255, 255, 255, 0.5);
+            }
+          }
+
+          .seller {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+
+      &.suggested {
+        .wrap-suggest__list {
+          padding: 0;
+        }
+        .wrap-suggest__item {
+          margin-right: 0;
+          margin-left: 0;
+          padding: 16px;
+        }
+
+        .wrap-filter {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+@include large-pc {
+  .contents {
+    .wrap-suggest {
+      &__list {
+        li {
+          padding: 16px 0;
+        }
+      }
+    }
+
+    .function {
+      .backtolist {
+        margin-left: 0;
+      }
+    }
+  }
+}

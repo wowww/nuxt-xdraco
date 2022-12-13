@@ -1,0 +1,827 @@
+@import '~@/assets/sass/mixin';
+
+.mirage-mirax {
+  --mirax-bgColor: #030227;
+  --mirax-color-red: #f00;
+  --mirax-color-yellow: #ffec44;
+
+  --mirax-section-inner-width: 100%;
+  --mirax-section-padding: 24px;
+  --mirax-section-max-width: 640px;
+  --mirax-top-banner-height: 291px;
+  --mirax-margin-y: 64px;
+
+  padding-top: 54px;
+  background-color: var(--mirax-bgColor);
+
+  ul,
+  ol {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .no-gutter {
+    position: static;
+    width: calc(100% + var(--mirax-section-padding) * 2) !important;
+    margin: 0 calc(var(--mirax-section-padding) * -1);
+  }
+
+  .banner {
+    position: relative;
+    margin: 0 auto;
+
+    color: #fff;
+    line-height: normal;
+    max-width: var(--mirax-section-max-width);
+    padding-top: 165px;
+
+    &__wrapper {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      width: var(--mirax-section-inner-width);
+      margin: 0 auto;
+      padding-top: 0;
+      text-align: center;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 19px;
+      width: 100%;
+      height: 242px;
+      background: url('https://file.mir4global.com/xdraco/img/mobile/mirage-mirax/bg-top.webp') 50% 0 / auto 100% no-repeat;
+      transform: translateX(-50%);
+    }
+
+    &--title {
+      font-size: 64px;
+      line-height: normal;
+    }
+
+    &--description {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  .contents {
+    color: rgba(#fff, 0.6);
+    line-height: normal;
+    max-width: none;
+    margin: 0;
+    width: auto;
+
+    &__wrapper {
+      overflow-x: hidden;
+      margin: 0 auto;
+      padding: 0 var(--mirax-section-padding);
+      max-width: var(--mirax-section-max-width);
+      width: var(--mirax-section-inner-width);
+    }
+
+    .concept {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 299px;
+      margin: 24px auto -16px;
+
+      &__wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background: url('https://file.mir4global.com/xdraco/img/mobile/mirage-mirax/bg-concept-frame.webp') 0 0 / 100% 100% no-repeat;
+        text-align: center;
+        width: 134px;
+        min-height: 84px;
+        row-gap: 6px;
+        padding: 9px 20px 12px;
+      }
+
+      &--title {
+        color: #fff;
+        font-weight: bold;
+        font-size: 17px;
+      }
+
+      &--description {
+        font-size: 10px;
+        line-height: 1.2;
+        margin-bottom: 0;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 83px;
+        min-height: 82px;
+        background: url('https://file.mir4global.com/xdraco/img/mobile/mirage-mirax/bg-concept-mirage.webp') 0 0 / contain no-repeat;
+        margin-bottom: 12px;
+      }
+      &::after {
+        left: auto;
+        right: 0;
+        background-image: url('https://file.mir4global.com/xdraco/img/mobile/mirage-mirax/bg-concept-mir4.webp');
+      }
+    }
+
+    .intro {
+      padding-bottom: 24px;
+
+      &--title {
+        margin-top: var(--mirax-margin-y);
+        margin-bottom: 24px;
+        color: #fff;
+        font-size: 24px;
+        line-height: 1.33;
+
+        > em {
+          color: var(--mirax-color-red);
+        }
+      }
+    }
+
+    .desc {
+      font-size: 14px;
+      line-height: 1.43;
+
+      > em {
+        color: #fff;
+      }
+      &:not(:first-of-type) {
+        margin-top: 8px;
+      }
+    }
+
+    .define__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 40px;
+      margin-top: var(--mirax-margin-y);
+      flex-direction: column;
+      row-gap: 24px;
+
+      .define {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex: 1;
+        margin-top: 0;
+      }
+      .wrap-img {
+        width: auto;
+        text-align: center;
+
+        img {
+          width: 100%;
+          max-width: 375px;
+        }
+
+        .mobile-image {
+          display: block;
+          margin: 0 auto;
+        }
+
+        .desktop-image {
+          display: none;
+        }
+
+        &.no-background-color {
+          width: 120%;
+          padding: 24px 0;
+          background-color: rgba(255, 255, 255, 0.05);
+
+          img {
+            max-width: 327px;
+          }
+        }
+      }
+
+      &.is-reverse {
+        .wrap-img {
+          order: 2;
+        }
+        .define {
+          order: 3;
+        }
+      }
+    }
+
+    .define {
+      margin-top: var(--mirax-margin-y);
+
+      &--title {
+        margin-bottom: 16px;
+        font-size: 20px;
+        color: #fff;
+        line-height: 1.2;
+        font-weight: bold;
+      }
+
+      &--description {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .figure-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 32px;
+        margin-top: 40px;
+        padding: 40px 0 52px;
+        background-color: rgba(255, 255, 255, 0.05);
+
+        figcaption {
+          font-size: 12px;
+          line-height: 1.5;
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        img {
+          max-width: 87%;
+        }
+      }
+    }
+
+    .applying-step {
+      display: flex;
+      justify-content: center;
+      column-gap: 16px;
+      min-height: 408px;
+      text-align: center;
+
+      flex-direction: column;
+      align-items: stretch;
+      margin: 64px auto;
+      max-width: 327px;
+      padding: 0;
+      row-gap: 24px;
+
+      .wrap-step {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        width: 160px;
+
+        justify-content: space-between;
+        flex-flow: row wrap;
+        gap: 24px 16px;
+
+        .image {
+          position: relative;
+          width: 100%;
+          height: 240px;
+        }
+
+        &.step1,
+        &.step2,
+        &.step3,
+        &.step4 {
+          width: 100%;
+
+          .wrap-score {
+            margin-top: 0;
+          }
+        }
+
+        &.step1,
+        &.step4 {
+          .image {
+            width: 156px;
+          }
+        }
+
+        &.step2,
+        &.step3 {
+          .image {
+            width: 171px;
+            height: 236px;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: -24px;
+              width: 220px;
+              height: 100%;
+              background-position: 50% 50%;
+              background-size: 245px 268px;
+              background-repeat: no-repeat;
+            }
+          }
+          .wrap-score {
+            position: relative;
+            z-index: 2;
+            margin-top: 0;
+          }
+        }
+
+        &.step1 {
+          .image {
+            background: url('https://file.mir4global.com/xdraco/img/common/mirage-mirax/img-applying-step01.webp') 50% 50% / cover no-repeat;
+          }
+        }
+        &.step2 {
+          .image {
+            &::before {
+              background-image: url('https://file.mir4global.com/xdraco/img/common/mirage-mirax/img-applying-step02.webp');
+            }
+          }
+          .step-desc {
+            padding-top: 0;
+            border: none;
+
+            > em {
+              color: var(--mirax-color-red);
+            }
+          }
+        }
+        &.step3 {
+          .image {
+            &::before {
+              background-image: url('https://file.mir4global.com/xdraco/img/common/mirage-mirax/img-applying-step03.webp');
+            }
+          }
+          .step-desc {
+            > em {
+              color: var(--mirax-color-yellow);
+            }
+          }
+        }
+        &.step4 {
+          .image {
+            background: url('https://file.mir4global.com/xdraco/img/common/mirage-mirax/img-applying-step04.webp') 50% 50% / cover no-repeat;
+          }
+        }
+      }
+
+      .wrap-score {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex: 1;
+        row-gap: 16px;
+
+        .mirage-score {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 2px;
+          margin-bottom: 0;
+
+          &--title {
+            font-size: 12px;
+          }
+
+          &--value {
+            display: flex;
+            align-items: center;
+            column-gap: 4px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 24px;
+
+            &::before {
+              content: '';
+              width: 19px;
+              height: 22px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/mirage-mirax/icon-mirage-score.webp') 0 0 / 100% auto no-repeat;
+            }
+          }
+        }
+
+        .mirax {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 4px;
+
+          &--value {
+            color: #fff;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .step-desc {
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 16px;
+        line-height: 1.38;
+        position: relative;
+        color: #fff;
+
+        width: 100%;
+        margin-top: 0;
+        min-height: auto;
+
+        > em {
+          font-weight: bold;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+
+      .summary {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        min-height: 40px;
+
+        &__inner {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 1;
+          column-gap: 8px;
+
+          &::before,
+          &::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: rgba(#fff, 0.2);
+          }
+        }
+
+        .txt {
+          color: #fff;
+          font-size: 12px;
+          line-height: 1.25;
+          font-weight: normal;
+
+          &.gain {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 8px;
+
+            .icon-mirax {
+              width: 34px;
+              height: 40px;
+              font-size: 0;
+              background: url('https://file.mir4global.com/xdraco/img/common/mirage-mirax/icon-gain-mirax.webp') 0 0 / cover no-repeat;
+            }
+            .gain-value {
+              font-size: 16px;
+              line-height: 1.13;
+              color: var(--mirax-color-yellow);
+            }
+          }
+        }
+
+      }
+    }
+
+    .section-remark {
+      margin-top: var(--mirax-margin-y);
+      text-align: center;
+      color: #fff;
+      padding-bottom: 80px;
+      font-size: 24px;
+      line-height: 1.33;
+
+      em {
+        color: var(--mirax-color-red);
+      }
+    }
+
+    .caution {
+      margin: 16px -8px 0;
+      font-size: 12px;
+      color: var(--mirax-color-red);
+      line-height: 1.5;
+    }
+  }
+}
+
+
+@include pc {
+  .mirage-mirax {
+    --mirax-top-banner-height: 500px;
+    --mirax-section-inner-width: 960px;
+    --mirax-margin-y: 80px;
+    padding-top: 100px;
+
+    .banner {
+      max-width: 100%;
+      min-height: var(--mirax-top-banner-height);
+      padding-top: 0;
+
+      &::before {
+        top: 0;
+        height: var(--mirax-top-banner-height);
+        background: url('https://file.mir4global.com/xdraco/img/desktop/mirage-mirax/bg-top.webp') 50% 0 / auto 100% no-repeat;
+      }
+
+      &__wrapper {
+        padding-top: 271px;
+        width: 100%;
+      }
+
+      &--title {
+        font-size: 100px;
+      }
+
+      &--description {
+        font-size: 24px;
+        line-height: 1.33;
+      }
+    }
+
+    .contents {
+      max-width: 960px;
+      margin: 0 auto;
+
+      &__wrapper {
+        max-width: 100%;
+        width: var(--mirax-section-inner-width);
+
+        .intro {
+          .desc {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .concept {
+        width: 741px;
+        margin: 0 auto;
+
+        &__wrapper {
+          row-gap: 4px;
+          width: 291px;
+          min-height: 120px;
+          padding: 15px 54px;
+          background-image: url('https://file.mir4global.com/xdraco/img/desktop/mirage-mirax/bg-concept-frame.webp');
+        }
+
+        &--title {
+          font-size: 24px;
+        }
+
+        &--descriptoin {
+          font-size: 12px;
+          line-height: 1.33;
+        }
+
+        &::before,
+        &::after {
+          width: 225px;
+          background: url('https://file.mir4global.com/xdraco/img/desktop/mirage-mirax/bg-concept-mirage.webp') 0 0 / contain no-repeat;
+          margin-bottom: 0;
+        }
+
+        &::after {
+          background-image: url('https://file.mir4global.com/xdraco/img/desktop/mirage-mirax/bg-concept-mir4.webp');
+        }
+      }
+
+      .intro--title {
+        font-size: 32px;
+        line-height: 1.25;
+      }
+
+      .desc {
+        font-size: 16px;
+        line-height: 1.4;
+
+        &:not(:first-of-type) {
+          margin-top: 16px;
+        }
+      }
+
+      .define__wrapper {
+        flex-direction: row;
+        .define {
+          order: 2;
+        }
+        .is-reverse {
+          .wrap-img {
+            order: 1;
+          }
+        }
+
+        .wrap-img {
+          width: 460px;
+
+          img {
+            max-width: 460px;
+          }
+
+          &.no-background-color {
+            order: 4;
+            width: auto;
+            background-color: transparent;
+
+            img {
+              min-width: 460px;
+            }
+          }
+
+          .mobile-image {
+            display: none;
+          }
+
+          .desktop-image {
+            display: block;
+          }
+        }
+      }
+
+      .define {
+        .figure-img {
+          padding: 40px 93px 56px;
+        }
+      }
+
+      .applying-step {
+        align-items: center;
+        margin-top: 40px;
+        padding: 0 24px;
+        flex-direction: row;
+        max-width: 100%;
+        min-height: 352px;
+
+        .wrap-step {
+          justify-content: center;
+
+          &.step2,
+          &.step3 {
+            .image {
+              &::before {
+                top: -23px;
+                left: calc(50% - 110px);
+              }
+            }
+
+            .wrap-score {
+              margin-top: -62px;
+            }
+          }
+
+          &.step4 {
+            .mirage-score {
+              display: none;
+            }
+          }
+
+          &.step1 + .summary {
+            .summary__inner {
+              &::before,
+              &::after {
+                width: 10px;
+              }
+            }
+          }
+          &.step2 + .summary {
+            .summary__inner {
+              &::before,
+              &::after {
+                width: 8px;
+              }
+            }
+          }
+
+          &.step3 + .summary {
+            .summary__inner {
+              &::before,
+              &::after {
+                width: 16px;
+              }
+            }
+          }
+        }
+
+        .wrap-score {
+          .mirage-score {
+            margin-bottom: 10px;
+
+            &--value {
+              font-size: 20px;
+
+              &::before {
+                width: 15px;
+                height: 16px;
+                background: url('https://file.mir4global.com/xdraco/img/desktop/mirage-mirax/icon-mirage-score.webp') 0 0 / 100% auto no-repeat;
+              }
+            }
+          }
+        }
+
+        .step-desc {
+          margin-top: 16px;
+          padding-top: 0;
+          border: none;
+          min-height: 44px;
+          font-size: 14px;
+          line-height: 1.57;
+
+          &::before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: -16px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: rgba(#fff, 0.2);
+          }
+        }
+
+        .summary {
+
+          &__inner {
+            column-gap: 4px;
+
+            &::before,
+            &::after {
+              background-color: rgba(#fff, 0.5);
+            }
+          }
+
+          .txt {
+            font-size: 10px;
+            line-height: 1.5;
+
+            &.gain {
+              flex-direction: column;
+            }
+          }
+
+        }
+      }
+
+      .section-remark {
+        padding-bottom: 120px;
+        font-size: 32px;
+        line-height: 1.25;
+      }
+
+      .caution {
+        margin: 16px 0 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .mirage-mirax {
+    .contents {
+      &__wrapper {
+        padding: 0;
+      }
+
+      .define {
+        .figure-img {
+          width: 100% !important;
+          margin: 40px 0 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .mirage-mirax {
+    .contents {
+      .applying-step {
+        .wrap-step.step2,
+        .wrap-step.step3 {
+          flex-direction: column;
+
+          .image {
+            margin: 0 auto 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .mirage-mirax {
+    .contents {
+      .concept {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,825 @@
+.card {
+  --card-width: 240px;
+  --card-height: 344px;
+  --card-padding-top: 169px;
+  --card-padding-horizontal: 12px;
+  --card-top-height: 20px;
+  --card-margin-text: 26px;
+  --card-thumb-width: 28px;
+  --card-badge-size: 52px;
+  --card-margin-itemname: 36px;
+  --card-name-height: 58px;
+  --card-item-name-fontsize: 17px;
+  --card-item-type-fontsize: 13px;
+  --card-ribbon-width: 190px;
+  --card-ribbon-height: 24px;
+  --card-ribbon-fontsize: 13px;
+  --card-character-thumbnail: 160px;
+  --card-power-fontsize: 24px;
+  --card-nftid-fontsize: 12px;
+  --card-class-size: 32px;
+  --card-level-fontsize: 18px;
+  --card-level-fontsize2: 11px;
+  --card-divider-width: 185px;
+  --card-margin-space: 4px;
+
+  width: var(--card-width);
+  height: var(--card-height);
+  perspective: 1000px;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: transform 300ms ease, filter 300ms ease;
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 500ms ease;
+  }
+  &__layer {
+    position: absolute;
+    z-index: 1;
+    padding: var(--card-padding-top) 0 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: url('https://file.mir4global.com/xdraco/img/common/card/sp-card.webp') 0 0 / calc(var(--card-width) * 5) calc(var(--card-height) * 5) no-repeat;
+    box-sizing: border-box;
+
+    &.front {
+      padding-right: var(--card-padding-horizontal);
+      padding-left: var(--card-padding-horizontal);
+      color: #fff;
+
+      .by-what {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+
+        &.draco {
+          width: 24px;
+          height: 24px;
+          background: url('https://file.mir4global.com/xdraco/img/common/card/icon-by-drace.webp') 0 0 / cover no-repeat;
+        }
+
+        &.draco-nft {
+          width: 42px;
+          height: 24px;
+          background: url('https://file.mir4global.com/xdraco/img/common/card/icon-by-draco-nft.webp') 0 0 / cover no-repeat;
+        }
+      }
+      .class {
+        position: absolute;
+        top: 6%;
+        left: 8%;
+        width: var(--card-class-size);
+        height: var(--card-class-size);
+        line-height: 0;
+        font-size: 0;
+        background: url('https://file.mir4global.com/xdraco/img/common/card/sp-class.webp') 0 0 / 100% auto no-repeat;
+
+        &.arbalist,
+        &.class-1 {
+          background-position-y: 0;
+        }
+        &.lancer,
+        &.class-2 {
+          background-position-y: calc(-1 * var(--card-class-size));
+        }
+        &.sorcerer,
+        &.class-3 {
+          background-position-y: calc(-2 * var(--card-class-size));
+        }
+        &.taoist,
+        &.class-4 {
+          background-position-y: calc(-3 * var(--card-class-size));
+        }
+        &.warrior,
+        &.class-4 {
+          background-position-y: calc(-4 * var(--card-class-size));
+        }
+      }
+      .level {
+        position: absolute;
+        top: 6%;
+        right: 8%;
+        line-height: 1;
+        font-size: var(--card-level-fontsize2);
+        color: #fff;
+        letter-spacing: -0.2px;
+
+        dt {
+          display: block;
+          opacity: 0.75;
+        }
+        dd {
+          line-height: 1.14;
+          font-size: var(--card-level-fontsize);
+          font-weight: 700;
+          letter-spacing: -0.36px;
+        }
+      }
+      .power-score {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        line-height: 1.2;
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: -0.18px;
+
+        &::before {
+          content: '';
+          display: block;
+          margin-right: 2px;
+          width: 20px;
+          height: 20px;
+          background: url('https://file.mir4global.com/xdraco/img/common/card/icon-power.webp') 0 0 / cover no-repeat;
+        }
+        dt {
+          @include hidden();
+        }
+        &.mirage {
+          &::before {
+            width: 21px;
+            height: 24px;
+            background-image: url('https://file.mir4global.com/xdraco/img/common/card/icon-mirage-score.webp');
+          }
+        }
+      }
+      .display-score {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: var(--card-divider-width);
+        height: 16px;
+        line-height: 16px;
+        font-size: 12px;
+        color: rgba(#000, .6);
+
+        dd {
+          display: flex;
+          align-items: center;
+          column-gap: 2px;
+          font-size: 1.16666em;
+          font-weight: 700;
+
+          &.power {
+            &::before {
+              content: '';
+              display: block;
+              width: 16px;
+              height: 16px;
+              background: url('https://file.mir4global.com/xdraco/img/common/card/icon-power-sm.webp') 50% 0 / auto 100% no-repeat;
+            }
+          }
+          &.mirage {
+            &::before {
+              content: '';
+              display: block;
+              width: 14px;
+              height: 16px;
+              background: url('https://file.mir4global.com/xdraco/img/common/card/icon-mirage-score-sm.webp') 50% 0 / auto 100% no-repeat;
+            }
+          }
+        }
+      }
+      .card-divider {
+        margin: 4px auto;
+        border-width: 0;
+        max-width: var(--card-divider-width);
+        width: 100%;
+        height: 8px;
+        background: url('https://file.mir4global.com/xdraco/img/common/card/bg-card-divider.webp') 50% 0 / auto 100% no-repeat;
+      }
+    }
+    &.back {
+      padding: 9px 0;
+      color: #fff;
+      font-size: 14px;
+      background-position-x: calc(-2 * var(--card-width));
+      transform: rotateY(180deg);
+
+      .back__inner {
+        overflow-y: hidden;
+        max-height: 100%;
+        padding: 11px 14px;
+
+        .platform-windows & {
+          &::-webkit-scrollbar {
+            width: 4px;
+            background-color: rgba(#000, 0.06);
+          }
+          &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(#000, 0.3);
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: rgba(#000, 0.4);
+          }
+        }
+      }
+
+      .no-options {
+        margin-top: 24px;
+        line-height: 1.4;
+        text-align: left;
+
+        dt {
+          display: block;
+          margin-bottom: 7px;
+          line-height: 1.14;
+          font-weight: 700;
+        }
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+
+      .wrap-property {
+        margin: 24px 0 16px;
+
+        .title-property {
+          border-bottom: 1px solid rgba(#fff, 0.5);
+          text-align: left;
+          font-size: 14px;
+        }
+        .property {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid rgba(#fff, 0.2);
+          padding: 7px 0;
+          line-height: 18px;
+          font-size: 14px;
+          color: #fff;
+          box-sizing: content-box;
+
+          dt {
+            overflow: hidden;
+            max-width: 158px;
+            letter-spacing: -0.14px;
+            white-space: nowrap;
+            word-break: break-word;
+
+            &.line-break {
+              white-space: initial;
+              line-height: 15px;
+              font-size: 12px;
+              text-align: left;
+            }
+          }
+          dd {
+            overflow: hidden;
+            max-width: 52px;
+            letter-spacing: -0.5px;
+          }
+          &.unique-number,
+          &.power-score {
+            font-weight: 700;
+            border-bottom-color: rgba(#fff, 0.5);
+
+            dd {
+              max-width: none;
+            }
+          }
+          &.power-score {
+            margin-top: 8px;
+
+            &:first-of-type {
+              margin-top: 0;
+            }
+          }
+        }
+        &:first-of-type {
+          margin-top: 0;
+        }
+        &:empty {
+          margin-top: 0;
+        }
+      }
+      .source {
+        margin-top: 16px;
+        line-height: 1.3;
+        font-size: 14px;
+        color: #fff;
+        text-align: left;
+
+        dt {
+          display: block;
+          margin-bottom: 8px;
+          line-height: 1.14;
+          font-weight: 700;
+        }
+      }
+      .wrap-button {
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+        margin-top: 24px;
+
+        .button {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 32px;
+          font-size: 12px;
+          letter-spacing: -0.01em;
+          color: #fff;
+          background-color: rgba(#fff, .1);
+        }
+      }
+    }
+  }
+
+  &__character {
+    &--level {
+      position: absolute;
+      bottom: 9%;
+      left: 73%;
+      display: block;
+      width: 48px;
+      height: 48px;
+      line-height: 40px;
+      text-align: center;
+      color: #FFF;
+      font-weight: 700;
+      font-size: 24px;
+      z-index: 1;
+
+      &[data-character-reinforce="1"],
+      &[data-character-reinforce="2"] {
+        color: #42FF00;
+      }
+
+      &[data-character-reinforce="3"],
+      &[data-character-reinforce="4"] {
+        color: #00C2FF;
+      }
+
+      &[data-character-reinforce="5"],
+      &[data-character-reinforce="6"] {
+        color: #E8401B;
+      }
+
+      &[data-character-reinforce="7"],
+      &[data-character-reinforce="8"] {
+        color: #FFE600;
+      }
+    }
+  }
+
+  .wrap-item,
+  .wrap-character {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: var(--card-top-height);
+    left: 0;
+    width: 100%;
+  }
+  .wrap-character {
+    top: 5.88%;
+
+    > img {
+      width: var(--card-character-thumbnail);
+    }
+  }
+  .wrap-badge {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: calc(var(--card-padding-top) - (var(--card-badge-size) / 2));
+    left: 0;
+    width: 100%;
+
+    .badge {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: var(--card-badge-size);
+      height: var(--card-badge-size);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.45px;
+      background: url('https://file.mir4global.com/xdraco/img/common/card/sp-badge-card.webp') 0 0 / calc(var(--card-badge-size) * 2) auto no-repeat;
+
+      dt {
+        @include hidden();
+      }
+      &.tier {
+        font-size: 17px;
+        letter-spacing: -0.17px;
+      }
+    }
+  }
+  .wrap-name {
+    margin-top: var(--card-margin-text);
+
+    .name {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: var(--card-name-height);
+      line-height: 1.2;
+
+      dt {
+        @include hidden();
+      }
+      .item-name {
+        padding: 0 var(--card-margin-itemname);
+        line-height: 1.14;
+        color: #000;
+        font-weight: 700;
+        font-size: var(--card-item-name-fontsize);
+        letter-spacing: -0.34px;
+
+        &.line-break {
+          font-size: 15px;
+        }
+      }
+      .item-type {
+        padding: 0 14px;
+        margin-top: 2px;
+        color: rgba(#000, 0.5);
+        font-size: var(--card-item-type-fontsize);
+        @include text-overflow();
+
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+    .unique-number {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 16%;
+      left: calc(50% - (var(--card-ribbon-width) / 2));
+      width: var(--card-ribbon-width);
+      height: var(--card-ribbon-height);
+      line-height: 1;
+      font-weight: 700;
+      font-size: var(--card-ribbon-fontsize);
+      color: #000;
+      background: url('https://file.mir4global.com/xdraco/img/common/card/sp-card-ribbon.webp') 0 0 / 100% auto no-repeat;
+    }
+    .nft-id {
+      margin-top: calc(var(--card-power-fontsize) / 2 - 5px);
+      line-height: 1.2;
+      color: #000;
+      font-size: var(--card-nftid-fontsize);
+    }
+    .power-score {
+      justify-content: center;
+      align-items: center;
+      position: static;
+      margin: var(--card-margin-space) 0 calc(var(--card-margin-space) * 3);
+      width: 100%;
+      line-height: 1;
+      color: #000;
+      letter-spacing: -0.5px;
+      font-size: var(--card-power-fontsize) !important;
+
+      &::before {
+        width: 24px;
+        height: 24px;
+        background-image: url('https://file.mir4global.com/xdraco/img/common/card/icon-power-black.webp');
+      }
+    }
+  }
+  .wrap-thumb {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 6%;
+    left: 0;
+    width: 100%;
+
+    .thumb {
+      margin-left: 4px;
+      width: var(--card-thumb-width);
+      height: var(--card-thumb-width);
+      line-height: 0;
+      font-size: 0;
+      background: url('https://file.mir4global.com/xdraco/img/common/card/sp-thumbs-character.webp') 0 0 / calc(var(--card-thumb-width) * 5) auto no-repeat;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &.warrior {
+        background-position-x: 0;
+      }
+      &.sorcerer {
+        background-position-x: calc(-1 * var(--card-thumb-width));
+      }
+      &.taoist {
+        background-position-x: calc(-2 * var(--card-thumb-width));
+      }
+      &.lancer {
+        background-position-x: calc(-3 * var(--card-thumb-width));
+      }
+      &.arbalist {
+        background-position-x: calc(-4 * var(--card-thumb-width));
+      }
+      &[aria-enabled='true'] {
+        background-position-y: calc(var(--card-thumb-width) * -3);
+      }
+    }
+  }
+
+  &:not([aria-disabled-flip='true']):hover {
+    transform: translateY(-6px);
+    filter: drop-shadow(0px 16px 24px rgba(#000, 0.4));
+  }
+  &:not([aria-disabled-flip='true']):hover {
+    .is-mobile & {
+      transform: none;
+      filter: none;
+    }
+  }
+
+  &[data-item-type='legendary'],
+  &[data-item-type='item-grade-5'] {
+    .card__layer {
+      background-position-y: 0;
+    }
+    .wrap-badge .badge {
+      background-position-y: 0;
+    }
+    .wrap-thumb .thumb {
+      &[aria-enabled='true'] {
+        background-position-y: calc(var(--card-thumb-width) * -5);
+      }
+    }
+    .unique-number {
+      background-position-y: calc(var(--card-ribbon-height) * -4);
+    }
+  }
+  &[data-item-type='epic'],
+  &[data-item-type='item-grade-4'] {
+    .card__layer {
+      background-position-y: calc(-1 * var(--card-height));
+    }
+    .wrap-badge .badge {
+      background-position-y: calc(-1 * var(--card-badge-size));
+    }
+    .wrap-thumb .thumb {
+      &[aria-enabled='true'] {
+        background-position-y: calc(var(--card-thumb-width) * -4);
+      }
+    }
+    .unique-number {
+      background-position-y: calc(var(--card-ribbon-height) * -3);
+    }
+  }
+  &[data-item-type='rare'],
+  &[data-item-type='item-grade-3'] {
+    .card__layer {
+      background-position-y: calc(-2 * var(--card-height));
+    }
+    .wrap-badge .badge {
+      background-position-y: calc(-2 * var(--card-badge-size));
+    }
+    .wrap-thumb .thumb {
+      &[aria-enabled='true'] {
+        background-position-y: calc(var(--card-thumb-width) * -3);
+      }
+    }
+    .unique-number {
+      background-position-y: calc(var(--card-ribbon-height) * -2);
+    }
+  }
+  &[data-item-type='grade2'],
+  &[data-item-type='item-grade-2'] {
+    .card__layer {
+      background-position-y: calc(-3 * var(--card-height));
+    }
+    .wrap-badge .badge {
+      background-position-y: calc(-3 * var(--card-badge-size));
+    }
+    .wrap-thumb .thumb {
+      &[aria-enabled='true'] {
+        background-position-y: calc(var(--card-thumb-width) * -3);
+      }
+    }
+    .unique-number {
+      background-position-y: calc(var(--card-ribbon-height) * -1);
+    }
+  }
+  &[data-item-type='grade1'],
+  &[data-item-type='item-grade-1'] {
+    .card__layer {
+      background-position-y: calc(-4 * var(--card-height));
+    }
+    .wrap-badge .badge {
+      background-position-y: calc(-4 * var(--card-badge-size));
+    }
+    .wrap-thumb .thumb {
+      &[aria-enabled='true'] {
+        background-position-y: calc(var(--card-thumb-width) * -3);
+      }
+    }
+    .unique-number {
+      background-position-y: 0;
+    }
+  }
+  &.reverse {
+    .card__inner {
+      transform: rotateY(180deg);
+    }
+    .card__layer {
+      &.back {
+        .back__inner {
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+
+  &.card--nft {
+    .card__layer {
+      &.front {
+        background-position-x: calc(var(--card-width) * -1);
+      }
+    }
+  }
+
+  &.card--collectible {
+    .card__layer {
+      &.front {
+        background-position-x: calc(var(--card-width) * -3);
+      }
+      &.back {
+        background-position-x: calc(var(--card-width) * -4);
+      }
+    }
+    .wrap-badge {
+      .badge {
+        color: #000;
+        background-position-x: calc(-1 * var(--card-badge-size));
+      }
+    }
+  }
+
+  &.card--sm {
+    --card-width: 212px;
+    --card-height: 312px;
+    --card-padding-top: 153px;
+    --card-top-height: 16px;
+    --card-margin-text: 22px;
+    --card-badge-size: 48px;
+    --card-margin-itemname: 24px;
+    --card-name-height: 52px;
+    --card-item-name-fontsize: 16px;
+    --card-item-type-fontsize: 12px;
+    --card-ribbon-width: 158px;
+    --card-ribbon-height: 20px;
+    --card-character-thumbnail: 144px;
+    --card-class-size: 28px;
+    --card-level-fontsize: 16px;
+    --card-divider-width: 172px;
+    --card-margin-space: 3px;
+
+    .wrap-item {
+      box-sizing: border-box;
+
+      .item {
+        width: 128px;
+      }
+    }
+    &.front {
+      .card-divider {
+        margin-top: 3px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  &.card--xs {
+    --card-width: 156px;
+    --card-height: 229px;
+    --card-padding-top: 112px;
+    --card-padding-horizontal: 8px;
+    --card-top-height: 10px;
+    --card-margin-text: 14px;
+    --card-badge-size: 34px;
+    --card-margin-itemname: 12px;
+    --card-thumb-width: 20px;
+    --card-name-height: 40px;
+    --card-item-name-fontsize: 12px;
+    --card-item-type-fontsize: 10px;
+    --card-ribbon-width: 142px;
+    --card-ribbon-height: 18px;
+    --card-ribbon-fontsize: 11px;
+    --card-character-thumbnail: 106px;
+    --card-power-fontsize: 17px;
+    --card-nftid-fontsize: 10px;
+    --card-class-size: 20px;
+    --card-level-fontsize: 13px;
+    --card-level-fontsize2: 10px;
+    --card-divider-width: 132px;
+    --card-margin-space: 2px;
+
+    .wrap-item {
+      box-sizing: border-box;
+
+      .item {
+        width: 88px;
+      }
+    }
+
+    .card__character--level {
+      bottom: 2%;
+      left: 68%;
+      font-size: 16px;
+    }
+
+    .card__layer {
+      &.front {
+        .by-what {
+          top: 12px;
+          left: 12px;
+
+          &.draco {
+            width: 16px;
+            height: 16px;
+          }
+
+          &.draco-nft {
+            width: 27px;
+            height: 16px;
+          }
+        }
+        .power-score {
+          top: 12px;
+          right: 12px;
+          font-size: 13px;
+
+          &::before {
+            width: 14px;
+            height: 14px;
+          }
+        }
+        .wrap-name {
+          .power-score {
+            &::before {
+              width: 16px;
+              height: 16px;
+            }
+            &.mirage {
+              &::before {
+                width: calc(21px * 0.71);
+                height: calc(24px * 0.7);
+              }
+            }
+          }
+        }
+        .display-score {
+          font-size: 10px;
+        }
+      }
+    }
+    .wrap-badge {
+      .badge {
+        font-size: 10px;
+
+        &.tier {
+          font-size: 12px;
+        }
+      }
+    }
+    .wrap-name {
+      .name {
+        .item-name {
+          font-size: var(--card-item-name-fontsize);
+        }
+        .item-type {
+          font-size: var(--card-item-type-fontsize);
+        }
+      }
+    }
+  }
+}
+
+.is-mobile {
+  .card--xs {
+    .card__character--level {
+      bottom: 6%;
+      left: 70%;
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.container {
+  .wrap-banner {
+    width: 100%;
+
+    .banner {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 22px;
+      width: 100%;
+      height: 320px;
+      line-height: 1.2;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      box-sizing: border-box;
+
+      &::before {
+        content: '';
+        display: block;
+        margin-bottom: 10px;
+        background-size: auto 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      &.mir4 {
+        background-image: url("https://file.mir4global.com/xdraco/img/bg-banner-mir4.webp");
+
+        &::before {
+          width: 218px;
+          height: 58px;
+          background-image: url("https://file.mir4global.com/xdraco/img/bi-banner-mir4.webp");
+        }
+        .button {
+          display: flex;
+          align-items: center;
+          margin-top: 24px;
+          height: 48px;
+          padding: 0 20px;
+          color: #fff;
+          font-size: 16px;
+          background-color: #000;
+        }
+      }
+      &.draco {
+        background-image: url("https://file.mir4global.com/xdraco/img/bg-banner-draco.webp");
+
+        &::before {
+          width: 200px;
+          height: 52px;
+          background-image: url("https://file.mir4global.com/xdraco/img/bi-banner-draco.webp");
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+
+.container {
+  .wrap-banner {
+    display: flex;
+
+    .banner {
+      flex: 1;
+      font-size: 24px;
+      background-size: cover;
+      background-position: 50% 50%;
+
+      &.mir4 {
+        font-size: 28px;
+
+        &::before {
+          width: 246px;
+          height: 64px;
+        }
+        .button {
+          margin-top: 13px;
+          padding: 0 43px;
+          height: 56px;
+          font-size: 24px;
+        }
+      }
+      &.draco {
+        &::before {
+          width: 300px;
+          height: 78px;
+        }
+      }
+    }
+  }
+}
+
+}

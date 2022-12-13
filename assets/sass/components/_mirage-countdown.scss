@@ -1,0 +1,235 @@
+@import "~@/assets/sass/mixin";
+
+.tick-mirage {
+  --tick-width: 20px;
+  --tick-height: 32px;
+  --tick-flip-lineheight: 32px;
+  --tick-fontsize: 18px;
+  --tick-flip-margin-x: 1px;
+  --tick-flip-margin-y: 1px;
+
+  line-height: 1.1;
+  font-size: var(--tick-fontsize);
+  font-weight: 700;
+  color: #fff;
+
+  [data-layout~=horizontal][data-layout~=fit] {
+    vertical-align: top;
+  }
+  > div {
+    font-size: inherit !important;
+  }
+  .tick-group {
+    display: flex;
+
+    .tick-label {
+      margin-right: var(--tick-flip-margin-x);
+      width: var(--tick-width);
+      height: var(--tick-height);
+      line-height: 0;
+      font-size: 0;
+      background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/sp-countdown.png') 0 0 / calc(var(--tick-width) * 3) calc(var(--tick-height) * 3) no-repeat;
+    }
+    &:nth-last-of-type(1) {
+      .tick-label {
+        background-position-x: 0;
+        margin-right: 0;
+
+        .mirage-boss-raid-report & {
+          margin-right: 1px;
+        }
+      }
+    }
+    &:nth-last-of-type(2) {
+      .tick-label {
+        background-position-x: calc(-1 * var(--tick-width));
+      }
+    }
+    &:nth-last-of-type(3) {
+      .tick-label {
+        background-position-x: calc(-2 * var(--tick-width));
+      }
+    }
+  }
+
+  &.hidden-day {
+    .tick-group {
+      &:nth-last-of-type(4) {
+        display: none !important;
+      }
+    }
+  }
+  &.hidden-time {
+    .tick-group {
+      &:nth-last-of-type(1),
+      &:nth-last-of-type(2),
+      &:nth-last-of-type(3) {
+        display: none !important;
+      }
+    }
+  }
+  &.hidden-second {
+    .tick-group {
+      &:nth-last-of-type(1) {
+        display: none !important;
+      }
+    }
+  }
+
+  .tick-flip {
+    margin: 0 var(--tick-flip-margin-x) 0 0;
+    border-radius: 0;
+    min-width: auto;
+    width: var(--tick-width);
+    height: var(--tick-height);
+    text-indent: 1px;
+    letter-spacing: 0;
+    background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty.png') 50% 0 / 48px 80px no-repeat;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 1px;
+      background-color: #942100;
+    }
+    .tick-flip-spacer {
+      height: 100%;
+    }
+  }
+  .tick-flip-panel {
+    background-color: transparent;
+
+    &.tick-flip-panel-front {
+      background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty.png') 50% 0 / 48px 40px no-repeat;
+    }
+    &.tick-flip-panel-back {
+      background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty.png') 50% 100% / 48px 40px no-repeat;
+    }
+  }
+  .tick-flip-panel-front,
+  .tick-flip-panel-back {
+    height: 50%;
+    box-shadow: none;
+  }
+  .tick-flip-panel-text-wrapper {
+    line-height: var(--tick-flip-lineheight);
+  }
+  .tick-flip-panel-back {
+    &::after {
+      background-image: none;
+    }
+  }
+  .tick-empty {
+    width: var(--tick-width);
+    height: var(--tick-height);
+    background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty.png') 0 0 / auto 100% no-repeat !important;
+  }
+
+  .tick-flip-shadow {
+    display: none;
+  }
+
+  &.tick--smaller {
+    --tick-height: 32px;
+    --tick-flip-lineheight: 32px;
+    --tick-fontsize: 20px;
+
+    display: flex;
+    gap: 2px;
+
+    .tick-group {
+      .tick-label {
+        background-position-y: -4px;
+      }
+    }
+
+    .tick-empty {
+      &:first-of-type {
+        margin-left: -2px;
+      }
+    }
+  }
+
+  &.theme-purple {
+    .tick-group {
+      .tick-label {
+        background-position-y: calc(var(--tick-height) * -2);
+      }
+    }
+    .tick-flip {
+      &::before {
+        background-color: rgba(#000, 0.2);
+      }
+    }
+    .tick-flip,
+    .tick-empty {
+      background-image: linear-gradient(to bottom, #406 0%, #130125 100%);
+    }
+    .tick-flip-panel {
+      &.tick-flip-panel-front,
+      &.tick-flip-panel-back {
+        background-image: linear-gradient(to bottom, #406 0%, #130125 100%);
+      }
+    }
+
+    &.tick--smaller {
+      .tick-group {
+        .tick-label {
+          background-position-y: calc(var(--tick-height) * -2 - 20px);
+        }
+      }
+    }
+  }
+
+  &.theme-dark {
+    .tick-group {
+      .tick-label {
+        background-position-y: calc(var(--tick-height) * -1);
+      }
+    }
+    .tick-flip {
+      &::before {
+        background-color: rgba(#000, 0.2);
+      }
+    }
+    .tick-flip,
+    .tick-empty {
+      background-image: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty-dark.png');
+    }
+    .tick-flip-panel {
+      &.tick-flip-panel-front,
+      &.tick-flip-panel-back {
+        background-image: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty-dark.png');
+      }
+    }
+
+    &.tick--smaller {
+      .tick-group {
+        .tick-label {
+          background-position-y: calc(var(--tick-height) * -1 - 12px);
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .tick-mirage {
+    --tick-width: 24px;
+    --tick-height: 40px;
+    --tick-flip-lineheight: 40px;
+    --tick-fontsize: 22px;
+    --tick-flip-margin-x: 1px;
+    --tick-flip-margin-y: 1px;
+
+    .tick-group {
+      .tick-label {
+        background-size: calc(var(--tick-width) * 3) auto;
+      }
+    }
+  }
+}

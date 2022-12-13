@@ -1,0 +1,96 @@
+@import "~@/assets/sass/mixin";
+
+.exd-list {
+  &__banner {
+    --banner-height: 300px;
+
+    height: var(--banner-height);
+    width: 100%;
+    background-image: url('https://file.mir4global.com/xdraco/img/common/banner/exd-top/bg-banner-mobile.webp'), linear-gradient(to bottom, #11001e, #1e0035);
+    background-position: 50% 0;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding: 48px 17px 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    &__bi {
+      margin-bottom: 16px;
+      width: 168px;
+      height: 64px;
+      font-size: 0;
+      background: url('https://file.mir4global.com/xdraco/img/common/banner/exd-top/bi-exd.webp') 50% 0 / auto 100% no-repeat;
+    }
+
+    &__msg {
+      margin: 0 48px;
+      line-height: 1.14;
+      font-size: 16px;
+      text-align: center;
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+
+  .exchange-list {
+    .wrap-card {
+      display: grid;
+      grid-gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+      margin: 23px;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .wrap-button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .exd-list {
+    &__banner {
+      --banner-height: 460px;
+
+      height: var(--banner-height);
+      background-image: url('https://file.mir4global.com/xdraco/img/common/banner/exd-top/bg-banner.webp'), linear-gradient(to bottom, #11001e, #1e0035);
+
+      &__inner {
+        padding-top: 0;
+      }
+
+      &__bi {
+        margin-bottom: 24px;
+        width: 252px;
+        height: 96px;
+      }
+
+      &__msg {
+        max-width: none;
+        font-size: 24px;
+      }
+    }
+
+    .exchange-list {
+      .wrap-card {
+        grid-gap: 24px 16px;
+        grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
+        margin: 24px 0;
+      }
+    }
+  }
+}

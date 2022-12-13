@@ -1,0 +1,946 @@
+@import '~@/assets/sass/mixin';
+
+.v-dialog {
+  .dialog-header {
+    min-height: 48px;
+    overflow: hidden;
+
+    .title {
+      font-size: 18px !important;
+      font-weight: 700;
+      margin: 16px 0 0 16px;
+      line-height: 1;
+    }
+  }
+
+  &.v-dialog--fullscreen {
+    .btn-close {
+      position: fixed;
+    }
+  }
+
+  .btn-close {
+    &.v-size--x-small {
+      --v-xsmall: 16px;
+      width: var(--v-xsmall);
+      height: var(--v-xsmall);
+      top: var(--v-xsmall);
+      right: var(--v-xsmall);
+      z-index: 1;
+    }
+  }
+}
+
+.v-menu__content.select-menu {
+  &.v-menu__content {
+    box-shadow: none;
+    border-radius: 0;
+    border: 1px solid rgba(#000, 0.1);
+    margin-top: -1px;
+    border-top: 0;
+
+    .v-sheet {
+      box-shadow: none;
+    }
+
+    .v-list-item:hover::before {
+      opacity: 0.03;
+    }
+
+    .v-list-item--link:before {
+      background-color: #aa00ff;
+      opacity: 0;
+    }
+
+    .v-list .v-list-item--active {
+      color: #aa00ff;
+    }
+  }
+}
+
+.dialog-account {
+  background: #fff;
+
+  .dialog-header {
+    border-bottom: 1px solid #00000010;
+  }
+
+  .content {
+    .btn-close {
+      position: absolute;
+      width: auto;
+      height: auto;
+      right: 16px;
+      top: 16px;
+    }
+  }
+
+  .tabs {
+    .v-tabs-slider {
+      background-color: var(--point-color);
+    }
+
+    .v-tabs-bar {
+      height: 54px;
+    }
+
+    .v-item-group {
+      background: url("https://file.mir4global.com/xdraco/img/mobile/popup/bg-vtabs-bar.png") 0 100% repeat-x #fff;
+    }
+
+    &.theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active),
+    &.theme--light.v-tabs > .v-tabs-bar .v-tab--disabled {
+      color: #000;
+    }
+
+    &.v-tabs > .v-tabs-bar {
+      .v-tab {
+        font-size: 12px;
+        font-weight: 700;
+        color: #000;
+        letter-spacing: 0;
+
+        &:not(.v-tab--active) {
+          color: #000;
+        }
+      }
+    }
+
+    .v-tab {
+      text-transform: none;
+
+      &::before {
+        display: none;
+      }
+
+      &.v-tab--active {
+        background-color: rgba(#aa00ff, 0.03);
+      }
+
+      .v-ripple__container {
+        display: none;
+      }
+    }
+
+    .v-card {
+      &.v-sheet {
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .v-tabs.tabs {
+    .v-tabs-bar {
+      .v-tab {
+        justify-content: flex-start;
+        padding: 0 16px 0 24px;
+      }
+    }
+  }
+
+  .v-card {
+    &.my-wallet {
+      .msgbox {
+        min-height: 414px;
+      }
+    }
+  }
+
+  .select {
+    &.v-input {
+      border-radius: 0;
+      transition: none;
+      min-height: 40px;
+
+      > .v-input__control {
+        > .v-input__slot {
+          margin-bottom: 0;
+        }
+
+        .v-text-field__details {
+          margin-bottom: 0;
+          padding: 0;
+          min-height: inherit;
+
+          .v-messages {
+            min-height: inherit;
+          }
+        }
+      }
+    }
+
+    &.v-text-field--outlined.v-input--is-focused fieldset,
+    &.v-text-field--outlined.v-input--has-state fieldset,
+    .v-input__control fieldset {
+      border: 1px solid rgba(#000, 0.15);
+    }
+
+    .v-select__selections {
+      line-height: 1.26;
+      font-size: 14px;
+    }
+
+    .v-icon {
+      font-size: 0;
+      width: 16px;
+      height: 16px;
+      background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-arrow-bottom.webp") 0 0 /
+      cover no-repeat;
+    }
+  }
+
+  .list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    border-bottom: 1px solid rgba(#000, 0.1);
+
+    li {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 80px;
+      border-top: 1px solid rgba(#000, 0.1);
+    }
+  }
+
+  .msgbox {
+    text-align: center;
+
+    .title {
+      font-size: 18px !important;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .title + .desc {
+      margin-top: 16px;
+    }
+
+    .desc {
+      font-size: 14px;
+      font-weight: normal;
+      color: rgba(#000, 0.5);
+    }
+
+    .wrap-button {
+      margin-top: 16px;
+
+      .btn-wemix {
+        height: 48px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #fff;
+        padding: 0 32px;
+        vertical-align: middle;
+        background-color: #a0f;
+
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 80px;
+          height: 22px;
+          background: url("https://file.mir4global.com/xdraco/img/desktop/popup/bi-wemix-light.webp") 0 0 /
+          cover no-repeat;
+          vertical-align: middle;
+          padding-right: 4px;
+          margin: -2px 4px 0 0;
+        }
+      }
+    }
+
+    &.vcenter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .radio-box,
+  .check-box {
+    display: inline-block;
+    position: relative;
+
+    .input-check,
+    .input-radio {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      transform: translate(0, -50%);
+      border: 0;
+      background: none;
+      -webkit-appearance: none;
+
+      + .input-label {
+        display: inline-block;
+        font-size: 11px;
+        color: #00000050;
+        padding-left: 28px;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+          width: 24px;
+          height: 24px;
+          background: url("https://file.mir4global.com/xdraco/img/mobile/popup/form-radio.webp") 0 0 /
+          cover no-repeat;
+          vertical-align: middle;
+        }
+      }
+
+      &:disabled + .input-label {
+        &:before {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .input-radio {
+      &:checked + .input-label {
+        &:before {
+          background: url("https://file.mir4global.com/xdraco/img/mobile/popup/form-radio-active.webp") 0 0 / cover no-repeat;
+        }
+      }
+
+      &[checked][disabled] + .input-label {
+        &:before {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .my-character {
+    .list-header {
+      display: flex;
+      flex: 1 1 auto;
+      align-items: center;
+
+      .server-select {
+        width: 50%;
+      }
+
+      .server-update {
+        margin-left: auto;
+
+        .btn-update {
+          position: relative;
+          display: inline-block;
+          padding: 0;
+          font-size: 12px;
+          font-weight: normal;
+          color: #000;
+          padding-left: 28px;
+          background-color: transparent;
+
+          em {
+            font-style: normal;
+          }
+
+          &:before {
+            @include pseudoIcon();
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            margin-top: -1px;
+            background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-reload.webp") 0 0 /
+            cover no-repeat;
+          }
+        }
+      }
+    }
+
+    .list {
+      li:first-of-type {
+        border-top: 0;
+      }
+    }
+  }
+
+  .my-wallet {
+    .iscroll {
+      min-height: 366px;
+    }
+
+    .list {
+      li {
+        min-height: 100px;
+      }
+    }
+  }
+
+  .my-activity {
+    .list {
+      li {
+        min-height: 90px;
+        padding: 15px 0 16px;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .tabs-content {
+    padding: 24px 16px;
+    font-size: 12px;
+
+    .my-address {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: inherit;
+
+      strong {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .btn-copy {
+        display: inline-flex;
+        align-items: center;
+        color: rgba(#000, 0.5);
+
+        &::after {
+          content: "";
+          display: block;
+          align-self: center;
+          margin-top: -1px;
+          width: 24px;
+          height: 24px;
+          min-width: inherit;
+          padding: 0;
+          background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-copy-point.webp") 0 0 /
+          cover no-repeat;
+        }
+      }
+    }
+
+    .msg-notice {
+      color: #00000050;
+    }
+
+    .list {
+      padding-left: 0;
+      margin-top: 10px;
+
+      li {
+        justify-content: space-between;
+
+        .list-content {
+          word-break: break-all;
+
+          .char-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .thumb + .info {
+              padding-left: 10px;
+            }
+
+            .info {
+              .nick {
+                display: block;
+                font-size: 16px;
+                font-weight: 700;
+                color: #000;
+              }
+
+              .category,
+              .lv {
+                display: inline-block;
+                font-size: 12px;
+                font-weight: normal;
+                color: #00000050;
+              }
+
+              .category {
+                position: relative;
+                margin-left: 10px;
+
+                &:before {
+                  content: "";
+                  position: absolute;
+                  left: -5px;
+                  top: 50%;
+                  height: 10px;
+                  margin-top: -5px;
+                  border-left: 1px solid #00000010;
+                }
+              }
+            }
+          }
+
+          .credit-info {
+            .info {
+              margin-top: 4px;
+
+              span[class^="ico-"] {
+                margin: 0;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 1;
+              }
+            }
+          }
+
+          .active-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .thumb {
+              .item-info {
+                .item__layer {
+                  --card-width: 48px;
+                  --card-height: 48px;
+
+                  .by-what.draco {
+                    width: 12px;
+                    height: 12px;
+                    top: 3px;
+                    left: 3px;
+                  }
+
+                  .wrap-item {
+                    .item {
+                      width: 36px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .thumb + .info {
+              padding-left: 16px;
+            }
+
+            .info {
+              em {
+                font-style: normal;
+              }
+
+              .time {
+                display: block;
+                font-size: 12px;
+                font-weight: normal;
+                color: #00000050;
+              }
+
+              .history,
+              .desc {
+                font-size: 16px;
+                color: #000;
+                line-height: 1.25;
+
+                em {
+                  font-weight: bold;
+                }
+              }
+
+              .history {
+                .ico-vigor.ico-xs {
+                  font-weight: 700;
+                }
+
+                .ico-darco.ico-xs {
+                  font-weight: 700;
+                }
+
+                em + .ico-darco.ico-xs {
+                  margin-left: 4px;
+                }
+
+                .ico-hydra.ico-xs {
+                  font-weight: 700;
+                }
+
+                em + .ico-hydra.ico-xs {
+                  margin-left: 4px;
+                }
+
+                .plus {
+                  padding: 0 8px;
+                }
+
+                .failed {
+                  color: #f00;
+                  font-weight: 700;
+                  vertical-align: bottom;
+                }
+              }
+            }
+          }
+        }
+
+        .fnc {
+          .radio-box {
+            .input-label {
+              padding-left: 0;
+              padding-right: 28px;
+
+              &:before {
+                left: inherit;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .list-notice {
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 1.5;
+      color: #00000050;
+      margin: 8px 0;
+    }
+
+    .msgbox {
+      min-height: 487px;
+    }
+
+    .btm-info {
+      position: relative;
+      margin-top: 20px;
+      padding-top: 16px;
+
+      .iflex {
+        display: flex;
+        align-items: flex-start;
+
+        &.type-colum {
+          flex-direction: column;
+        }
+
+        &.type-row {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .desc {
+          color: #00000050;
+        }
+
+        .brand-logo {
+          height: 24px;
+
+          &::before {
+            @include pseudoIcon($width: 89px, $height: 24px, $margin: 0);
+            background: url("https://file.mir4global.com/xdraco/img/mobile/popup/bi-wemix.webp") 0 0 /
+            cover no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .v-menu__content.select-menu-dark {
+    &.v-menu__content {
+      box-shadow: none;
+      border-radius: 0;
+      margin-top: -2px;
+      border-top: 0;
+
+      .v-sheet {
+        background-color: #0f0f25;
+        border: solid 1px #333346;
+        box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.5);
+      }
+
+      .v-list-item {
+        &:hover {
+          &::before {
+            opacity: 0.03;
+          }
+        }
+
+        &:after {
+          content: none;
+        }
+
+        &.v-list-item--active {
+          .v-list-item__content {
+            .v-list-item__title {
+              color: #f00;
+            }
+          }
+        }
+
+        &.v-list-item--disabled {
+          .v-list-item__content {
+            .v-list-item__title {
+              color: rgba(#fff, 0.4);
+            }
+          }
+        }
+
+        .v-list-item__content {
+          .v-list-item__title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: normal;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .dialog-account {
+    width: 560px;
+    height: auto;
+
+    .tabs {
+      .v-item-group {
+        background: url("https://file.mir4global.com/xdraco/img/desktop/popup/bg-vtabs-bar.png") 0 100% repeat-x #fff;
+      }
+    }
+
+    .select {
+      .v-icon {
+        background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-arrow-bottom.webp") 0 0 /
+          cover no-repeat;
+      }
+    }
+
+    .radio-box,
+    .check-box {
+      .input-check,
+      .input-radio {
+        + .input-label {
+          &:before {
+            background: url("https://file.mir4global.com/xdraco/img/desktop/popup/form-radio.webp") 0 0 /
+              cover no-repeat;
+          }
+        }
+      }
+
+      .input-radio {
+        &:checked + .input-label {
+          &:before {
+            background: url("https://file.mir4global.com/xdraco/img/desktop/popup/form-radio-active.webp") 0 0 / cover no-repeat;
+          }
+        }
+      }
+    }
+
+    .my-character {
+      .list-header {
+        .server-update {
+          .btn-update {
+            display: inline-flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            &:before {
+              background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-reload.webp") 0 0 /
+                cover no-repeat;
+            }
+          }
+        }
+      }
+    }
+
+    .tabs-content {
+      overflow-y: auto;
+      padding: 24px;
+      height: 535px;
+
+      .platform-windows & {
+        &::-webkit-scrollbar {
+          width: 6px;
+          background-color: rgba(#000, 0.06);
+        }
+
+        &::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 6px rgba(#000, 0.3);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(#000, 0.4);
+        }
+      }
+
+      .my-address {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 40px;
+
+        .btn-copy {
+          &::after {
+            background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-copy-point.webp") 0 0 /
+              cover no-repeat;
+          }
+        }
+      }
+
+      .list {
+        li {
+          .list-content {
+            .active-info {
+              .thumb {
+                .item-info {
+                  .item__layer {
+                    --card-width: 46px;
+                    --card-height: 46px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+      .btm-info {
+        .iflex {
+          align-items: flex-end;
+          .brand-logo {
+            margin-left: auto;
+
+            &::before {
+              @include pseudoIcon($width: 89px, $height: 24px, $margin: 0);
+              background: url("https://file.mir4global.com/xdraco/img/desktop/popup/bi-wemix.webp") 0 0 /
+                cover no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-mobile {
+  .v-dialog {
+    &.v-dialog--fullscreen {
+      .btn-close {
+        position: fixed;
+      }
+    }
+
+    .btn-close {
+      z-index: 2;
+    }
+  }
+
+  .dialog-account {
+    .dialog-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      background-color: #fff;
+    }
+    .tabs {
+      .v-tabs-bar {
+        position: fixed;
+        top: 48px;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        background-color: #fff;
+      }
+    }
+
+    .radio-box,
+    .check-box {
+      .input-check,
+      .input-radio {
+        + .input-label {
+          &:before {
+            background: url("https://file.mir4global.com/xdraco/img/mobile/popup/form-radio.webp") 0 0 /
+            cover no-repeat;
+          }
+        }
+      }
+
+      .input-radio {
+        &:checked + .input-label {
+          &:before {
+            background: url("https://file.mir4global.com/xdraco/img/mobile/popup/form-radio-active.webp") 0 0 / cover no-repeat;
+          }
+        }
+      }
+    }
+
+    .my-character {
+      .list-header {
+        .server-update {
+          .btn-update {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+
+    .tabs-content {
+      min-height: 535px;
+
+      .my-address {
+        flex-direction: column;
+      }
+
+      .list {
+        li {
+          .list-content {
+            .active-info {
+              .info {
+                .history {
+                  .ico-darco.ico-xs.add-inside {
+                    vertical-align: bottom;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+      .btm-info {
+        &:before {
+          display: none;
+        }
+
+        .iflex {
+          .brand-logo {
+            margin-top: 8px;
+          }
+        }
+      }
+
+      .msgbox + .btm-info {
+        position: relative;
+
+        &:before {
+          display: block;
+          content: "";
+          position: absolute;
+          top: -10px;
+          width: 100%;
+          border-top: 1px solid #00000010;
+        }
+      }
+    }
+  }
+}

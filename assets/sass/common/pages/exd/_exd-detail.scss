@@ -1,0 +1,98 @@
+@import '~@/assets/sass/mixin';
+
+.wrap-price-history {
+  position: relative;
+  padding: 48px 0 0;
+  min-height: 100px;
+
+  .price-chart {
+    margin-top: 18px;
+  }
+}
+
+.exd-trade {
+  .exchange-market {
+    padding: 0 20px;
+
+    .wrap-addition {
+      &__detail {
+        .wrap-seller {
+          .seller {
+            align-items: flex-end;
+            column-gap: 8px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .exd-trade {
+    .exchange-market {
+      padding: 0;
+      .wrap-addition__detail {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+
+    .float-bottom {
+      .register {
+        .item-info {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet - 1) {
+  .exchange-market {
+    .wrap-card {
+      > .card {
+        --card-width: 212px;
+        --card-height: 312px;
+        --card-padding-top: 153px;
+        --card-top-height: 16px;
+        --card-margin-text: 22px;
+        --card-badge-size: 48px;
+        --card-margin-itemname: 24px;
+        --card-name-height: 52px;
+        --card-item-name-fontsize: 16px;
+        --card-item-type-fontsize: 12px;
+        --card-ribbon-width: 158px;
+        --card-ribbon-height: 20px;
+        --card-character-thumbnail: 144px;
+        --card-class-size: 28px;
+        --card-level-fontsize: 16px;
+        --card-divider-width: 172px;
+        --card-margin-space: 3px;
+
+        .wrap-item {
+          box-sizing: border-box;
+
+          .item {
+            width: 128px;
+          }
+        }
+        &.front {
+          .card-divider {
+            margin-top: 3px;
+            margin-bottom: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop - 1) {
+  .v-main__wrap {
+    .contents[class*="market"] {
+      background-position: 45% 0;
+    }
+  }
+}

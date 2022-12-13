@@ -1,0 +1,241 @@
+@import '~@/assets/sass/mixin';
+
+.contents.mirage-teaser {
+  background-color: #000;
+
+  .section {
+    color: #fff;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      padding: 0 24px;
+      max-width: 640px;
+    }
+
+    &.section-video {
+      padding: 0;
+      background-color: #000;
+
+      .section__inner {
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        max-width: 640px;
+      }
+
+      .wrap-video {
+        position: relative;
+        padding-top: 0;
+        transition: padding 0.3s;
+
+        &.wrap-video--open {
+          padding-top: 56.25%;
+        }
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+    }
+    &.section-intro {
+      background: url('https://file.mir4global.com/xdraco/img/mobile/mirage/bg-intro.webp') 50% 110px / 960px auto no-repeat;
+
+      .section__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .section-title {
+        margin-top: 80px;
+      }
+
+      .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        align-self: stretch;
+      }
+
+      .subject {
+        margin-bottom: 40px;
+        font-size: 24px;
+        line-height: 1.67;
+        font-weight: 700;
+      }
+
+      .part {
+        margin-bottom: 40px;
+        font-size: 16px;
+        line-height: 1.63;
+        white-space: pre-wrap;
+      }
+
+      .remark {
+        font-size: 22px;
+        line-height: 1.45;
+        font-weight: 700;
+      }
+
+      .divider {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 75px;
+        background: url('https://file.mir4global.com/xdraco/img/mobile/mirage/img-draco-hydra.webp') 50% 50% / 117px 57px no-repeat;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: calc(50% - 68px);
+          height: 1px;
+          background-color: rgba(#c4c4c4, 0.4);
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: calc(50% - 68px);
+          height: 1px;
+          background-color: rgba(#c4c4c4, 0.4);
+        }
+      }
+
+      figcaption {
+        margin-top: 40px;
+        align-self: stretch;
+        text-align: right;
+      }
+
+      .txt-caption {
+        font-size: 14px;
+        line-height: 2;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+
+    &.section-define {
+      margin-top: 80px;
+
+      .section-title {
+        align-self: stretch;
+        margin-bottom: 24px;
+        font-size: 24px;
+        line-height: 1.33;
+      }
+
+      p {
+        margin-top: 24px;
+        font-size: 14px;
+        line-height: 1.57;
+        color: rgba(255, 255, 255, 0.6);
+
+        em {
+          color: #fff;
+        }
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+
+      .remark {
+        margin-top: 56px;
+        font-size: 14px;
+        line-height: 1.57;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@include pc {
+  .contents.mirage-teaser {
+    .section {
+      &__inner {
+        width: 720px;
+      }
+
+      &.section-video {
+        margin: 4px 0;
+
+        .section__inner {
+          width: 960px;
+        }
+      }
+      &.section-intro {
+        padding-top: 96px;
+        background: url('https://file.mir4global.com/xdraco/img/desktop/mirage/bg-intro.webp') 50% 0 / 1200px auto no-repeat;
+
+        .section__inner {
+          padding: 0 40px;
+        }
+
+        .intro {
+          padding: 16px;
+        }
+
+        .subject {
+          font-size: 36px;
+          line-height: 1.11;
+        }
+
+        .part {
+          font-size: 18px;
+          line-height: 1.56;
+
+          .new-line {
+            line-height: 1.78;
+          }
+        }
+
+        .remark {
+          font-size: 24px;
+          line-height: 1.67;
+        }
+
+        .divider {
+          width: 720px;
+          background: url('https://file.mir4global.com/xdraco/img/desktop/mirage/img-divider.webp') 0 0 / 100% no-repeat;
+        }
+      }
+
+      &.section-define {
+        .section-title {
+          font-size: 28px;
+          line-height: 1.14;
+        }
+
+        p {
+          margin-top: 16px;
+          line-height: 1.86;
+        }
+
+        .remark {
+          margin-top: 80px;
+          font-size: 18px;
+          line-height: 1.78;
+        }
+      }
+    }
+  }
+}

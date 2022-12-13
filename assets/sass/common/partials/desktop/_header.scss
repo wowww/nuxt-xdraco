@@ -1,0 +1,394 @@
+@import '~@/assets/sass/mixin';
+@import '~@/assets/sass/common/partials/header-custom-props';
+
+.header {
+  visibility: visible;
+  position: fixed;
+  z-index: var(--header-zindex);
+  width: 100%;
+  box-shadow: none !important;
+  transition: height 400ms ease, margin-top 400ms ease, backdrop-filter 600ms ease-out, background-color 600ms ease-out;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    height: var(--header-height);
+    background-color: $header-bgcolor;
+
+  }
+
+  .subnav--simple.subnav.light {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    background-color: transparent !important;
+
+  }
+
+  &__top {
+    background-color: $header-bgcolor;
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    height: 100%;
+  }
+
+  &__gnb-menu,
+  &__gnb-language {
+    .v-btn__content {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__gnb-language {
+
+    .v-btn__content {
+      background: url("https://file.mir4global.com/xdraco/img/mobile/header/icon-language.webp") 50% 50% / 24px 24px no-repeat;
+    }
+  }
+
+  &__gnb-menu {
+    .v-btn__content {
+      &::before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url("https://file.mir4global.com/xdraco/img/mobile/header/icon-gnb.webp") 50% 50% / cover no-repeat;
+      }
+    }
+
+    &__bi {
+      visibility: visible;
+      margin-left: 8px;
+      width: 92px;
+      height: 20px;
+      line-height: 0;
+      font-size: 0;
+      background-position: 0 0;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+
+      &.home {
+        background-image: url("https://file.mir4global.com/xdraco/img/mobile/header/bi-header-xdraco.webp");
+      }
+
+      &.exchange {
+        width: 92px;
+        height: 38px;
+        background-image: url("https://file.mir4global.com/xdraco/img/mobile/header/bi-header-exd.webp");
+      }
+      &.dsp {
+        width: 70px;
+        height: 28px;
+        background-image: url("https://file.mir4global.com/xdraco/img/mobile/header/bi-header-dsp.webp");
+      }
+      &.mir4nft {
+        width: 71px;
+        height: 30px;
+        background-image: url("https://file.mir4global.com/xdraco/img/mobile/header/bi-header-mir4nft.webp");
+      }
+      &.draco {
+        width: 108px;
+        height: 28px;
+        background-image: url("https://file.mir4global.com/xdraco/img/mobile/header/bi-header-draco.webp");
+      }
+      &.exd {
+        width: 92px;
+        height: 38px;
+        background-image: url("https://file.mir4global.com/xdraco/img/mobile/header/bi-header-exd.webp");
+      }
+      &.collectible {
+        width: 159px;
+        height: 30px;
+        background-image: url("https://file.mir4global.com/xdraco/img/mobile/header/bi-header-collectibles.webp");
+      }
+      &.hsp {
+        width: 76px;
+        height: 28px;
+        background-image: url("https://file.mir4global.com/xdraco/img/mobile/header/bi-header-hsp.webp");
+      }
+      &.mirage {
+        width: 120px;
+        height: 32px;
+        background-image: url("https://file.mir4global.com/xdraco/img/mobile/header/nav-mirage.webp");
+      }
+      &.inventory {
+        width: 107px;
+        height: 32px;
+        background-image: url("https://file.mir4global.com/xdraco/img/mobile/header/bi-header-inventory.webp");
+      }
+    }
+  }
+
+  &__left {
+    &--simple {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 2px;
+      padding-left: 8px;
+      width: 100%;
+      align-items: center;
+    }
+  }
+
+  &__right {
+    column-gap: 1px;
+
+    &--detail {
+      display: flex;
+    }
+
+    &--simple {
+      display: flex;
+      align-items: center;
+
+      .v-btn {
+        width: 48px;
+        height: 48px;
+      }
+
+      .btn-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: visible;
+        width: 48px;
+        height: 48px;
+
+        &.download {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 48px;
+          font-size: 0;
+
+          &::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            background: url("https://file.mir4global.com/xdraco/img/mobile/header/icon-download.webp") 0 0 / cover no-repeat;
+          }
+        }
+        &.discord {
+          width: 48px;
+          line-height: 0;
+          font-size: 0;
+
+          &::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            background: url("https://file.mir4global.com/xdraco/img/mobile/header/icon-discord.webp") 0 0 / cover no-repeat;
+          }
+        }
+        &.account {
+          position: relative;
+          font-size: 0;
+
+          &::before {
+            content: '';
+            display: block;
+            border-radius: 50%;
+            margin: 0 auto;
+            width: 32px;
+            height: 32px;
+            background: rgba(#fff, .3) url("https://file.mir4global.com/xdraco/img/mobile/header/icon-profile.webp") 50% 50% / 24px 24px no-repeat;
+          }
+          > img {
+            position: absolute;
+            top: calc(50% - 16px);
+            left: calc(50% - 16px);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+          }
+          &[data-get-activity="true"] {
+            @include iconActivity($top: 5px, $right: 5px);
+            &::after {
+              background-image: none;
+            }
+          }
+        }
+      }
+
+      .btn-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: visible;
+        position: relative;
+        padding: 0 8px;
+        min-width: 44px;
+        height: 48px;
+        font-size: 12px;
+        color: #fff;
+        box-sizing: border-box;
+        transition: background-color 400ms ease;
+
+        .text {
+          margin-right: 8px;
+        }
+        .thumbs {
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          background: rgba(#fff, .3) url("https://file.mir4global.com/xdraco/img/desktop/header-v2/icon-profile.webp") 50% 50% / 24px 24px no-repeat;
+
+          > img {
+            border-radius: inherit;
+          }
+        }
+        &::after {
+          content: '';
+          display: none;
+          border-radius: 50%;
+          width: 6px;
+          height: 6px;
+        }
+        &[aria-expanded="true"] {
+          background-color: rgba(#fff, .2);
+        }
+        &[data-get-activity="true"] {
+          .thumbs {
+            @include iconActivity();
+          }
+        }
+        &[data-has-represent="false"] {
+          cursor: default;
+
+          .thumbs {
+            > img {
+              border-radius: 0;
+            }
+          }
+          &[aria-expanded="true"] {
+            background-color: transparent
+          }
+        }
+      }
+    }
+  }
+
+  .btn-open-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--header-height);
+    height: 100%;
+    font-size: 0;
+    color: #fff;
+    background-color: rgba(#fff, .2);
+  }
+
+  &.headroom--unpinned {
+    margin-top: calc(-1 * var(--header-height)) !important;
+  }
+
+  &.headroom--not-top {
+    .subnav {
+      --navdsp-height: 60px;
+
+      transition: background-color 400ms ease;
+      background-color: rgba(#161630, .6) !important;
+      backdrop-filter: blur(5px);
+
+      &.dsp {
+        .logo {
+          height: 36px;
+        }
+      }
+
+      &.exchange {
+        .logo {
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  &.v-app-bar--is-scrolled {
+    --header-height: 44px;
+    --header-btn-height: 44px;
+
+    .gnb {
+      &__bi {
+        min-width: 128px;
+
+        .link::before {
+          transform: scale(.72);
+        }
+      }
+
+      &__list {
+        .v-list-item {
+          min-width: auto;
+
+          &::before {
+            opacity: 0;
+          }
+
+          &[target=_blank]::after {
+            margin-left: -2px;
+            transform: scale(.8);
+          }
+
+          .text {
+            transform: scale(.8);
+          }
+        }
+      }
+    }
+  }
+}
+
+.v-navigation-drawer {
+  width: 100% !important;
+  max-width: 440px !important;
+  height: 100% !important;
+  background-color: $header-bgcolor !important;
+
+  .v-navigation-drawer__content {
+    position: relative;
+
+    .v-menu + button {
+      display: none;
+    }
+  }
+  .btn-close {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+  }
+}
+
+// media query
+
+.header__left--detail,
+.header__right--detail {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .header__left--detail {
+    display: flex;
+    align-items: center;
+  }
+  .header__left--simple {
+    display: none;
+  }
+}
+
+@include large-pc {
+  .header__right--detail {
+    display: flex;
+    align-items: center;
+  }
+  .header__right--simple {
+    display: none;
+  }
+}

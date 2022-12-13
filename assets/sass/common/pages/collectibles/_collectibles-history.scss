@@ -1,0 +1,16 @@
+@import "~@/assets/sass/mixin";
+
+.collectible-history {
+  min-height: calc(100vh - 184px);
+  .exd-ranking-list {
+    margin: 24px 16px 42px;
+  }
+}
+
+@include large-pc {
+  .collectible-history {
+    .exd-ranking-list {
+      margin: 40px 0 80px;
+    }
+  }
+}

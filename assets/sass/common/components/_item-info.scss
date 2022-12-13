@@ -1,0 +1,212 @@
+@import '~@/assets/sass/mixin';
+
+.item-info {
+  --card-width: 64px;
+  --card-height: 64px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: normal;
+  font-size: 16px;
+
+  &[data-item-type='legendary'],
+  &[data-item-type='grade-5'] {
+    .item__layer {
+      background-position-x: 0;
+    }
+  }
+  &[data-item-type='epic'],
+  &[data-item-type='grade-4'] {
+    .item__layer {
+      background-position-x: calc(var(--card-width) * -1);
+    }
+  }
+  &[data-item-type='rare'],
+  &[data-item-type='grade-3'] {
+    .item__layer {
+      background-position-x: calc(var(--card-width) * -2);
+    }
+  }
+  &[data-item-type='uncommon'],
+  &[data-item-type='grade-2'] {
+    .item__layer {
+      background-position-x: calc(var(--card-width) * -3);
+    }
+  }
+  &[data-item-type='common'],
+  &[data-item-type='grade-1'] {
+    .item__layer {
+      background-position-x: calc(var(--card-width) * -4);
+    }
+  }
+  &[data-item-type='none'],
+  &[data-item-type='grade-0'] {
+    .item__layer {
+      background-position-x: calc(var(--card-width) * -5);
+    }
+  }
+
+  .item__layer {
+    position: relative;
+    width: var(--card-width);
+    height: var(--card-height);
+    flex: 0 0 var(--card-width);
+    background: url('https://file.mir4global.com/xdraco/img/common/nft-detail/sp-item-thumbs.webp') 0 0 / calc(var(--card-width) * 6) calc(var(--card-height) * 2) no-repeat;
+    background-position-y: 0;
+    box-sizing: border-box;
+
+    .by-what {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+
+      &.draco {
+        width: 12px;
+        height: 12px;
+        background: url('https://file.mir4global.com/xdraco/img/common/card/icon-by-drace.webp') 0 0 / cover no-repeat;
+      }
+
+      &.draco-nft {
+        width: 20px;
+        height: 12px;
+        background: url('https://file.mir4global.com/xdraco/img/common/card/icon-by-draco-nft.webp') 0 0 / cover no-repeat;
+      }
+    }
+    .nft & {
+      background-position-y: calc(-1 * var(--card-height));
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__desc {
+    margin-left: 17px;
+    color: rgba(255, 255, 255, 0.5);
+
+    .category {
+      font-size: 0;
+      line-height: 0;
+
+      span {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: normal;
+        padding: 0 4px;
+        color: #fff;
+        border: 1px solid #fff;
+        margin: 0 0 6px 4px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+        &.legendary,
+        &.grade-5 {
+          color: var(--color-legendary);
+          border-color: var(--color-legendary);
+        }
+        &.epic,
+        &.grade-4 {
+          color: var(--color-epic);
+          border-color: var(--color-epic);
+        }
+        &.rare,
+        &.grade-3 {
+          color: var(--color-rare);
+          border-color: var(--color-rare);
+        }
+        &.uncommon,
+        &.grade-2 {
+          color: var(--color-uncommon);
+          border-color: var(--color-uncommon);
+        }
+        &.tire {
+          color: #fff;
+          border-color: #fff;
+        }
+      }
+    }
+    .sncode {
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: normal;
+      color: rgba(#fff, 0.5);
+    }
+    .sub {
+      font-weight: 400;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 0;
+
+      span:not(:first-child) {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: -0.16px;
+    em {
+      font-style: normal;
+      color: #ffe600;
+      margin-left: 4px;
+    }
+  }
+}
+
+@include pc {
+  .item-info {
+    font-size: 20px;
+    .item__layer {
+      .by-what {
+        top: 4px;
+        left: 4px;
+
+        &.draco {
+          width: 16px;
+          height: 16px;
+        }
+
+        &.draco-nft {
+          width: 27px;
+          height: 16px;
+        }
+      }
+    }
+
+    &__desc {
+      margin-left: 16px;
+
+      .sub {
+        margin-top: 4px;
+      }
+
+      .sncode {
+        margin-top: 4px;
+      }
+    }
+
+    &__name {
+      font-size: 20px;
+      letter-spacing: -0.2px;
+
+      .item-info__desc {
+        margin-left: 0;
+        font-size: 12px;
+        font-weight: normal;
+        color: rgba(#fff, 0.5);
+      }
+    }
+  }
+}

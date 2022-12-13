@@ -1,0 +1,176 @@
+@import '~@/assets/sass/mixin';
+
+
+.init-boss-raid {
+  .mirage {
+    .section {
+      margin: 54px 0 0 !important;
+      width: 100% !important;
+    }
+  }
+}
+
+.mirage {
+  .section {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .boss-raid-detail {
+    line-height: normal;
+    margin: 0 auto;
+    width: 100%;
+
+    .function {
+      display: none;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .section-title {
+      padding: 16px;
+      line-height: normal;
+      color: #fff;
+    }
+    hr {
+      background-color: #ffffff33;
+    }
+
+    .wrap-my-mirage {
+      .util-list {
+        margin: 0 0 24px;
+        padding: 0;
+      }
+    }
+
+    .mirage-inventory {
+      display: flex;
+      column-gap: 1px;
+      width: 100%;
+      height: 48px;
+      justify-content: center;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: hsla(0,0%,100%,.1);
+        padding: 12px 16px;
+        flex: 1;
+      }
+
+      .mirage-inventory-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 12px 16px;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          display: none;
+        }
+
+        .btn {
+          &-enhance {
+            padding: 0 8px;
+            height: 24px;
+            color: #fff;
+            background-color: hsla(0,0%,100%,.2);
+          }
+          &-charge {
+            padding: 0 8px;
+            height: 24px;
+            color: #000;
+            background-color: #ffec44;
+          }
+        }
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@include pc {
+  .init-boss-raid {
+    .mirage {
+      .section {
+        margin: 100px 0 0 !important;
+      }
+    }
+  }
+
+  .mirage {
+    .section {
+      width: calc(100% - (var(--intro-draco-padding) * 2));
+    }
+
+    .boss-raid-detail {
+      .my-mirage {
+        display: flex;
+
+        .util-list {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 40px 16px 0;
+          width: 100%;
+
+          .function {
+            display: block;
+            padding: 0;
+
+            .backtolist {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+
+      hr {
+        margin: 32px 0;
+      }
+      .mirage-inventory {
+        column-gap: 16px;
+        justify-content: flex-end;
+
+        &__item {
+          flex: initial;
+          background-color: transparent;
+          padding: 0;
+        }
+
+        .currency {
+          button[class*=btn-] {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include large-pc {
+  .contents.mirage {
+    .boss-raid-detail {
+      .my-mirage {
+        .util-list {
+          padding-top: 0;
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+      .mirage-inventory__item {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

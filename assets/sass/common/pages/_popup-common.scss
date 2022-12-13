@@ -1,0 +1,171 @@
+.dialog-common {
+  .dialog-header {
+    margin: 0;
+  }
+
+  .wrap-notice {
+    padding: 8px 0 24px;
+
+    .msgbox {
+      text-align: center;
+
+      &.vcenter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .ico-loading,
+      .ico-error,
+      .ico-completed {
+        width: 64px;
+        height: 64px;
+      }
+      .ico-completed {
+        background: url('https://file.mir4global.com/xdraco/img/mobile/popup/ico-status-completed.webp')
+          0 0 / cover no-repeat;
+      }
+      .ico-error {
+        background: url('https://file.mir4global.com/xdraco/img/mobile/popup/ico-status-error.webp') 0 0 /
+          cover no-repeat;
+      }
+      .ico-loading {
+        background: url('https://file.mir4global.com/xdraco/img/mobile/popup/ico-status-loading.webp') 0
+          0 / cover no-repeat;
+        &.add-ani {
+          animation: animCircle 0.75s linear infinite;
+        }
+      }
+
+      .title {
+        font-size: 18px !important;
+        font-weight: 700;
+        color: #000;
+      }
+
+      .desc,
+      .title {
+        line-height: normal;
+      }
+      .desc {
+        font-size: 14px;
+        font-weight: normal;
+        color: rgba(#000, 0.5);
+        margin-top: 8px;
+        padding: 0 12px;
+      }
+      .title + .desc {
+        margin-top: 16px;
+      }
+      .wrap-loading + .title,
+      .v-progress-circular + .title,
+      [class^='ico-'] + .title {
+        margin-top: 8px;
+      }
+      .wrap-loading {
+        position: relative;
+        width: 64px;
+        height: 64px;
+        margin: 0 auto;
+
+        .v-progress-circular {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .wrap-button {
+        margin-top: 16px;
+
+        .btn {
+          margin-left: 8px;
+          &:first-of-type {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-desktop {
+  .dialog-common {
+    .dialog-header {
+      margin: -24px -24px 0;
+    }
+
+    .wrap-notice {
+      .msgbox {
+        .ico-completed {
+          background: url('https://file.mir4global.com/xdraco/img/desktop/popup/ico-status-completed.webp')
+            0 0 / cover no-repeat;
+        }
+
+        .ico-error {
+          background: url('https://file.mir4global.com/xdraco/img/desktop/popup/ico-status-error.webp') 0
+            0 / cover no-repeat;
+        }
+
+        .ico-loading {
+          background: url('https://file.mir4global.com/xdraco/img/desktop/popup/ico-status-loading.webp')
+            0 0 / cover no-repeat;
+        }
+
+        .title {
+          font-size: 20px !important;
+        }
+
+        .desc {
+          line-height: 1.43;
+          letter-spacing: -0.14px;
+        }
+
+        .title + .desc {
+          margin-top: 8px;
+        }
+
+        .wrap-button {
+          .btn {
+            min-width: 108px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-mobile {
+  span[class^='ico-'] {
+    display: inline-block;
+    vertical-align: middle;
+
+    &.add-inside {
+      position: relative;
+      width: inherit;
+      height: inherit;
+      background: none;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  .dialog-common {
+    position: relative;
+    background-color: #fff;
+    border-radius: 0;
+    margin: 16px;
+    padding: 16px;
+
+    .dialog-header {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.enhance__info {
+  display: flex;
+
+  &--level {
+    &-num {
+      margin-left: 4px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+
+      .is-mobile & {
+        font-size: 16px;
+      }
+
+      &[data-character-reinforce="1"],
+      &[data-character-reinforce="2"] {
+        color: #42FF00;
+      }
+
+      &[data-character-reinforce="3"],
+      &[data-character-reinforce="4"] {
+        color: #00C2FF;
+      }
+
+      &[data-character-reinforce="5"],
+      &[data-character-reinforce="6"] {
+        color: #E8401B;
+      }
+
+      &[data-character-reinforce="7"],
+      &[data-character-reinforce="8"] {
+        color: #FFE600;
+      }
+    }
+  }
+}

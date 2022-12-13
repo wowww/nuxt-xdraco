@@ -1,0 +1,87 @@
+.swiper-container {
+  width: 100%;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+    width: 64px;
+    height: 64px;
+
+    &::before {
+      content: '';
+      flex: 1;
+      height: 100%;
+      background: url("https://file.mir4global.com/xdraco/img/btn-swiper-arrow.svg") 0 0 / cover no-repeat;
+    }
+
+    &::after {
+      content: none;
+    }
+
+    &.swiper-button-disabled {
+      opacity: .2;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 5px;
+  }
+
+  .swiper-button-next {
+    right: 5px;
+
+    &::before {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .swiper-wrapper {
+    .swiper-slide {
+      width: 100% !important;
+    }
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    .swiper-pagination-bullet {
+      position: relative;
+      border-radius: 0;
+      padding: 10px 5px;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      transition: opacity 400ms ease;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 6px;
+        transform: rotate(45deg);
+        background-color: #999;
+      }
+
+      &::after {
+        position: absolute;
+        top: calc(50% - 5px);
+        left: calc(50% - 5px);
+        border: 1px solid #999;
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+        box-sizing: border-box;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.swiper-pagination-bullet-active {
+        &::after {
+          content: '';
+        }
+      }
+    }
+  }
+}

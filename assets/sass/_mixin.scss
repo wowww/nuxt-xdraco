@@ -1,0 +1,418 @@
+$breakpoint-mobile: 375px;
+$breakpoint-large-mobile: 678px;
+$breakpoint-tablet: 900px;
+$breakpoint-desktop: 1240px;
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin large-mobile {
+  @media (min-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-large-mobile}) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin large-pc {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin hidden {
+  position: absolute !important;
+  top: -1px;
+  left: -1px;
+  overflow: hidden;
+  visibility: hidden;
+  height: 1px !important;
+  width: 1px !important;
+  font-size: 0;
+  word-wrap: normal;
+}
+
+@mixin hide-text {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin line-clamp($line, $line-height) {
+  overflow: hidden;
+  display: flex;
+  text-overflow: ellipsis;
+  max-height: $line-height * $line;
+  line-height: $line-height;
+  -webkit-line-clamp: $line;
+
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+
+  /*! autoprefixer: on */
+}
+
+@mixin display-balance(
+  $line-height: 1,
+  $font-size: 40px,
+  $color: #fff,
+  $symbol: "draco"
+) {
+  display: flex;
+  align-items: center;
+  line-height: $line-height;
+  letter-spacing: -0.6px;
+  font-size: $font-size;
+  font-weight: 700;
+  color: $color;
+
+  &::before {
+    content: "";
+    display: block;
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+    background: url("https://file.mir4global.com/xdraco/img/mobile/symbol-#{$symbol}.webp") 0 0 / cover
+      no-repeat;
+  }
+}
+
+@mixin volume-change($height: 40px, $font-size: inherit, $padding: 10px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 $padding;
+  height: $height;
+  text-align: center;
+  font-size: $font-size;
+  background-color: rgba(#fff, 0.2);
+  vertical-align: super;
+
+  &.plus {
+    background-color: #2A4;
+  }
+
+  &.minus {
+    background-color: #f04;
+  }
+}
+
+@mixin pseudoIcon($width: 24px, $height: 24px, $margin: 0 4px) {
+  content: "";
+  display: inline-block;
+  margin: $margin;
+  width: $width;
+  height: $height;
+}
+
+@mixin ellipsis($line: 1) {
+  display: block;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+
+
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-word;
+  -webkit-line-clamp: $line;
+}
+
+@mixin placeholder($color: #7f7f7f) {
+  &::input-placeholder {
+    color: $color;
+  }
+
+  &::placeholder {
+    color: $color;
+  }
+
+  &:input-placeholder {
+    color: $color;
+  }
+
+  &:placeholder {
+    color: $color;
+  }
+}
+
+@mixin iconActivity($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  &::after {
+    content: "";
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #f00;
+  }
+}
+
+@mixin box-filter-style {
+  border-radius: 0;
+  border: 1px solid rgba(#fff, 0.15);
+  font-size: 14px;
+  background-color: #0f0f25;
+  box-sizing: border-box;
+
+  &:not(.v-input__control, .select-filter-layer, .layer-filter) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    height: 40px;
+    padding: 0 16px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url("https://file.mir4global.com/xdraco/img/common/ico-filter-arrow.webp") 50% 50% /
+        contain no-repeat;
+      transition: transform 300ms cubic-bezier(0.25, 0.8, 0.5, 1);
+    }
+
+    &.btn--active {
+      border-color: rgba(#fff, 0.5);
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+    &.btn--set {
+      border-color: rgba(#fff, 0.3);
+    }
+  }
+
+  .v-input__icon {
+    margin-right: 6px;
+  }
+}
+
+@mixin btn-viewmore($width: auto) {
+  --viewmore-height: 62px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $width;
+  min-height: var(--viewmore-height);
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  background-color: rgba(#fff, 0.05);
+  vertical-align: top;
+  box-sizing: border-box;
+
+  .is-mobile & {
+    --viewmore-height: 48px;
+  }
+}
+
+@mixin fieldset-editable() {
+  --fe-padding-x: 16px;
+  --fe-min-height: 60px;
+  --fe-font-size: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background-color: rgb(0 0 0 / 25%);
+  border: 1px solid #fff;
+  min-height: var(--fe-min-height);
+  font-size: var(--fe-font-size);
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  line-height: normal;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  input[type="text"],
+  span[contenteditable="true"] {
+    font-size: var(--fe-font-size);
+    font-weight: 700;
+    letter-spacing: -0.24px;
+    color: #fff;
+    outline: 0;
+    cursor: text;
+    margin-left: 2px;
+    width: 100%;
+
+    &::placeholder {
+      font-weight: 400;
+      color: rgba(#fff, 0.25);
+    }
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .ico-darco.ico-xs {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.36px;
+    margin: 0;
+    vertical-align: top;
+
+    &.add-inside {
+      width: inherit;
+      height: inherit;
+      vertical-align: middle;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: -0.2px;
+      padding-left: 26px;
+      color: #fff;
+
+      &::before {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .add-draco {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+
+    .add {
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: -0.16px;
+      color: #fff;
+    }
+
+    .fee,
+    .ico-darco.ico-xs {
+      margin-left: 4px;
+    }
+
+    .fee {
+      font-size: 12px;
+      font-weight: normal;
+      letter-spacing: -0.12px;
+      vertical-align: middle;
+      color: #fff;
+    }
+  }
+
+  .in-msg {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 12px;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: -0.12px;
+    width: auto;
+
+    span {
+      vertical-align: middle;
+
+      + span {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &.focus {
+    border: 1px solid #a0f;
+  }
+
+  &.alert {
+    border: 1px solid #f00;
+
+    input[type="text"],
+    span[contenteditable="true"] {
+      color: #f00;
+    }
+  }
+
+  .is-mobile & {
+    --fe-padding-x: 12px;
+    --fe-min-height: 48px;
+    --fe-font-size: 20px;
+
+    input[type="text"],
+    span[contenteditable="true"] {
+      max-width: 140px;
+    }
+  }
+}
+
+@mixin trainingCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@mixin miragPopupType1($width, $deg) {
+  box-sizing: border-box;
+  width: $width;
+  box-shadow: 0 16px 16px 0 rgba(#000, 0.25);
+  border-style: solid;
+  border-width: 1px;
+  border-image-source: linear-gradient(to bottom, #448 0%, #226 100%);
+  border-image-slice: 1;
+  background-image: linear-gradient(
+    to bottom,
+    #000028 24%,
+    rgb(0 0 0 / 0%) 100%
+  ),
+    linear-gradient($deg, #005, #006 49%, #005 100%);
+}
+
+@mixin ico($width, $height, $imgname) {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: $width;
+  height: $height;
+  background: url($imgname) 50% 50% / cover no-repeat;
+}

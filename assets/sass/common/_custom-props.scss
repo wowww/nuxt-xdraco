@@ -1,0 +1,33 @@
+@import '~@/assets/sass/mixin';
+
+:root {
+  --bg-container: #020219;
+  --navdsp-height: 54px;
+  --navexd-height: 54px;
+  --notification-global-height: 96px;
+  --content-color: #ffffff80;
+  --point-color: #a0f;
+  --color-exd: #ffdd00;
+  --color-hsp: #0044ff;
+  --color-epic: #ff002e;
+  --color-legendary: #ffff00;
+  --color-rare: #3391ff;
+  --color-uncommon: #00b267;
+
+  --intro-draco-padding: 15px;
+  --intro-draco-maxwidth: 670px;
+  --section-padding-x: 24px;
+  --coin-section-inner-width: 640px;
+  --intro-draco-float-height: clamp(96px, 96px, 96px);
+}
+
+@include pc {
+  :root {
+    --navdsp-height: 100px;
+    --navexd-height: 100px;
+    --section-inner-width: 1200px;
+    --gutter-width: 200px;
+    --notification-global-height: 60px;
+    --intro-draco-float-height--scrolled: 120px;
+  }
+}

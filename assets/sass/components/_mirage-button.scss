@@ -1,0 +1,71 @@
+.btn-mirage {
+  --btn-height: 40px;
+  --btn-fontsize: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  column-gap: 4px;
+  padding: 0 10px;
+  width: 100%;
+  min-width: 100px;
+  max-width: 1000px;
+  height: var(--btn-height);
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  color: #fff;
+  font-size: var(--btn-fontsize);
+  font-weight: 700;
+
+  .volume {
+    display: flex;
+    align-items: center;
+    column-gap: 2px;
+    font-size: calc(var(--btn-fontsize) + 2px);
+  }
+
+  &.btn-primary {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to bottom, #dd714e 0%, #620 100%);
+    background-image: linear-gradient(to right, #620 0%, #f40 51%, #620 100%);
+  }
+  &.btn-recover {
+    border-color: #444;
+    background-image: linear-gradient(107deg, #000 0%, #000 51%, #140000 100%);
+  }
+  &.btn-reinforce {
+    background-color: rgba(#fff, .1);
+  }
+  &.btn-assault {
+    background-color: rgba(#f00, .3);
+  }
+  &.btn-enlisted {
+    line-height: 1.25;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(#fff, .5);
+    background-color: rgba(#fff, .05);
+  }
+  &.btn-bid {
+    border-image-source: linear-gradient(to bottom, #fff9c5 0%, #ffa99d 100%);
+    border-image-slice: 1;
+    background-image: linear-gradient(97deg, #f90 0%, #ffec44 51%, #f90 100%);
+    color: #000 !important;
+  }
+  &.btn-disabled,
+  &[aria-disabled="true"],
+  &:disabled {
+    background-color: rgba(#fff, .05);
+
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url('https://file.mir4global.com/xdraco/img/common/mirage-character/ico-locked.webp') 0 0 / contain no-repeat;
+      opacity: .5;
+    }
+  }
+}

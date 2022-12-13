@@ -1,0 +1,221 @@
+@import 'assets/sass/common/partials/header-custom-props';
+@import '~@/assets/sass/mixin';
+
+.mobile-nav {
+  &__gnb {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $header-bgcolor;
+
+    &__list {
+      padding: 0;
+      visibility: visible;
+      line-height: 1.33;
+      font-weight: 700;
+      margin-top: 64px;
+      font-size: 24px;
+
+      &__item {
+        margin-top: 2px;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+
+        .v-list-item {
+          height: 70px;
+          position: relative;
+          padding: 0 var(--gnb-horizontal-padding) 0 0;
+          color: #fff !important;
+          text-decoration: none;
+
+          &::after {
+            content: none !important;
+          }
+
+          &::before {
+            content: none !important;
+          }
+
+          .text {
+            font-size: 0;
+            padding-left: 32px;
+            box-sizing: content-box;
+
+            &.home {
+              width: 103px;
+              height: 24px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-xdraco.webp') 50% 0 /
+            auto 100% no-repeat;
+            }
+
+            &.nft {
+              width: 95px;
+              height: 38px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-mir4nft.webp') 50% 0 / auto 100% no-repeat;
+            }
+
+            &.exchange {
+              width: 118px;
+              height: 20px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-exchange.webp') 50% 0 /
+            auto 100% no-repeat;
+            }
+
+            &.dsp {
+              width: 96px;
+              height: 39px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-dsp.webp') 50% 0 /
+            auto 100% no-repeat;
+            }
+
+            &.draco {
+              width: 110px;
+              height: 28px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-draco.webp') 50% 0 /
+            auto 100% no-repeat;
+            }
+
+            &.collectible {
+              width: 208px;
+              height: 38px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-collectible.webp') 50% 0 / auto 100% no-repeat;
+            }
+
+            &.exd {
+              width: 92px;
+              height: 38px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-exd.webp') 50% 0 /
+            auto 100% no-repeat;
+            }
+
+            &.hsp {
+              width: 108px;
+              height: 40px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-hsp.webp') 50% 0 /
+            auto 100% no-repeat;
+            }
+
+            &.mirage {
+              width: 149px;
+              height: 40px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-mirage.webp') 50% 0 /
+            auto 100% no-repeat;
+            }
+
+            &.coin {
+              width: 148px;
+              height: 33px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-token.webp') 50% 0 /
+            auto 100% no-repeat;
+            }
+
+            &.inventory {
+              width: 272px;
+              height: 40px;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/nav-inventory.webp') 50% 0 / auto 100% no-repeat;
+            }
+          }
+
+          &[target='_blank'] {
+            &::after {
+              content: '' !important;
+              margin-left: 10px;
+              width: 13px;
+              height: 12px;
+              min-height: auto;
+              background: url('https://file.mir4global.com/xdraco/img/mobile/header/icon-external.webp') 0 0 /
+            auto 100% no-repeat;
+            }
+          }
+
+          &:not([target='_blank']) {
+            .text {
+              &::before {
+                content: '';
+                position: absolute;
+                top: calc(50% - 20px);
+                left: 0;
+                width: 4px;
+                height: 0;
+                background-color: #f00;
+                transition: height 400ms 0.5s ease;
+              }
+            }
+          }
+
+          &.v-item--active {
+            .text {
+              &::before {
+                height: 40px;
+              }
+            }
+          }
+
+          &.v-item--new {
+            .text {
+              position: relative;
+
+              &::after {
+                content: '';
+                position: absolute;
+                top: -2px;
+                right: 5px;
+                border-radius: 50%;
+                width: 8px;
+                height: 8px;
+                background-color: #f00;
+              }
+            }
+          }
+        }
+      }
+
+      &--external {
+        visibility: visible;
+        margin-top: 40px;
+        margin-bottom: min(6vh, 40px);
+        padding-left: 0 !important;
+
+        li {
+          list-style: none;
+          margin-top: 8px;
+
+          &:first-of-type {
+            margin-top: 0;
+          }
+
+          a {
+            display: inline-flex;
+            align-items: center;
+            column-gap: 6px;
+            padding: 10px 32px;
+            vertical-align: top;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+
+            &[target='_blank'] {
+              &::after {
+                content: '';
+                display: block;
+                margin-left: 6px;
+                width: 9px;
+                height: 9px;
+                background: url('https://file.mir4global.com/xdraco/img/mobile/header/icon-arrow.png') 0 0 /
+              cover no-repeat;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include large-pc {
+  .mobile-nav {
+    display: none;
+  }
+}

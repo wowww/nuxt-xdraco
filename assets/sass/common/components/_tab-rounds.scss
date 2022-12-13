@@ -1,0 +1,119 @@
+@import '~@/assets/sass/mixin';
+
+.tab-rounds {
+  --tab-height: 48px;
+  --tab-fontcolor: #fff;
+  --tab-fontsize: 12px;
+  --tab-countcolor: #aa00ff;
+
+  margin: 16px 0 24px;
+  color: var(--tab-fontcolor);
+
+  .v-slide-group {
+    height: var(--tab-height);
+    color: inherit;
+    background-color: transparent !important;
+
+    &--is-overflowing,
+    &__prev,
+    &__next {
+      display: none;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 2px;
+    padding: 0 0 0 8px;
+    height: inherit;
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: var(--tab-fontsize);
+    letter-spacing: -0.2px;
+    text-align: left;
+    text-transform: initial;
+    max-width: 100%;
+    background-color: transparent;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: rgba(#fff, 0.2);
+    }
+
+    &:last-of-type {
+      margin-left: 0;
+    }
+    &.v-tab--active {
+      font-weight: 700;
+      color: #fff !important;
+    }
+  }
+
+  .v-tabs-slider-wrapper {
+    color: var(--tab-countcolor);
+  }
+
+  &__count {
+    margin-left: 4px;
+    color: var(--tab-countcolor);
+  }
+
+  &__total {
+    margin-left: 4px;
+    color: var(--tab-countcolor);
+  }
+}
+
+.exd-history {
+  .tab-rounds {
+    --tab-countcolor: #ffdd00;
+  }
+}
+
+.nft-history {
+  .tab-rounds {
+    --tab-countcolor: #ee0000;
+  }
+}
+
+.collectible-history {
+  .tab-rounds {
+    --tab-countcolor: #fff;
+  }
+}
+
+@include large-mobile {
+  .tab-rounds {
+    --tab-fontsize: 13px;
+
+    &__item {
+      padding-left: 8px;
+    }
+  }
+}
+
+@include pc {
+  .tab-rounds {
+    --tab-height: 57px;
+    --tab-fontsize: 20px;
+    margin: 32px 0;
+
+    &__item {
+      align-items: flex-start;
+      margin-right: 8px;
+      padding: 16px 0 0 8px;
+      font-weight: 700;
+      text-align: inherit;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

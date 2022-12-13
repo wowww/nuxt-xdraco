@@ -1,0 +1,136 @@
+@import "~@/assets/sass/_mixin.scss";
+
+.tick-dsp {
+  --tick-width: 20px;
+  --tick-height: 28px;
+  --tick-fontsize: 24px;
+  --tick-flip-margin-x: 2px;
+  --tick-flip-margin-y: 1px;
+  --tick-flip-lineheight: 1.24;
+
+  line-height: 1.1;
+  font-size: var(--tick-fontsize);
+  font-weight: 700;
+  color: #fff;
+
+  [data-layout~=horizontal][data-layout~=fit] {
+    vertical-align: top;
+  }
+  > div {
+    font-size: inherit !important;
+  }
+  .tick-group {
+    display: flex;
+
+    .tick-label {
+      margin-right: var(--tick-flip-margin-x);
+      width: var(--tick-width);
+      height: var(--tick-height);
+      line-height: 0;
+      font-size: 0;
+      background:
+        url('https://file.mir4global.com/xdraco/img/mobile/countdown/sp-countdown.png')
+        0 0 / calc(var(--tick-width) * 4) var(--tick-height) no-repeat;
+    }
+    &:nth-last-of-type(1) {
+      .tick-label {
+        background-position-x: 0;
+      }
+    }
+    &:nth-last-of-type(1) {
+      .tick-label {
+        background-position-x: calc(-1 * var(--tick-width));
+      }
+    }
+    &:nth-last-of-type(2) {
+      .tick-label {
+        background-position-x: calc(-2 * var(--tick-width));
+      }
+    }
+    &:nth-last-of-type(3) {
+      .tick-label {
+        background-position-x: calc(-3 * var(--tick-width));
+      }
+    }
+  }
+  .tick-flip {
+    margin: 0 var(--tick-flip-margin-x) 0 0;
+    border-radius: 0;
+    padding: 0 4px;
+    min-width: 10px;
+    max-width: var(--tick-width);
+    height: var(--tick-height);
+    text-indent: 1px;
+    letter-spacing: 0;
+
+    .tick-flip-card {
+      &:first-of-type {
+        .tick-flip-panel-front {
+          height: calc(51% - var(--tick-flip-margin-y));
+        }
+      }
+    }
+    .tick-flip-spacer {
+      height: 100%;
+    }
+  }
+  .tick-flip-panel {
+    background-color: rgba(#251e5e, .9);
+  }
+  .tick-flip-panel-text-wrapper {
+    line-height: var(--tick-flip-lineheight);
+  }
+  .tick-flip-panel-back {
+    &::after {
+      background-image: none;
+    }
+  }
+}
+
+@include pc {
+  .tick-dsp {
+    --tick-width: 30px;
+    --tick-height: 42px;
+    --tick-fontsize: 36px;
+    --tick-flip-margin-x: 3px;
+    --tick-flip-margin-y: 2px;
+    --tick-flip-lineheight: 1.2;
+
+    .tick-group {
+      .tick-label {
+        background-image: url('https://file.mir4global.com/xdraco/img/desktop/countdown/sp-countdown.png');
+      }
+    }
+    .tick-flip {
+      padding: 0;
+      min-width: auto;
+      width: var(--tick-width);
+    }
+    .tick-empty {
+      width: var(--tick-width);
+      height: var(--tick-height);
+      background: url('https://file.mir4global.com/xdraco/img/desktop/countdown/bg-empty.png') 0 0 / auto 100% no-repeat !important;
+    }
+    &.tick--smaller {
+      --tick-width: 20px;
+      --tick-height: 28px;
+      --tick-fontsize: 24px;
+      --tick-flip-margin-x: 2px;
+      --tick-flip-margin-y: 1px;
+      --tick-flip-lineheight: 1.24;
+      display: flex;
+      gap: 2px;
+      .tick-flip {
+        padding: 0 4px;
+        min-width: 10px;
+        max-width: var(--tick-width);
+        width: auto;
+      }
+      .tick-empty {
+        &:first-of-type {
+          margin-left: -2px;
+        }
+      }
+    }
+  }
+}

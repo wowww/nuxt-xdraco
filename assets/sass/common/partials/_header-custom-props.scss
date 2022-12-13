@@ -1,0 +1,37 @@
+:root {
+  --header-height: 64px;
+  --header-btn-width: 44px;
+  --header-btn-height: 48px;
+  --gnb-bgcolor: #000;
+  --gnb-item-width: 120px;
+  --header-zindex: 10;
+}
+
+$header-bgcolor: #000;
+
+@media (min-width: 900px) {
+  :root {
+    --header-height: 56px;
+    --header-btn-width: 44px;
+    --header-btn-height: 48px;
+    --gnb-item-width: 120px;
+  }
+}
+
+.is-desktop {
+  :root {
+    --header-height: 56px;
+    --header-btn-width: 44px;
+    --header-btn-height: 48px;
+    --gnb-item-width: 120px;
+  }
+}
+
+.is-mobile {
+  --header-height: 64px;
+  --header-btn-width: 44px;
+  --header-btn-height: 48px;
+  --gnb-bgcolor: #000;
+  --gnb-item-width: 120px;
+  --header-zindex: 10;
+}

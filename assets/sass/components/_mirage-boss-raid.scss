@@ -1,0 +1,231 @@
+@import '~@/assets/sass/mixin';
+
+.mirage-boss-raid {
+  margin: 40px auto 0;
+  line-height: normal;
+  background-color: transparent;
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 8px;
+    padding: 16px;
+
+    &__desc {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+
+      > em {
+        color: #fff;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: normal;
+    color: #fff;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .wrap-boss {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      height: 360px;
+      color: #fff;
+
+      &.eunsil, &.raid-type-11,
+      &[data-boss-name='eunsil'], &[data-raid-type='11'] {
+        background: url('https://file.mir4global.com/xdraco/img/desktop/mirage/bg-boss-raid-eunsil.webp') 50% 45% / cover no-repeat;
+
+        &.eunsil-vacation {
+          position: relative;
+          background-image: url('https://file.mir4global.com/xdraco/img/desktop/mirage/bg-boss-raid-eunsil-vacation-image.webp');
+
+          .wrap-boss {
+            &__next {
+              background-image: none;
+              background-color: rgba(17, 17, 17, 0.8);
+            }
+          }
+        }
+      }
+      &.horang, &.raid-type-12,
+      &[data-boss-name='horang'], &[data-raid-type='12'] {
+        background:
+          url('https://file.mir4global.com/xdraco/img/desktop/mirage/img_bossrade_main_horang_bg.jpg')
+        50% 45% / cover no-repeat;
+      }
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 20px;
+      }
+
+      &__title {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        font-size: 26px;
+        line-height: 1.08;
+        font-weight: bold;
+        letter-spacing: normal;
+        word-break: keep-all;
+        width: 250px;
+
+        > em {
+          display: block;
+          color: #f00;
+        }
+      }
+
+      &__round {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 9px;
+        row-gap: 2px;
+        width: 58px;
+        height: 58px;
+        border: 1px solid #fff;
+        font-size: 12px;
+
+        em {
+          font-size: 20px;
+          line-height: 1;
+          font-weight: 600;
+        }
+      }
+
+      &__bottom {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+
+        &__item {
+          display: flex;
+          flex-direction: column;
+
+          .btn-bid {
+            max-width: none;
+          }
+        }
+
+        &__info {
+          display: flex;
+          background-color: #000;
+
+          &__msg {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            padding: 8px 12px;
+            background-image: linear-gradient(to bottom, #5d017c 0%, #46015d 100%);
+            font-size: 14px;
+
+            p {
+              margin-bottom: 0;
+            }
+          }
+
+          .tick-mirage {
+            margin-right: -1px;
+          }
+
+          .icon-locked {
+            width: 32px;
+            height: 32px;
+            margin-left: 1px;
+            background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-locked-dark.webp') 0 0 / cover no-repeat;
+            font-size: 0;
+          }
+
+          &.is-locked {
+            .wrap-boss__bottom__info__msg {
+              background-image: linear-gradient(to bottom, #444 0%, #222 100%);
+            }
+          }
+
+          &--locked {
+            .wrap-boss__bottom__info__msg {
+              background-image: linear-gradient(to bottom, #444 0%, #222 100%);
+            }
+          }
+        }
+      }
+
+      &.eunsil,
+      &[data-boss-name='eunsil'] {
+        background-image: url('https://file.mir4global.com/xdraco/img/mobile/mirage/bg-boss-raid-eunsil.webp');
+      }
+      &.horang,
+      &[data-boss-name='horang'] {
+        background-image: url('https://file.mir4global.com/xdraco/img/mobile/mirage/bg-boss-raid-horang.webp');
+      }
+
+      &__next {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 4px;
+        min-height: 80px;
+        padding: 21px 20px;
+        background-color: rgba(17, 17, 17, 0.8);
+        text-align: center;
+
+        &__msg {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .mirage-boss-raid {
+    background-color: #111133;
+    padding: 0 24px 24px;
+    margin: 0;
+
+    &__header {
+      align-items: center;
+      flex-direction: row;
+      column-gap: 60px;
+      padding: 26px 0;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__body {
+      gap: 2px;
+      flex-direction: row;
+
+      .wrap-boss {
+        width: calc(50% - 1px);
+        padding: 24px;
+        height: 400px;
+
+        &__title {
+          width: auto;
+        }
+      }
+    }
+  }
+}

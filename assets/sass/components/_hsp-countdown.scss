@@ -1,0 +1,190 @@
+.tick-hsp {
+  --tick-width: 52px;
+  --tick-height: 72px;
+  --tick-flip-lineheight: 72px;
+  --tick-fontsize: 51px;
+  --tick-flip-margin-x: 2px;
+  --tick-flip-margin-y: 1px;
+
+  line-height: 1.1;
+  font-size: var(--tick-fontsize);
+  font-weight: 700;
+  color: #fff;
+
+  [data-layout~=horizontal][data-layout~=fit] {
+    vertical-align: top;
+  }
+  > div {
+    font-size: inherit !important;
+  }
+  .tick-group {
+    display: flex;
+
+    .tick-label {
+      margin-right: var(--tick-flip-margin-x);
+      width: var(--tick-width);
+      height: var(--tick-height);
+      line-height: 0;
+      font-size: 0;
+      background: url('https://file.mir4global.com/xdraco/img/common/hsp-countdown/sp-countdown.png') 0 0 / calc(var(--tick-width) * 4) var(--tick-height) no-repeat;
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+    }
+    &:nth-last-of-type(1) {
+      .tick-label {
+        background-position-x: 0;
+      }
+    }
+    &:nth-last-of-type(2) {
+      .tick-label {
+        background-position-x: calc(-1 * var(--tick-width));
+      }
+    }
+    &:nth-last-of-type(3) {
+      .tick-label {
+        background-position-x: calc(-2 * var(--tick-width));
+      }
+    }
+    &:nth-last-of-type(4) {
+      .tick-label {
+        background-position-x: calc(-3 * var(--tick-width));
+      }
+    }
+  }
+  .tick-flip {
+    margin: 0 var(--tick-flip-margin-x) 0 0;
+    border-radius: 0;
+    min-width: auto;
+    width: var(--tick-width);
+    height: var(--tick-height);
+    text-indent: 1px;
+    letter-spacing: 0;
+    background: url('https://file.mir4global.com/xdraco/img/common/hsp-countdown/bg-empty.png') 50% 0 / 52px 72px no-repeat;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+    }
+    .tick-flip-card {
+
+      &:first-of-type {
+        .tick-flip-panel-front {
+          box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+    .tick-flip-spacer {
+      height: 100%;
+    }
+  }
+  .tick-flip-panel {
+    background-color: transparent;
+
+    &.tick-flip-panel-front {
+      background: url('https://file.mir4global.com/xdraco/img/common/hsp-countdown/bg-empty.png') 50% 0 / 52px 72px no-repeat;
+    }
+    &.tick-flip-panel-back {
+      background: url('https://file.mir4global.com/xdraco/img/common/hsp-countdown/bg-empty.png') 50% 100% / 52px 72px no-repeat;
+    }
+  }
+  .tick-flip-panel-front,
+  .tick-flip-panel-back {
+    height: 50%;
+  }
+  .tick-flip-panel-text-wrapper {
+    line-height: var(--tick-flip-lineheight);
+  }
+  .tick-flip-panel-back {
+    &::after {
+      background-image: none;
+    }
+  }
+  .tick-empty {
+    width: var(--tick-width);
+    height: var(--tick-height);
+    background: url('https://file.mir4global.com/xdraco/img/common/hsp-countdown/bg-empty.png') 0 0 / auto 100% no-repeat !important;
+  }
+
+  .tick-flip-shadow {
+    display: none;
+  }
+
+  &.tick--smaller {
+    --tick-width: 40px;
+    --tick-height: 56px;
+    --tick-flip-lineheight: 56px;
+    --tick-fontsize: 41px;
+
+    display: flex;
+    gap: 2px;
+
+    .tick-empty {
+      &:first-of-type {
+        margin-left: -2px;
+      }
+    }
+  }
+
+  .is-mobile & {
+    --tick-width: 26px;
+    --tick-height: 36px;
+    --tick-flip-lineheight: 36px;
+    --tick-fontsize: 26px;
+
+    .tick-flip {
+      &::before {
+        height: 1px;
+      }
+    }
+  }
+}
+
+.teaser-hsp-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px 0;
+  line-height: 1.333;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+
+  .date {
+    font-size: 36px;
+    letter-spacing: -0.02em;
+  }
+  .tick-hsp {
+    margin: 24px 0;
+  }
+  .description {
+    line-height: 0.9;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .is-mobile & {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(#fff, .75);
+
+    .date {
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .tick-hsp {
+      margin: 16px 0;
+    }
+    .description {
+      font-size: 14px;
+      line-height: 1.29;
+      color: #fff;
+    }
+  }
+}

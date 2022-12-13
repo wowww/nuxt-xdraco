@@ -1,0 +1,264 @@
+@import '~@/assets/sass/mixin';
+
+.v-application {
+  .refining-dialog {
+    position: fixed;
+    bottom: 0;
+    margin: 0 !important;
+    background: url('https://file.mir4global.com/xdraco/img/desktop/hydra/bg-popprologue.webp') 50% 50% / cover no-repeat,
+    radial-gradient(circle, rgba(0, 0, 117, 1) 0%, rgba(0, 0, 71, 1) 100%);
+    width: 100%;
+    padding: 24px;
+    border: 1px solid #313181;
+
+    &__title {
+      font-weight: bold;
+      color: #0f69ff;
+    }
+
+    &__contents {
+      height: 100%;
+      position: relative;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      min-height: 210px;
+
+      &.empty {
+        justify-content: center;
+        align-items: center;
+        height: 198px;
+        text-align: center;
+
+        &::before {
+          content: attr(data-empty-message);
+          display: block;
+          font-size: 16px;
+          color: rgba(#fff, 0.5);
+        }
+
+        p,
+        ul {
+          display: none;
+        }
+      }
+
+      &--number {
+        margin-top: 16px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+        line-height: 40px;
+      }
+
+      &__list {
+        list-style-type: none;
+        margin-top: 8px;
+        color: #fff;
+        padding-left: 0;
+
+        li {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 15px 0;
+          border-top: 1px solid rgba($color: #fff, $alpha: 0.2);
+
+          span {
+            font-size: 14px;
+          }
+
+          div {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 10px;
+
+            p {
+              position: relative;
+              height: auto !important;
+              margin-bottom: 0;
+
+              &.volume-hydra {
+                padding-left: 36px;
+                font-size: 20px;
+
+                &::before {
+                  @include ico(32px, 32px, 'https://file.mir4global.com/xdraco/img/desktop/hydra/icon-coin-hydra.webp');
+                }
+              }
+
+              &.volume-draco {
+                padding-left: 37px;
+
+                &::before {
+                  @include ico(33px, 32px, 'https://file.mir4global.com/xdraco/img/desktop/hydra/icon-coin-draco.webp');
+                }
+              }
+
+              &.volume-septarium {
+                padding-left: 30px;
+
+                &::before {
+                  @include ico(26px, 32px, 'https://file.mir4global.com/xdraco/img/desktop/hydra/icon-coin-septarium.webp');
+                }
+              }
+            }
+
+            .syn {
+              margin: 0 10px;
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    &__btn-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px !important;
+      height: 20px !important;
+      background: url('https://file.mir4global.com/xdraco/img/desktop/hydra/icon-close.webp') 50% 50% / cover no-repeat;
+      font-size: 0;
+    }
+
+    &__text {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+
+      &__input {
+        position: relative;
+        width: 100%;
+        height: 52px;
+        padding: 9px 16px 12px 190px;
+        background-color: #0a0a3d;
+        box-sizing: border-box;
+
+        span {
+          position: absolute;
+          top: 50%;
+          left: 16px;
+          transform: translateY(-50%);
+          font-size: 14px;
+          color: #fff;
+        }
+
+        input {
+          width: 100%;
+          text-align: right;
+          font-size: 24px;
+          color: #ffc700;
+          outline: none;
+          vertical-align: middle;
+          font-weight: 700;
+
+          &::placeholder {
+            color: rgba($color: #fff, $alpha: 0.2);
+          }
+        }
+      }
+    }
+
+    &__btn-calc {
+      color: #fff;
+      font-size: 14px;
+      line-height: normal;
+
+      span {
+        display: flex;
+        position: relative;
+        padding-right: 23px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          right: 23px;
+          bottom: -3px;
+          left: 0;
+          height: 1px;
+          background-color: #fff;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: calc(50% - 8px);
+          right: 0;
+          width: 15px;
+          height: 21px;
+          margin-left: 8px;
+          background: url('https://file.mir4global.com/xdraco/img/mobile/hydra/icon-calc.webp') 0 0 / 100% no-repeat;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .v-application {
+    .refining-dialog {
+      width: 640px !important;
+      box-shadow: none;
+      font-size: 16px;
+      bottom: initial;
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        min-height: 210px;
+
+        &.empty {
+          justify-content: center;
+          align-items: center;
+          height: 198px;
+          text-align: center;
+
+          &::before {
+            content: attr(data-empty-message);
+            display: block;
+            font-size: 16px;
+            color: rgba(#fff, 0.5);
+          }
+
+          p,
+          ul {
+            display: none;
+          }
+        }
+
+        &--number {
+          margin-top: 16px;
+          font-weight: bold;
+          text-align: center;
+          font-size: 16px;
+          color: #fff;
+          line-height: 40px;
+        }
+
+        &__list {
+          li {
+            flex-direction: row;
+            justify-content: space-between;
+
+            div {
+              margin-top: 0;
+
+              p {
+               &.volume-hydra {
+                 font-size: 28px;
+               }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

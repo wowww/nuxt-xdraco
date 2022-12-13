@@ -1,0 +1,128 @@
+@import '~@/assets/sass/mixin';
+
+.exd-history {
+  &__top-trade {
+    margin: 24px 16px 32px;
+  }
+
+  .wrap-suggest {
+    &__list {
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 20px;
+        position: relative;
+        justify-content: space-between;
+
+        &:after {
+          content: "";
+          position: absolute;
+          width: calc(100% - 40px);
+          height: 1px;
+          bottom: 0;
+          background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        dl {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-between;
+
+          dt {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+          }
+
+          dd {
+            font-size: 14px;
+            color: #fff;
+          }
+
+          &.price {
+            margin-top: 16px;
+            padding-top: 16px;
+            position: relative;
+
+            &:before {
+              content: "";
+              position: absolute;
+              top: 0;
+              width: 100%;
+              height: 1px;
+              background-color: rgba(255, 255, 255, 0.15);;
+            }
+
+            strong {
+              font-size: 18.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .exd-history {
+    .function {
+      margin-left: 16px;
+    }
+
+    .wrap-suggest {
+      &__list {
+        li {
+          flex-direction: row;
+          align-items: center;
+
+          .item-info {
+            width: 40%;
+          }
+        }
+        .price,
+        .seller,
+        .date {
+          flex-direction: column;
+          width: 20%;
+
+          dt {
+            margin-bottom: 8px;
+          }
+        }
+
+        .price {
+          padding-top: 0 !important;
+          margin-top: 0 !important;
+
+          &:before {
+            content: none !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include large-pc {
+  .exd-history {
+    &__top-trade {
+      margin: 40px 0 80px;
+    }
+
+    .wrap-suggest {
+      &__list {
+        li {
+          padding: 16px 0;
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .function {
+      margin: 0;
+    }
+  }
+}

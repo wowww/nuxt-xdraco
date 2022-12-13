@@ -1,0 +1,93 @@
+@import '~@/assets/sass/mixin';
+
+.header {
+  .gnb {
+    .gnb__right {
+      gap: 0;
+    }
+  }
+
+  .nav-profile {
+    top: var(--header-height) !important;
+    left: auto !important;
+    right: var(--header-height);
+    border-radius: 0;
+  }
+  .btn-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    position: relative;
+    padding: 0 8px;
+    min-width: 44px;
+    height: 100%;
+    font-size: 12px;
+    box-sizing: border-box;
+    transition: background-color 400ms ease;
+
+    .text {
+      margin-right: 8px;
+    }
+    .thumbs {
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      background: rgba(#fff, .3) url("https://file.mir4global.com/xdraco/img/desktop/header-v1/icon-profile.webp") 50% 50% / 24px 24px no-repeat;
+
+      > img {
+        border-radius: inherit;
+      }
+    }
+    &::after {
+      content: '';
+      display: none;
+      border-radius: 50%;
+      width: 6px;
+      height: 6px;
+    }
+    &[aria-expanded="true"] {
+      background-color: rgba(#fff, .2);
+    }
+    &[data-get-activity="true"] {
+      .thumbs {
+        @include iconActivity();
+      }
+    }
+    &[data-has-represent="false"] {
+      cursor: default;
+
+      .thumbs {
+        > img {
+          border-radius: 0;
+        }
+      }
+      &[aria-expanded="true"] {
+        background-color: transparent
+      }
+    }
+  }
+
+  .wrap-signin {
+    border: solid 1px #333346;
+    padding: 16px;
+    min-width: 200px;
+    background-color: #0f0f25;
+    box-shadow: 0 40px 40px 0 rgba(#000, 0.5);
+
+    hr {
+      margin-top: 16px;
+      border-width: 0;
+      height: 1px;
+      background-color: rgba(#fff, .1);
+    }
+    .desc {
+      line-height: 1.3;
+      font-size: 12px;
+    }
+    .wrap-thumb-profile {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}

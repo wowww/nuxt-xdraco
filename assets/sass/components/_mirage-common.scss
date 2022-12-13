@@ -1,0 +1,283 @@
+.contents.mirage {
+  background-color: #030227;
+
+  .section {
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      padding: 16px;
+    }
+  }
+
+  .section-dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding-right: 16px;
+
+    &__roster {
+      display: flex;
+      color: #fff;
+      column-gap: 12px;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        column-gap: 4px;
+      }
+
+      &__title {
+        display: none;
+      }
+
+      &__value {
+        font-size: 16px;
+        line-height: 1.5;
+        white-space: nowrap;
+
+        &--max {
+          color: var(--content-color);
+        }
+      }
+
+      &__link {
+        display: flex;
+        align-items: center;
+        column-gap: 4px;
+        font-size: 14px;
+        line-height: 1.43;
+
+        &::after {
+          content: '';
+          width: 9px;
+          height: 9px;
+          border-right: 1px solid;
+          border-bottom: 1px solid;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  // id / my
+  .util-list {
+    .mirage-inventory {
+      &.mobile {
+        width: 100%;
+        padding: 0 16px;
+
+        &::after {
+          display: none !important;
+        }
+      }
+    }
+  }
+  .mirage-inventory {
+    display: flex;
+    padding: 0;
+    column-gap: 24px;
+    justify-content: flex-end;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 8px;
+
+      &-count {
+        display: flex;
+        column-gap: 5px;
+      }
+
+      button {
+        margin-left: 4px;
+      }
+
+      &__value {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .btn-charge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px;
+    min-width: 40px;
+    height: 24px;
+    color: #000;
+    font-size: 12px;
+    background-color: #ffec44;
+  }
+
+  .btn-enhance {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px;
+    min-width: 40px;
+    height: 24px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #ffffff33;
+  }
+
+  .char-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    max-width: 896px;
+
+    li {
+      margin-left: -1px;
+
+      &[aria-disabled='true'] {
+        position: relative;
+
+        .mirage-character,
+        .wrap-button {
+          opacity: 0.5;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  hr {
+    display: block;
+    margin: 24px 0;
+    border-width: 0;
+    height: 1px;
+    background-color: rgba(#fff, .1);
+  }
+
+  .mirage-tooltip {
+    padding: 15px !important;
+    font-size: 12px !important;
+    border: 1px solid rgba(#fff, 0.1);
+    box-shadow: 0 24px 24px 0 rgba(#000, 0.25);
+    word-break: keep-all;
+    backdrop-filter: blur(8px);
+    border: solid 1px rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(0, 0, 51, 0.75) !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+    line-height: 1.5 !important;
+    font-weight: 400;
+
+    p {
+      position: relative;
+      padding-left: 10px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+    }
+
+    .mirage-tooltip-title {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #fff;
+      font-weight: 600;
+    }
+    .mirage-tooltip-desc {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+  }
+  .icon-mirage-tooltip {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-16-tooltip.webp') 0 0 / cover no-repeat;
+    font-size: 0;
+    cursor: pointer;
+  }
+}
+
+@include pc {
+  .contents.mirage {
+    .section-dashboard {
+      margin-bottom: 16px;
+
+      &__roster {
+        column-gap: 24px;
+
+        &__title {
+          display: block;
+          margin-right: 4px;
+          font-size: 12px;
+          line-height: 1.67;
+        }
+
+        &__link {
+          &:after {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    .my-mirage {
+      display: block;
+      justify-content: flex-end;
+    }
+    .mirage-inventory {
+      -moz-column-gap: 24px;
+      column-gap: 24px;
+
+      &__item {
+        padding-right: 0;
+        padding-left: 0;
+        column-gap: 2px;
+        background-color: transparent;
+
+        button {
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+}
+
+@include large-pc {
+  .contents.mirage {
+    .section {
+      &__title {
+        padding: 16px 0;
+      }
+    }
+
+    .section-dashboard {
+      padding: 0;
+    }
+
+    .mirage-inventory {
+      padding: 0;
+    }
+  }
+}

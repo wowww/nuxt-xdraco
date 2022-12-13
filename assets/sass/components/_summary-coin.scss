@@ -1,0 +1,276 @@
+@import '~@/assets/sass/mixin';
+
+.wrap-summary-coin {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 2px;
+
+  > div,
+  .wrap-child {
+    flex: 1;
+
+    .summary-coin {
+      flex-direction: column;
+    }
+  }
+}
+
+.price {
+  .coin-content {
+    padding-top: 40px;
+    width: 100%;
+    background-color: #000044;
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .coin-content__info {
+      padding: 40px 0;
+      width: calc(100% - var(--section-padding-x)*2);
+    }
+
+    &__info {
+       &:last-child {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .chart {
+    width: 100%;
+
+    &__wrapper {
+      margin-top: 46px;
+    }
+    &--box {
+      padding-top: 80px;
+    }
+
+    &__contents {
+      margin-bottom: 8px;
+      padding: 0 16px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.25rem;
+
+      .date {
+        font-size: 0.75rem;
+        color: var(--content-color);
+      }
+    }
+
+    &--title {
+      font-size: 1.25rem;
+    }
+
+    .derby-chart__wrapper {
+      margin-right: -24px;
+      margin-left: -24px;
+      width: calc(100% + var(--section-padding-x)*2);
+    }
+  }
+
+  .derby-chart__wrapper {
+    margin-top: 20px;
+    border-top: 2px solid hsla(0,0%,100%,.25);
+    padding-top: 40px;
+    min-height: 100px;
+    margin-bottom: 40px;
+  }
+}
+
+.summary-coin {
+  margin: 0;
+  padding: 0;
+  background-color: #000044;
+
+  .summary-coin__inner,
+  .title-currency {
+    width: 420px;
+  }
+  .summary-coin__inner {
+    min-height: 355px;
+  }
+  .title-currency {
+    display: flex;
+    margin-top: 64px;
+    border-bottom: 1px solid rgba(#fff, .5);
+    padding-bottom: 16px;
+    height: 24px;
+    box-sizing: content-box;
+    width: 100%;
+  }
+  .updated-date {
+    margin-top: 13px;
+    line-height: 1.5;
+    font-size: 12px;
+    color: rgba(#fff, .5);
+    letter-spacing: -0.01em;
+    text-align: center;
+
+    em {
+      font-style: normal;
+      color: rgba(#fff, .75);
+    }
+  }
+  .display-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 160px;
+
+    dt {
+      min-height: 40px;
+      line-height: 1.5;
+      font-size: 16px;
+
+      .sub-title {
+        margin: 0;
+        line-height: 1.333;
+        font-size: 12px;
+        opacity: .5;
+      }
+    }
+    dd {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    .amount {
+      align-items: center;
+      line-height: 1.4;
+      font-size: 40px;
+      letter-spacing: -0.4px;
+    }
+    .change {
+      margin-left: 16px;
+      padding: 0 8px;
+      height: 36px;
+      line-height: 1.6;
+      font-size: 20px;
+    }
+    .sup {
+      top: -0.8em;
+    }
+    .wrap-refining-hydra {
+      display: flex;
+      column-gap: 16px;
+
+      .amount {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        line-height: 1.2;
+        font-size: 40px;
+        transition: all 200ms 0.3s ease-in;
+
+        &::before {
+          content: "";
+          display: block;
+          margin-right: 8px;
+          width: 40px;
+          height: 40px;
+          background-position: 50% 0;
+          background-size: auto 100%;
+          background-repeat: no-repeat;
+        }
+        .sup {
+          top: -1.5em;
+          margin-left: 8px;
+          line-height: 1;
+          font-weight: 400;
+          font-size: 12px;
+        }
+        &.draco {
+          &::before {
+            background-image: url("https://file.mir4global.com/xdraco/img/desktop/symbol-draco.webp");
+          }
+        }
+        &.septaria {
+          &::before {
+            margin-right: 4px;
+            width: 34px;
+            background-image: url("https://file.mir4global.com/xdraco/img/desktop/hydra/icon-coin-septarium.webp");
+          }
+        }
+      }
+      .symbol-plus {
+        line-height: 56px;
+        font-size: 48px;
+        font-weight: 100;
+      }
+    }
+  }
+  .display-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(#c4c4c4, .2);
+    border-width: 1px 0;
+    height: 56px;
+    box-sizing: content-box;
+
+    dt, dd {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    dt {
+      row-gap: 2px;
+      line-height: 16px;
+      font-size: 14px;
+      color: rgba(#fff, .75);
+
+      > span {
+        &:only-child {
+          font-size: 12px;
+        }
+      }
+    }
+    dd {
+      font-weight: 700;
+      color: #fff;
+    }
+    .date {
+      margin-top: 0;
+      height: 100%;
+      font-size: 10px;
+      color: rgba(#fff, .5);
+      text-align: left;
+    }
+    .v-carousel {
+      &__item {
+        color: currentColor;
+      }
+    }
+    & + .display-data {
+      border-top-width: 0;
+    }
+  }
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+@include pc {
+  .price {
+    .coin-content {
+      justify-content: flex-start;
+
+      &__info {
+        min-height: 355px;
+
+        &:last-child {
+          padding: 0;
+        }
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,89 @@
+.notification-global {
+  --notification-global-line-clamp: 1;
+  --notification-bgcolor: #3388ee;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 12px;
+  position: relative;
+  padding: 0 40px 0 32px;
+  height: var(--notification-global-height);
+  color: #fff;
+  background-color: var(--notification-bgcolor);
+  transition: height 400ms ease;
+
+  .btn-close-dialog {
+    position: absolute;
+    top: calc(50% - 24px);
+    right: 0;
+    font-size: 0;
+    padding: 16px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      mask: url("https://file.mir4global.com/xdraco/img/common/notification-global/btn-close-dialog.svg") 0 0 / contain no-repeat;
+      background-color: #fff;
+    }
+  }
+  .link-external {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    height: 100%;
+    font-size: 0;
+  }
+  .message {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--notification-global-line-clamp);
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+
+    a {
+      position: relative;
+      z-index: 1;
+      color: #ffff00;
+      text-decoration: underline;
+    }
+    em {
+      font-weight: 700;
+    }
+  }
+  .sns-bi {
+    line-height: 0;
+    display: flex;
+    align-items: center;
+
+    .twitter {
+      display: block;
+      width: 23px;
+      height: 18px;
+    }
+  }
+  .headroom--not-top & {
+    height: 0;
+  }
+
+  .is-mobile & {
+    --notification-global-line-clamp: 2;
+
+    align-items: flex-start;
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 8px;
+    padding: 0 16px;
+
+    .btn-close-dialog {
+      top: 0;
+    }
+  }
+}

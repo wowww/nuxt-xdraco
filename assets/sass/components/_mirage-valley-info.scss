@@ -1,0 +1,267 @@
+@import "~@/assets/sass/mixin";
+
+.mirage-valley-info {
+  margin-bottom: 24px;
+  line-height: normal;
+  color: #fff;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &__title {
+    margin: 16px;
+    font-size: 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #f60 0%, #930 100%);
+  }
+
+  &__contents {
+    padding: 12px 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.1) 100%, rgba(255, 255, 255, 0.05) 0%);
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 12px 16px;
+        font-size: 12px;
+
+        em {
+          font-size: 22px;
+
+          small {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  &__countdown {
+    display: flex;
+    align-items: center;
+    column-gap: 1px;
+
+    &__text {
+      display: flex;
+      align-items: center;
+      margin-right: 1px;
+      background-image: linear-gradient(to bottom, #e40 0%, #810 100%);
+      height: 33px;
+      font-size: 14px;
+      padding: 0 10px;
+      font-weight: bold;
+      white-space: nowrap;
+
+      &.half {
+        flex: 1;
+        justify-content: flex-end;
+      }
+    }
+
+    .icon-battle {
+      position: relative;
+      padding-left: 24px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-20-battle.webp') 0 0 / cover no-repeat;
+      }
+    }
+
+    .wrap-flip {
+      display: flex;
+      align-items: center;
+      gap: 1px;
+      font-size: 22px;
+
+      &__item {
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 33px;
+        background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty.png') 50% 0 / 100% 40px no-repeat;
+      }
+    }
+  }
+
+  &__desc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 12px;
+    font-size: 14px;
+
+    p {
+      margin: 0;
+    }
+
+    .ico-locked {
+      position: relative;
+      padding-left: 28px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-locked.webp') 0 0 / cover no-repeat;
+      }
+    }
+
+    .v-icon {
+      margin-left: 8px;
+    }
+  }
+
+  .v-icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background: url('https://file.mir4global.com/xdraco/img/common/mirage/ico-16-tooltip.webp') 0 0 / cover no-repeat;
+    font-size: 0;
+    cursor: pointer;
+  }
+
+  .wrap-tooltip {
+    padding: 15px !important;
+    font-size: 12px !important;
+    border: 1px solid rgba(#fff, 0.1);
+    box-shadow: 0 24px 24px 0 rgba(#000, 0.25);
+    word-break: keep-all;
+    backdrop-filter: blur(8px);
+    border: solid 1px rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(0, 0, 51, 0.75) !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+    line-height: 1.5 !important;
+  }
+
+  &.is-locked {
+    .mirage-valley-info {
+      &__header {
+        background-image: linear-gradient(to bottom, #444 0%, #222 100%);
+      }
+
+      &__countdown {
+        &__text {
+          background-image: linear-gradient(to bottom, #333 0%, #111 100%);
+        }
+
+        .wrap-flip {
+          &__item {
+            background-image: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty-dark.png');
+          }
+        }
+
+        .tick-mirage {
+          .tick-flip-card {
+            .tick-flip-panel-front {
+              background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty-dark.png') 50% 0% / 48px 40px no-repeat;
+            }
+
+            .tick-flip-panel-back {
+              background: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty-dark.png') 50% 100% / 48px 40px no-repeat;
+            }
+          }
+
+          .tick-flip {
+            background-image: url('https://file.mir4global.com/xdraco/img/common/mirage-countdown/bg-empty-dark.png');
+
+            &:before {
+              background-color: rgba(0, 0, 0, 0.2);
+            }
+          }
+          .tick-group {
+            .tick-label {
+              background-position-y: calc(var(--tick-height)*-1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .mirage-valley-info {
+    &__header {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__desc {
+      justify-content: flex-end;
+    }
+
+    &__contents {
+      padding: 0;
+      &__list {
+        flex-direction: row;
+        justify-content: space-between;
+        li {
+          position: relative;
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 24px;
+          width: 100%;
+          row-gap: 4px;
+
+          &:not(:last-child) {
+            &:after {
+              content: '';
+              position: absolute;
+              top: -1px;
+              right: 0;
+              bottom: -1px;
+              width: 1px;
+              background-color: rgba(#fff, 0.1);
+            }
+          }
+        }
+      }
+    }
+
+    &__countdown {
+      &__text {
+        height: 40px;
+      }
+
+      .wrap-flip {
+        &__item {
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+@include large-pc {
+  .mirage-valley-info {
+    &__title {
+      margin: 16px 0;
+    }
+  }
+}

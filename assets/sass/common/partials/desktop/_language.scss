@@ -1,0 +1,62 @@
+@import '~@/assets/sass/mixin';
+@import '~@/assets/sass/common/partials/header-custom-props';
+
+@include large-pc {
+  .select-language {
+    --language-width: 140px;
+    --language-bgcolor: #222;
+
+    top: var(--header-height) !important;
+    left: auto !important;
+    right: 0;
+    border-radius: 0;
+    min-width: auto !important;
+    width: var(--language-width);
+    background-color: var(--language-bgcolor);
+    box-shadow: 0 40px 40px 0 rgba(#000, .5);
+
+    .select-language__list {
+      padding: 2px 0;
+      width: 100%;
+      background-color: transparent;
+
+      .v-item-group {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+      }
+
+      .v-list-item {
+        justify-content: flex-start;
+        position: relative;
+        padding: 0 0 0 16px;
+        height: 48px;
+        line-height: 1.75;
+        font-size: 16px;
+        color: var(--content-color) !important;
+        transition: background-color 400ms ease;
+
+        &::before,
+        &::after {
+          content: none !important;
+        }
+
+        &:hover {
+          color: rgba(#fff, 1) !important;
+          background-color: rgba(#fff, .1);
+        }
+
+        &.v-item--active {
+          color: rgba(#fff, 1) !important;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .btn-gnb-language {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+    }
+  }
+}

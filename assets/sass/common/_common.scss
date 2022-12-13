@@ -1,0 +1,413 @@
+@import "~@/assets/sass/mixin";
+
+.section {
+  margin: 0;
+  width: 100%;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  > .title {
+    margin-bottom: 40px;
+    line-height: 1.25;
+    color: #fff;
+    font-weight: 700;
+    font-size: 32px !important;
+  }
+}
+
+.no-gutter {
+  position: relative;
+  left: 0;
+  width: 100%;
+
+  &__inner {
+    width: calc(100% - (var(--intro-draco-padding) * 2));
+    max-width: var(--intro-draco-maxwidth);
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1240px - 1) {
+  .section {
+    max-width: 896px;
+    margin: 0 auto !important;
+  }
+}
+
+.hidden {
+  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+  top: -1px;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+}
+
+[class^="ico-"] {
+  display: inline-block;
+  vertical-align: middle;
+
+  &.ico-ss {
+    width: 16px;
+    height: 16px;
+    margin: 0 4px;
+
+    &::before {
+      width: 16px;
+      height: 16px;
+    }
+
+    &.add-inside {
+      padding-left: 18px;
+    }
+  }
+
+  &.ico-xs {
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.add-inside {
+      padding-left: 22px;
+    }
+  }
+
+  &.ico-xs {
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.add-inside {
+      padding-left: 22px;
+    }
+  }
+
+  &.ico-sm {
+    width: 32px;
+    height: 32px;
+    margin: 0 4px;
+
+    &::before {
+      width: 32px;
+      height: 32px;
+    }
+
+    &.add-inside {
+      padding-left: 36px;
+    }
+  }
+
+  &.add-inside {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    background: none;
+    margin: 0;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+.loading-circle {
+  background-color: white;
+
+  circle {
+    animation: animCircle 0.75s linear infinite;
+    transform-origin: 32px 32px;
+  }
+}
+
+.ico-vigor {
+  background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-vigor.webp") 0 0 / cover no-repeat;
+
+  &.add-inside {
+    &::before {
+      background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-vigor.webp") 0 0 / cover no-repeat;
+    }
+  }
+}
+
+.ico-hydra {
+  background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-hydra.webp") 0 0 / cover no-repeat;
+
+  &.add-inside {
+    &:before {
+      background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-hydra.webp") 0 0 / cover no-repeat;
+    }
+  }
+}
+
+.ico-hydra2 {
+  background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-hydra-96.webp") 0 0 / cover no-repeat;
+
+  &.add-inside {
+    &:before {
+      background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-hydra-96.webp") 0 0 /
+      cover no-repeat;
+    }
+  }
+}
+
+.ico-darco {
+  background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-draco.webp") 0 0 / cover no-repeat;
+
+  &.add-inside {
+    &:before {
+      background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-draco.webp") 0 0 / cover no-repeat;
+    }
+  }
+}
+
+.ico-wemixcredit {
+  background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-wemix-credit-logo.webp") 0 0 /
+  cover no-repeat;
+
+  &.add-inside {
+    &:before {
+      background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-wemix-credit-logo.webp") 0 0 / cover no-repeat;
+    }
+  }
+}
+
+.ico-wemix {
+  background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-wemix-logo.webp") 0 0 / cover no-repeat;
+
+  &.add-inside {
+    &:before {
+      background: url("https://file.mir4global.com/xdraco/img/mobile/popup/ico-wemix-logo.webp") 0 0 /
+      cover no-repeat;
+    }
+  }
+}
+
+.ico-wemixbox {
+  background: url("https://file.mir4global.com/xdraco/img/mobile/promotion/2111/logo-wemixbox.webp") 50% 50% / cover no-repeat;
+}
+
+.ico-mir4box {
+  background: url("https://file.mir4global.com/xdraco/img/mobile/promotion/2111/logo-mir4box.webp") 50% 50% / cover no-repeat;
+}
+
+.title-page {
+  margin-bottom: 26px;
+  line-height: 1.24;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.us-dollar {
+  &::before {
+    content: "$";
+    margin-right: 1px;
+  }
+
+  font-weight: 400;
+  align-items: baseline;
+}
+
+@include pc {
+  .fieldset {
+    .in-msg {
+      .ico-nano {
+        width: auto;
+      }
+    }
+  }
+
+  [class^="ico-"] {
+    &.ico-nano {
+      width: 16px;
+      height: 16px;
+      margin: 0 2px;
+
+      &::before {
+        width: 16px;
+        height: 16px;
+      }
+
+      &.add-inside {
+        padding-left: 20px;
+      }
+    }
+
+    &.ico-xs {
+      &.add-inside {
+        padding-left: 24px;
+      }
+    }
+
+    &.ico-ss {
+      width: 24px;
+      height: 24px;
+      margin: 0 2px;
+
+      &::before {
+        width: 24px;
+        height: 24px;
+      }
+
+      &.add-inside {
+        padding-left: 28px;
+        width: auto;
+      }
+    }
+
+    .ico-vigor {
+      background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-vigor.webp") 0 0 / cover no-repeat;
+
+      &.add-inside {
+        &::before {
+          background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-vigor.webp") 0 0 / cover no-repeat;
+        }
+      }
+    }
+
+    .ico-hydra {
+      background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-hydra.webp") 0 0 / cover no-repeat;
+
+      &.add-inside {
+        &::before {
+          background: url("https://file.mir4global.com/xdraco/img/common/ico-hydra.webp") 0 0 / cover no-repeat;
+        }
+      }
+    }
+
+    .ico-hydra2 {
+      background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-hydra-96.webp") 0 0 / cover no-repeat;
+
+      &.add-inside {
+        &::before {
+          background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-hydra-96.webp") 0 0 /
+      cover no-repeat;
+        }
+      }
+    }
+
+    .ico-darco {
+      background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-draco.webp") 0 0 / cover no-repeat;
+
+      &.add-inside {
+        &::before {
+          background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-draco.webp") 0 0 / cover no-repeat;
+        }
+      }
+    }
+
+    .ico-wemixcredit {
+      background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-wemix-credit-logo.webp") 0 0 / cover no-repeat;
+
+      &.add-inside {
+        &::before {
+          background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-wemix-credit-logo.webp") 0 0 / cover no-repeat;
+        }
+      }
+    }
+
+    .ico-wemix {
+      background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-wemix-logo.webp") 0 0 / cover no-repeat;
+
+      &.add-inside {
+        &::before {
+          background: url("https://file.mir4global.com/xdraco/img/desktop/popup/ico-wemix-logo.webp") 0 0 / cover no-repeat;
+        }
+      }
+    }
+
+    .ico-wemixbox {
+      background: url("https://file.mir4global.com/xdraco/img/desktop/promotion/2111/logo-wemixbox.webp") 50% 50% / 100% auto no-repeat;
+    }
+
+    .ico-mir4box {
+      background: url("https://file.mir4global.com/xdraco/img/desktop/promotion/2111/logo-mir4box.webp") 50% 50% / 100% auto no-repeat;
+    }
+  }
+
+  .title-page {
+    margin-bottom: 48px;
+    line-height: 1.18;
+    font-size: 32px;
+  }
+
+  .wrap-thumb-profile {
+    overflow: hidden;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    vertical-align: top;
+
+    .base-profile {
+      display: block;
+      height: 100%;
+      background: url("https://file.mir4global.com/xdraco/img/common/login-profile/profile-mir4.webp") 0 0 /
+    cover no-repeat;
+    }
+
+    &.by-wemix {
+      .base-profile {
+        background-image: url("https://file.mir4global.com/xdraco/img/common/login-profile/bg-wemix-profile.webp");
+      }
+    }
+
+    > img {
+      + .base-profile {
+        display: none;
+      }
+    }
+  }
+
+  .wrap-signin {
+    text-align: center;
+
+    .desc {
+      display: inline-block;
+      margin-top: 16px;
+      width: 148px;
+      font-size: 14px;
+      font-weight: normal;
+      letter-spacing: -0.14px;
+      color: rgba(#fff, 0.75);
+    }
+
+    .wrap-button {
+      margin-top: 16px;
+
+      .btn-max {
+        min-width: 100%;
+        justify-content: center;
+
+        &:disabled,
+        &[aria-disabled="true"] {
+          background-color: rgba(#fff, 0.05);
+        }
+      }
+
+      & + .info-char {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  .us-dollar {
+    display: flex;
+  }
+}

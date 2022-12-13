@@ -1,0 +1,57 @@
+  .number-image {
+    --number-width: 30px;
+    --number-height: 42px;
+    --number-gap: 3px;
+
+    display: flex;
+    gap: var(--number-gap);
+
+    span {
+      width: var(--number-width);
+      height: var(--number-height);
+      line-height: 0;
+      font-size: 0;
+      background: url('https://file.mir4global.com/xdraco/img/desktop/countdown/sp-number.png') 0 0 / auto 100% no-repeat;
+
+      &.comma {
+        width: 10px;
+        background-image: url('https://file.mir4global.com/xdraco/img/desktop/countdown/bg-comma.png');
+      }
+      &.num1 {
+        background-position-x: 0;
+      }
+      &.num2 {
+        background-position-x: calc(-1 * var(--number-width));
+      }
+      &.num3 {
+        background-position-x: calc(-2 * var(--number-width));
+      }
+      &.num4 {
+        background-position-x: calc(-3 * var(--number-width));
+      }
+      &.num5 {
+        background-position-x: calc(-4 * var(--number-width));
+      }
+      &.num6 {
+        background-position-x: calc(-5 * var(--number-width));
+      }
+      &.num7 {
+        background-position-x: calc(-6 * var(--number-width));
+      }
+      &.num8 {
+        background-position-x: calc(-7 * var(--number-width));
+      }
+      &.num9 {
+        background-position-x: calc(-8 * var(--number-width));
+      }
+      &.num0 {
+        background-position-x: calc(-9 * var(--number-width));
+      }
+    }
+
+    &.number-image--smaller {
+      --number-width: 20px;
+      --number-height: 28px;
+      --number-gap: 2px;
+    }
+  }

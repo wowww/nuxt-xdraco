@@ -1,0 +1,87 @@
+@import '~@/assets/sass/mixin';
+
+.mirage-dashboard {
+  width: 100%;
+  margin-bottom: 40px;
+	color: #fff;
+  line-height: normal;
+
+  &__title {
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+  }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 1px;
+
+    li {
+      width: 100%;
+      padding: 16px 0;
+      background-color: rgba(255, 255, 255, 0.1);
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 8px;
+
+        .btn {
+          margin-left: 8px;
+        }
+
+        .btn-enhance {
+          display: inline-flex;
+          align-items: center;
+          padding: 0 8px;
+          min-width: 40px;
+          height: 24px;
+          color: #fff;
+          font-size: 12px;
+          background-color: #ffffff33;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@include pc {
+  .mirage-dashboard {
+    margin-bottom: 32px;
+
+    &__title {
+      line-height: 1.67;
+    }
+
+    &__list {
+      display: flex;
+      li {
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 100%);
+        background-color: transparent;
+
+        span {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}

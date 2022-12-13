@@ -1,0 +1,90 @@
+<div class="wemix__modal" aria-wemix-modal="true">
+  <section class="wemix__modal-set">
+    <div class="wemix__modal-close">
+      <img src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/ico-close.svg" alt="" />
+    </div>
+    <div class="wemix__modal-title">
+      <img src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/ico-logo.svg" height="75" width="75" alt="WEMIX" />
+      <label class="wemix__modal-title-prefix">${qr.title.prefix}</label>
+      <img
+          src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/ico-logo-text.svg"
+          height="75"
+          width="auto"
+          alt="WEMIX"
+      />
+      <label>${qr.title.suffix}</label>
+
+    </div>
+    <article class="wemix__modal-qrcode">
+      <div class="wemix__modal-qrcode-image">
+        <div class="wemix__modal-qrcode-image-refresh" style="display:none;">
+          <img src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/ico-refresh.svg" height="30" width="30" />
+        </div>
+        <canvas class="wemix__qr-canvas" />
+      </div>
+      <div class="wemix__modal-qrcode-timer">
+        <p>${qr.remain} <span class="wemix__modal-qrcode-remain"></span></p>
+      </div>
+
+      <div class="wemix__modal-qrcode-warning">
+        ${qr.text1}
+      </div>
+    </article>
+    <article class="wemix__modal__notice">
+      <div>
+        <div class="wemix__modal__flow">
+          <div class="wemix__modal__flow-wrap">
+            <span>step<em>1</em></span>
+            <div class="wemix__modal__flow-icon app">
+              <img
+                  class="wemix__modal__flow-icon--app"
+                  src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/ico-logo.svg"
+                  alt=""
+              />
+            </div>
+            <p>${qr.step1}</p>
+          </div>
+          <img
+              class="wemix__modal__flow-arrow"
+              src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/ico-arrow.svg"
+              alt="pointer"
+          />
+        </div>
+        <div class="wemix__modal__flow">
+          <div class="wemix__modal__flow-wrap">
+            <span>step<em>2</em></span>
+            <div class="wemix__modal__flow-icon">
+              <img
+                  class="wemix__modal__flow-icon--scan"
+                  src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/ico-scan.svg"
+                  alt=""
+              />
+            </div>
+            <p>${qr.step2}</p>
+          </div>
+          <img
+              class="wemix__modal__flow-arrow"
+              src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/ico-arrow.svg"
+              alt="pointer"
+          />
+        </div>
+        <div class="wemix__modal__flow">
+          <div class="wemix__modal__flow-wrap">
+            <span>step<em>3</em></span>
+            <div class="wemix__modal__flow-icon">
+              <img
+                  class="wemix__modal__flow-icon--auth"
+                  src="https://file.mir4global.com/xdraco-dsp/wemix/sdk/templete/qr/ico-auth.svg"
+                  alt=""
+              />
+            </div>
+            <p>${qr.step3}</p>
+          </div>
+        </div>
+      </div>
+      <div class="wemix__modal__step-warning">
+        <span>* ${qr.other1}</span>
+      </div>
+    </article>
+  </section>
+</div>

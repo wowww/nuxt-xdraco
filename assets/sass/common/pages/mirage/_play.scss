@@ -1,0 +1,23 @@
+@import "~@/assets/sass/mixin";
+
+.mirage {
+  .mirage-play {
+    padding-bottom: 80px;
+    background: url("https://file.mir4global.com/xdraco/img/mobile/mirage/bg-mirage-play.webp") 50% 0 / cover no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+
+    .section-title {
+      color: #fff;
+    }
+  }
+}
+
+
+@include pc {
+  .mirage {
+    .mirage-play {
+      background: url("https://file.mir4global.com/xdraco/img/mobile/mirage/bg-mirage-play.webp") 50% 0 / contain no-repeat;
+    }
+  }
+}

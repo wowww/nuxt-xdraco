@@ -1,0 +1,42 @@
+.char-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .thumb {
+    line-height: normal;
+    img {
+      vertical-align: top;
+    }
+  }
+  .thumb + .info {
+    padding-left: 12px;
+  }
+  .info {
+    line-height: normal;
+
+    .nick {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+    }
+    .server {
+      display: block;
+      font-size: 12px;
+      font-weight: normal;
+      color: #fff;
+      margin-top: 4px;
+    }
+  }
+}
+
+.is-desktop {
+  .char-info {
+    .info {
+      .nick {
+        line-height: 1;
+      }
+    }
+  }
+}

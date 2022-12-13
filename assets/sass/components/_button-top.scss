@@ -1,0 +1,60 @@
+.v-application {
+  .btn-top {
+    --btn-posX: 16px;
+    --btn-posY: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: var(--btn-posX);
+    bottom: var(--btn-posY);
+    border-radius: 50%;
+    border: 1px solid rgba(#fff, 0.1);
+    width: 48px;
+    height: 48px;
+    line-height: 0;
+    font-size: 0;
+    background-color: rgba(#343457, 0.7);
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(0);
+    transition: all 400ms ease;
+    z-index: 10;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url('https://file.mir4global.com/xdraco/img/btn-top.webp') 50% 50% / cover no-repeat;
+    }
+    &:hover {
+      transform: translateY(-4px);
+      filter: drop-shadow(3px 3px 4px rgba(#2a2aac, .5));
+    }
+    &.btn-activated {
+      opacity: 1;
+    }
+    &.btn-offset-y {
+      --btn-posY: 100px;
+    }
+    &.btn-offset-y2 {
+      --btn-posY: 180px;
+    }
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .v-application {
+    .btn-top {
+      --btn-posX: 8px;
+      --btn-posY: 8px;
+
+      &:hover {
+        transform: none;
+        filter: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,239 @@
+@import "~@/assets/sass/mixin";
+
+.item-manual {
+  display: block;
+  text-align: center;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.06;
+    color: #fff;
+    margin-top: 32px;
+
+    .enhancement {
+      color: #FFF;
+
+      &[data-character-reinforce="1"],
+      &[data-character-reinforce="2"] {
+        color: #42FF00;
+      }
+
+      &[data-character-reinforce="3"],
+      &[data-character-reinforce="4"] {
+        color: #00C2FF;
+      }
+
+      &[data-character-reinforce="5"],
+      &[data-character-reinforce="6"] {
+        color: #E8401B;
+      }
+
+      &[data-character-reinforce="7"],
+      &[data-character-reinforce="8"] {
+        color: #FFE600;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    color: rgba(#fff, 0.5);
+    margin-top: 6px;
+  }
+
+  .sncode {
+    margin-top: 32px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+  }
+
+  &__title + &__subtitle {
+    margin-top: 4px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px auto 0;
+    width: 100%;
+    min-height: 56px;
+
+    li {
+      flex: 1;
+      border-left: 1px solid rgba(#fff, 0.1);
+      padding: 0 8px;
+
+      &:first-of-type {
+        border-left: 0;
+      }
+
+      &:last-of-type {
+      }
+
+      span,
+      strong {
+        display: block;
+        text-align: center;
+
+        &.ico-draco {
+          display: inline-block;
+          text-align: left;
+        }
+      }
+
+      span {
+        font-size: 12px;
+        font-weight: normal;
+        line-height: normal;
+        color: rgba(#fff, 0.5);
+      }
+
+      strong {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -0.18px;
+        margin-top: 6px;
+        color: #fff;
+
+        &.legendary,
+        &.grade-5 {
+          color: var(--color-legendary);
+        }
+
+        &.epic,
+        &.grade-4 {
+          color: var(--color-epic);
+        }
+
+        &.rare,
+        &.grade-3 {
+          color: var(--color-rare);
+        }
+
+        &.uncommon,
+        &.grade-2 {
+          color: var(--color-uncommon);
+        }
+      }
+
+      &.enhance,
+      &.tire {
+        text-align: center;
+
+        strong {
+          font-size: 24px;
+          line-height: 1;
+          letter-spacing: -0.48px;
+        }
+      }
+
+      &.sncode {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__desc {
+    margin-top: 32px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.43;
+    color: rgba(#fff, 0.6);
+    text-align: left;
+  }
+}
+
+@include pc {
+  .item-manual {
+    text-align: start;
+    margin-bottom: 32px;
+
+    &__title {
+      font-size: 40px;
+      line-height: normal;
+      margin-top: 4px;
+    }
+
+    &__desc {
+      margin-top: 24px;
+      min-height: 75px;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.38;
+      color: rgba(#fff, 0.6);
+    }
+
+    &__detail {
+      justify-content: flex-start;
+      margin: 24px auto 0;
+
+      li {
+        padding: 0 16px;
+
+        strong {
+          letter-spacing: -0.01em;
+
+          &.uncommon,
+          &.grade-2 {
+            border-color: var(--color-uncommon);
+          }
+        }
+
+        &.sncode,
+        &.price,
+        &.rank {
+          text-align: left;
+
+          span,
+          strong {
+            text-align: left;
+          }
+        }
+
+        &.power {
+          span {
+            text-align: left;
+          }
+        }
+
+        &:first-of-type {
+          border-left: 0;
+          padding-left: 0 !important;
+        }
+
+        &:last-of-type {
+          padding-right: 0 !important;
+        }
+      }
+
+      &.size-lg {
+        li {
+          padding: 0 30px;
+        }
+
+        span {
+          font-size: 15px;
+        }
+
+        strong {
+          height: 40px;
+          line-height: 40px;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+

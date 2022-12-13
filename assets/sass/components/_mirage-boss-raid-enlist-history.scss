@@ -1,0 +1,86 @@
+@import '~@/assets/sass/mixin';
+
+.dialog-mirage-raid-info {
+  .dialog-header {
+    font-size: 20px;
+  }
+
+  .mirage-round-raid-info {
+    padding: 16px;
+    width: 100%;
+  }
+
+  .mirage-result-list {
+    .list-raid-result {
+      li {
+        > div[class*="col-"]:not(:last-of-type) {
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .col-rank {
+          padding: 16px;
+
+          .rank {
+            width: 40px;
+            height: 30px;
+            background-position-y: -7px;
+          }
+
+          .name {
+            &::before {
+              top: -50%;
+            }
+          }
+        }
+        .col-title {
+          display: block;
+
+          small {
+            display: none;
+          }
+        }
+        .col-reward {
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  #contents .dialog-mirage-raid-info {
+    .mirage-result-list {
+      .list-raid-result {
+        > li {
+          flex-direction: row;
+        }
+      }
+
+      .col-rank {
+        justify-content: flex-start;
+      }
+
+      .col-title {
+        display: none;
+      }
+
+      .col-score {
+        .mirage-score {
+          font-weight: 600;
+          line-height: 24px;
+
+          &::before {
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,23 @@
+{
+  "qr.title.prefix": "连接",
+  "qr.title.suffix": "",
+  "qr.remain": "剩余时间",
+  "qr.text1":"通过PLAY WALLET 扫描二维码。",
+  "qr.step1":"运行PLAY Wallet ",
+  "qr.step2":"点击上方按钮",
+  "qr.step3":"扫描后验证",
+  "qr.other1":"可用其他二维码阅读器扫描。",
+  "qr.remain.format":"{mm}分 {ss}秒",
+  "qr.expired":"已过期",
+
+  "qr.text2":"连接WEMIX Wallet 进行验证",
+  "qr.step1.mobile":"自动运行WEMIX Wallet",
+  "qr.step2.mobile":"完成WEMIX Wallet验证",
+  "qr.step3.mobile":"验证后返回上一页",
+  "qr.allow.popup.mobile" :"如果WEMIX钱包不运行，请解除弹窗。",
+  "qr.mobile.submit": "PLAY Wallet Connection",
+  "qr.help.title": "您需要什么帮助？",
+  "qr.help.sub1": "您咨询的问题，我们将会第一时间为您解答。",
+  "qr.help.sub2": "",
+  "qr.qr.help.btn": "Inquiry"
+}
